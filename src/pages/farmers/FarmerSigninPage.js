@@ -3,7 +3,7 @@ import FarmerSiginComponent from "../../components/farmers/FarmerSigninComponent
 const FarmerSigninPage = () => {
     return (  
         <div>
-            FarmerLoginPage
+            FarmerLoginPage it needs to change
             
             <FarmerSiginComponent></FarmerSiginComponent>
         </div>
