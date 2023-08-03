@@ -13,6 +13,10 @@ const FarmerSiginComponent = () => {
             <div>
                 <button>Sign In</button>
             </div>
+
+            <div>
+                <button>Sing Out</button>
+            </div>
         </div>
     );
 }
