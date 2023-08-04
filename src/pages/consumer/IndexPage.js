@@ -1,8 +1,6 @@
 const IndexPage = () => {
     return ( 
-        <BasicLayout>
-            
-        </BasicLayout>
+        <div></div>
     );
 }
  
