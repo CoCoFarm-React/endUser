@@ -1,20 +1,26 @@
+import { Link } from "react-router-dom";
+
 const FarmerSiginComponent = () => {
-    return (  
-        <div>
-            FarmerSiginComponent~~
-            <div>
-                Id
-                <input type="text" name="email"></input>
-            </div>
-            <div>
-                pw
-                <input type="text" name="pw"></input>
-            </div>
-            <div>
-                <button>Sign In</button>
-            </div>
-        </div>
-    );
+return (  
+
+    <div>
+        <Link to="/cocofarm/farmer/login">
+            <button 
+            className="border-gray-400 m-3 mt-7 p-1 border-2 rounded-md
+            hover:bg-black hover:text-white text-center text-sm">
+            FarmerIn
+            </button>
+        </Link>
+
+        <Link to="/cocofarm/consumer/login">
+            <button 
+            className="border-gray-400 m-3 mt-7 p-1 border-2 rounded-md
+            hover:bg-black hover:text-white text-center text-sm">
+            LogOut
+            </button>
+        </Link>
+    </div>
+);
 }
- 
+
 export default FarmerSiginComponent;

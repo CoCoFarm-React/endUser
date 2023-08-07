@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
 
 import router2 from './routers/rootConsumer';
+// import router from './routers/root';
+import router2 from './routers/rootFarmer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
