@@ -1,7 +1,7 @@
 import TopNav from "./nav/TopNav";
 import mainWrap from "/project/enduser/src/public/mainWrap_01.jpg"
-import farmerLogin from "../../public/농부.png"
-import memberLogin2 from "../../public/주부.png"
+import farmerLogin from "../../public/farmerlogin.png"
+import memberLogin2 from "../../public/memberlogin.png"
 
 const BasicLayout = () => {
   return ( 
