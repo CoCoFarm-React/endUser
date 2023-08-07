@@ -1,7 +1,7 @@
 import FarmerBoardComponent from "../../components/farmers/FarmerBoardComponent";
 import FarmerHomeComponent from "../../components/farmers/FarmerHomeComponent";
 import TopNav from "../../layouts/farmers/nav/TopNav";
-import farmImage01 from "/project/enduser/src/public/farmerImage01.jpg"
+
 
 
 const FarmerHomePage = () => {

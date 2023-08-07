@@ -1,3 +1,4 @@
+import FarmerSearchComponent from "../../components/farmers/FarmerSearchComponent";
 import FarmerSubListComponent from "../../components/farmers/FarmerSubListComponent";
 import useQueryObj from "../../hooks/farmers/useQueryObj";
 import TopNav from "../../layouts/farmers/nav/TopNav";
@@ -40,6 +41,14 @@ const FarmerSubListPage = () => {
       
       <div>
         <TopNav></TopNav>
+      </div>
+
+      <div>
+        <FarmerSearchComponent
+        moveSearch={moveSearch}
+        queryObj={queryObj}
+        chgSize={chgSize}
+        ></FarmerSearchComponent>
       </div>
 
       <div className="mt-5">
