@@ -1,5 +1,4 @@
 import TopNav from "./nav/TopNav";
-import mainWrap from "/project/enduser/src/public/mainWrap_01.jpg"
 import farmerLogin from "../../public/farmerlogin.png"
 import memberLogin2 from "../../public/memberlogin.png"
 
