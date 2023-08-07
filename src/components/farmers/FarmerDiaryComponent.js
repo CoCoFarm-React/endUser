@@ -37,10 +37,10 @@ const FarmerDiaryComponent = () => {
 
       <ul className="flex flex-wrap container items-center justify-center mt-2 ">
         
-        <div className="items-center justify-center flex">
+        {/* <div className="items-center justify-center flex">
           <input className="rounded-sm border-2 p-2"/>          
           <button type="submit" className="border-2 p-2 w-20 hover:bg-black hover:text-white">검색</button>
-        </div>
+        </div> */}
       
         <div className=" w-full ">
 
@@ -61,6 +61,16 @@ const FarmerDiaryComponent = () => {
 
               <div className="w-full bg-sb-03 ml-5 whitespace-pre-line" >
                 <div className="ml-3">
+                {/* {this.props.data.content.split("\n").map((line) => { //this.props.data.content: 내용
+            return (
+              <span>
+                {line}
+                <br />
+              </span>
+            );
+          })} */}
+
+          {/* {this.props.data.content} */}
                   오늘은 가지를 수확했습니다!<br/>
                   가지가 싱싱해요!<br/>
                   구입문의 : 010-3333-5555

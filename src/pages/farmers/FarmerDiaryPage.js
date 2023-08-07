@@ -1,9 +1,13 @@
 import FarmerDiaryComponent from "../../components/farmers/FarmerDiaryComponent";
 import FarmerPageComponent from "../../components/farmers/FarmerPageComponent";
+import useQueryObj from "../../hooks/farmers/useQueryObj";
 import TopNav from "../../layouts/farmers/nav/TopNav";
 
 
 const FarmerDiaryPage = () => {
+
+
+
   return ( 
 
     <div className="container mx-[auto] w-[1280px]">
@@ -13,12 +17,11 @@ const FarmerDiaryPage = () => {
       </div>
 
       <div>
-        <FarmerDiaryComponent></FarmerDiaryComponent>
+        <FarmerDiaryComponent>
+
+        </FarmerDiaryComponent>
       </div>
 
-      <div className="">
-        <FarmerPageComponent></FarmerPageComponent>
-      </div>
 
     </div>
 

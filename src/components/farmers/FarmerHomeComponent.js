@@ -1,4 +1,4 @@
-import farmImage01 from "/project/enduser/src/public/farmerImage01.jpg"
+import farmImage01 from "../../public/farmerImage01.jpg"
 
 const FarmerHomeComponent = () => {
   
