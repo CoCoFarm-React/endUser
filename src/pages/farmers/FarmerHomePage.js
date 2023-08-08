@@ -3,7 +3,6 @@ import FarmerHomeComponent from "../../components/farmers/FarmerHomeComponent";
 import TopNav from "../../layouts/farmers/nav/TopNav";
 
 
-
 const FarmerHomePage = () => {
   return ( 
 
