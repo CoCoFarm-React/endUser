@@ -8,6 +8,8 @@ import FarmerQAReadPage from "../pages/farmers/FarmerQAReadPage";
 import FarmerSubListPage from "../pages/farmers/FarmerSubListPage";
 import FarmerSubReadPage from "../pages/farmers/FarmerSubReadPage";
 import FarmerDiaryReadPage from "../pages/farmers/FarmerDiaryReadPage";
+import FarmerSigninPage from "../pages/farmers/FarmerSigninPage";
+import FarmerQARegistPage from "../pages/farmers/FarmerQARegistPage";
 
 
 const router2 = createBrowserRouter([
@@ -34,7 +36,11 @@ const router2 = createBrowserRouter([
   {
     path:"/farmer/qa/read/:bno",
     element: <FarmerQAReadPage></FarmerQAReadPage>
-  },  
+  },
+  {
+    path:"/farmer/qa/regist",
+    element: <FarmerQARegistPage></FarmerQARegistPage>
+  },   
   {
     path:"/farmer/subscriberlist",
     element: <FarmerSubListPage></FarmerSubListPage>
@@ -42,6 +48,10 @@ const router2 = createBrowserRouter([
   {
     path:"/farmer/subscriberlist/read/:mno",
     element: <FarmerSubReadPage></FarmerSubReadPage>
+  },
+  {
+    path:"/farmer/signin",
+    element: <FarmerSigninPage></FarmerSigninPage>
   },
 ])
 

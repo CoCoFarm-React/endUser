@@ -40,26 +40,24 @@ const FarmerSubReadComponent = ({mno}) => {
           </tr>
 
           <tr >
-              <td className="border-2 font-medium text-center">email</td>
-              <td className="border-2">{board.email}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium text-center">intro</td>
-              <td className="border-2">{board.intro}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium text-center">nickname</td>
+              <td className="border-2 font-medium text-center">Nickname</td>
               <td className="border-2">{board.nickname}</td>
           </tr>
 
           <tr >
-              <td className="border-2 font-medium text-center">role_name</td>
+              <td className="border-2 font-medium text-center">Email</td>
+              <td className="border-2">{board.email}</td>
+          </tr>
+
+          <tr >
+              <td className="border-2 font-medium text-center">Role_name</td>
               <td className="border-2">{board.roleName}</td>
           </tr>
 
-          
+          <tr >
+              <td className="border-2 font-medium h-40 text-center">Intro</td>
+              <td className="border-2">{board.intro}</td>
+          </tr>
 
         </thead>
     

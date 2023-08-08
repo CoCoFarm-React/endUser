@@ -1,5 +1,3 @@
-import FarmerListComponent from "../../components/farmers/FarmerListComponent";
-import FarmerPageComponent from "../../components/farmers/FarmerPageComponent";
 import FarmerQAComponent from "../../components/farmers/FarmerQAComponent";
 import FarmerSearchComponent from "../../components/farmers/FarmerSearchComponent";
 import useQueryObj from "../../hooks/farmers/useQueryObj";
