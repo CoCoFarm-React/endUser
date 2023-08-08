@@ -1,5 +1,7 @@
 import ConsumerQAComponent from "../../components/consumer/ConsumerQAComponent"
-
+import SampleNav from "../../layout/consumernav/SampleNav"
+import useQueryObj from "../../hooks/farmers/useQueryObj";
+import BasicLayout from "../../layout/BasicLayout"
 
 
 
@@ -40,7 +42,7 @@ const QAPage = () => {
         <div className="container mx-[auto] w-[1280px] ">
       
         <div>
-          <TopNav></TopNav>
+          <SampleNav></SampleNav>
         </div>
         
         <div>

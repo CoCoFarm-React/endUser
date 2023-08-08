@@ -5,7 +5,7 @@ import BasicLayout from "../layout/BasicLayout";
 import BoardPage from "../pages/consumer/BoardPage";
 import QAPage from "../pages/consumer/QAPage";
 
-const router2 = createBrowserRouter([
+const router3 = createBrowserRouter([
     {
         path:"",
         element: <BasicLayout></BasicLayout>
@@ -20,4 +20,4 @@ const router2 = createBrowserRouter([
     }
 ])
 
-export default router2;
+export default router3;
