@@ -10,16 +10,21 @@ import FarmerSubReadPage from "../pages/farmers/FarmerSubReadPage";
 import FarmerDiaryReadPage from "../pages/farmers/FarmerDiaryReadPage";
 import FarmerSigninPage from "../pages/farmers/FarmerSigninPage";
 import FarmerQARegistPage from "../pages/farmers/FarmerQARegistPage";
+import FarmerHomeReadPage from "../pages/farmers/FarmerHomeReadPage";
 
 
 const router2 = createBrowserRouter([
   {
-      path:"",
-      element: <BasicLayout></BasicLayout>
+    path:"",
+    element: <BasicLayout></BasicLayout>
   },
   {
-      path:"/farmer/home",
-      element: <FarmerHomePage></FarmerHomePage>
+    path:"/farmer/home",
+    element: <FarmerHomePage></FarmerHomePage>
+  },
+  {
+    path:"/farmer/home/read/:pno",
+    element: <FarmerHomeReadPage></FarmerHomeReadPage>
   },
   {
     path:"/farmer/diary",

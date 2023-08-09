@@ -38,7 +38,7 @@ const useQueryObj = () => {
   const moveList = () => {
     const queryString = createSearchParams(queryObj).toString()
 
-    navigate(`/farmer/qa`) 
+    navigate(`/farmer/qa?${queryString}`) 
 
     console.log("queryString..." + queryString)
   }
@@ -47,6 +47,14 @@ const useQueryObj = () => {
     const queryString = createSearchParams(queryObj).toString()
 
     navigate(`/farmer/diary`) 
+
+    console.log("queryString..." + queryString)
+  }
+
+  const moveBoardList = () => {
+    const queryString = createSearchParams(queryObj).toString()
+
+    navigate(`/farmer/home`) 
 
     console.log("queryString..." + queryString)
   }
@@ -62,7 +70,7 @@ const useQueryObj = () => {
 
   }
 
-  return {queryObj, setSearch, moveList, moveRead, moveDiaryList}
+  return {queryObj, setSearch, moveList, moveRead, moveDiaryList, moveBoardList}
 }
 
 export default useQueryObj;

@@ -34,7 +34,7 @@ const FarmerHomeComponent = ({mno}) => {
   
   return ( 
 
-    <div className="flex container h-[200px] mt-3">
+    <div className="flex container h-[200px] mt-3 ">
         
       <div className=" w-[300px] flex justify-center items-center">
         <img src={farmImage01} alt="farmImage01" 
