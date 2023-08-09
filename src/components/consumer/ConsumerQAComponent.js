@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import ConsumerPageComponent from "./ConsumerPageComponent"
+import { getCunsumerList, getList } from "../../api/ConsumerAPI"
 
-import { getList } from "../../api/FarmerAPI";
+//import { getList } from "../../api/FarmerAPI";
 
 const initState = {
     dtoList:[],
@@ -23,7 +24,7 @@ const ConsumerQAComponent = ({queryObj, movePage, moveRead}) => {
 
     useEffect(() => {
 
-        getList(queryObj).then(data => {
+        getCunsumerList(queryObj).then(data => {
           console.log("ConsumerListComponent: " + data)
           setListData(data)
         })
@@ -35,12 +36,7 @@ const ConsumerQAComponent = ({queryObj, movePage, moveRead}) => {
         
         <div className="justify-center items-center container mt-3">
 
-        {/* <div className="w-full h-[100px] flex justify-center items-center ">
-          <div className="items-center justify-center flex">
-            <input className="rounded-sm border-2 p-2"/>          
-            <button type="submit" className="border-2 p-2 w-20 hover:bg-black hover:text-white">검색</button>
-          </div>
-        </div>       */}
+      
         
         <table className="w-[1200px] items-center justify-center container">
   

@@ -1,7 +1,7 @@
 import ConsumerQAComponent from "../../components/consumer/ConsumerQAComponent"
 import SampleNav from "../../layout/consumernav/SampleNav"
-import useQueryObj from "../../hooks/farmers/useQueryObj";
-import BasicLayout from "../../layout/BasicLayout"
+import useQueryObj from "../../hooks/consumer/useQueryObj"; 
+import ConsumerSearchComponent from "../../components/consumer/ConsumerSearchComponent";
 
 
 
@@ -14,7 +14,7 @@ const QAPage = () => {
     //페이지 번호 받는
     const movePage = (num) => {
       
-      console.log("DiaryPage_Num: " + num)
+      console.log("Page_Num: " + num)
       queryObj.page = num
       setSearch({...queryObj})
     }
@@ -68,4 +68,4 @@ const QAPage = () => {
 
 }
  
-export default QAPage;
+export default QAPage;  

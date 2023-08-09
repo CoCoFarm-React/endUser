@@ -48,9 +48,13 @@ const BasicLayout = () => {
                 소비자로그인
               </div>
               
+              
+
+             
+              <Link to="/consumer">
               <img className="h-[200px] mt-12 rounded-md shadow-2xl hover:scale-125 hover:cursor-pointer" 
                   alt="mainWrap" src={memberLogin2} />
-
+              </Link>
             </div>
             
           </div>

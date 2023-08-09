@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getList } from "../../api/ConsumerAPI"
+import { getCunsumerList, getList } from "../../api/ConsumerAPI"
 
 
 const initState = {
@@ -21,7 +21,7 @@ const QNAComponent = ({queryObj}) => {
     const [listData, setListData] = useState(initState)
 
     useEffect(() => {
-        getList(queryObj).then(data => {
+        getCunsumerList(queryObj).then(data => {
             console.log("----------=====----------")
             console.log(data)
             setListData({...data})

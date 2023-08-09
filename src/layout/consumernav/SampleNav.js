@@ -14,10 +14,10 @@ const SampleNav = () => {
                 <Link to="/farmer/home">FARMER</Link>
             </div>
             <div  className='font-size-16px font-serif'>
-                <Link to="/consumer/list">BOARD</Link>
+                <Link to="/consumer/qapage">QnA</Link>
             </div>
             <div  className='font-size-16px font-serif'>
-                <Link to="/consumer/qa">QnA</Link>
+                <Link to="/consumer/mypage">ACCOUNT</Link>
             </div>
             <div>
                 LOGIN

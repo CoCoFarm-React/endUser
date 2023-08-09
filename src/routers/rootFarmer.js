@@ -13,10 +13,10 @@ import FarmerQARegistPage from "../pages/farmers/FarmerQARegistPage";
 
 
 const router2 = createBrowserRouter([
-  {
-      path:"",
-      element: <BasicLayout></BasicLayout>
-  },
+  // {
+  //     path:"",
+  //     element: <BasicLayout></BasicLayout>
+  // },
   {
       path:"/farmer/home",
       element: <FarmerHomePage></FarmerHomePage>

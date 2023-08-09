@@ -8,6 +8,7 @@ import { RouterProvider } from 'react-router-dom';
 
 import router3 from './routers/rootConsumer';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <RouterProvider router={router3}>
