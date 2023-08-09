@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { getFarmerOne } from "../../api/FarmerAPI"
 import farmImage01 from "../../public/farmerImage01.jpg"
-import { getCookis } from "../../util/cookieUtil"
+import { getCookies } from "../../util/cookieUtil"
 
 const initState = {
 
@@ -15,7 +15,7 @@ const initState = {
 
 const FarmerHomeComponent = ({mno}) => {
 
-  const sess = getCookis("login")
+  const sess = getCookies("login")
   
   const [board, setBoard] = useState(initState)
 

@@ -10,10 +10,37 @@ export const setCookie = ( cookieName , value , days ) => {
 
 }
 
-export const getCookis = (cookieName) => {
+export const getCookies = (cookieName) => {
     return cookies.get(cookieName)
 }
 
 export const removeCookis = (cookieName , path="/") => {
     cookies.remove(cookieName , {path:path})
 }
+
+const initState = {
+
+    email:'',
+    nickname:'',
+    admin:false,
+    // signed:false,
+    loading: false,
+    errorMsg: null,
+    
+
+}
+
+export const loadCookie = () => {
+    const loginObj = getCookies("login")
+
+    console.log("")
+    console.log(loginObj)
+
+    if(!loginObj){
+        return initState;
+    }
+
+    return loginObj;
+}
+
+

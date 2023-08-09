@@ -12,6 +12,10 @@ import FarmerSigninPage from "../pages/farmers/FarmerSigninPage";
 import FarmerQARegistPage from "../pages/farmers/FarmerQARegistPage";
 import FarmerHomeReadPage from "../pages/farmers/FarmerHomeReadPage";
 
+import LoginHandleComponent from "../components/member/LoginHandleComponent";
+
+
+
 
 const router2 = createBrowserRouter([
   {
@@ -58,6 +62,13 @@ const router2 = createBrowserRouter([
     path:"/farmer/signin",
     element: <FarmerSigninPage></FarmerSigninPage>
   },
+  {
+    path:"/member/loginhandler",
+    element: <LoginHandleComponent></LoginHandleComponent>
+  },
+
+
+  
 ])
 
 export default router2;

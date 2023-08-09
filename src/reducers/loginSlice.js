@@ -1,8 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { setCookie , getCookis , removeCookis } from "../util/cookieUtil";
+import { setCookie , getCookies , removeCookis } from "../util/cookieUtil";
 import { postLogin } from "../api/LoginApi";
-import { Link, useNavigate } from "react-router-dom";
-
 
 export const postLoginThunk = createAsyncThunk('postLoginThunk', (params) => {
     console.log(params)
@@ -11,7 +9,7 @@ export const postLoginThunk = createAsyncThunk('postLoginThunk', (params) => {
 });
 
 const loadCookie = () => {
-    const loginObj = getCookis("login")
+    const loginObj = getCookies("login")
 
     console.log("")
     console.log(loginObj)
