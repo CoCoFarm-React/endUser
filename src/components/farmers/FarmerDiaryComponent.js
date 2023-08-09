@@ -32,6 +32,8 @@ const FarmerDiaryComponent = ({queryObj, movePage, moveRead}) => {
       console.log("Diary Component: " + data)
       setListData(data)
     })
+
+    
   },[queryObj])
 
 
