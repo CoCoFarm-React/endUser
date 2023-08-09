@@ -38,9 +38,13 @@ const TopNav = () => {
 
       </div>
       
-      <div>
-        <FarmerSiginComponent/>
-      </div>
+      <Link to="/">
+            <button 
+            className="border-gray-400 m-3 mt-7 p-1 ml-32 border-2 rounded-md
+            hover:bg-black hover:text-white text-center text-sm">
+            LogOut
+            </button>
+      </Link>
 
     </div>
 

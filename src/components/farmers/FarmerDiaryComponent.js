@@ -1,88 +1,90 @@
+import { useEffect, useState } from "react"
+
+import { getList } from "../../api/FarmerAPI"
+import FarmerPageComponent from "./FarmerPageComponent"
 
 
-const FarmerDiaryComponent = () => {
+const initState = {
+  dtoList:[],
+  end:0,
+  start:0,
+  next:false,
+  prev:false,
+  pageNums:[],
+  page:0,
+  size:0,
+  requestDTO:null,
+  regDate:''
+}
 
-  const farmers = [
-    {
-      name: "당근 재배일지",
-      farmName: "농장1",
-      image: "https://images.pexels.com/photos/2694393/pexels-photo-2694393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    },
-    {
-      name: "당근 재배일지",
-      farmName: "농장1",
-      image: "https://images.pexels.com/photos/2694393/pexels-photo-2694393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    },
-    {
-      name: "당근 재배일지",
-      farmName: "농장1",
-      image: "https://images.pexels.com/photos/2694393/pexels-photo-2694393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    },
-    {
-      name: "당근 재배일지",
-      farmName: "농장1",
-      image: "https://images.pexels.com/photos/2694393/pexels-photo-2694393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    },
-    {
-      name: "당근 재배일지",
-      farmName: "농장1",
-      image: "https://images.pexels.com/photos/2694393/pexels-photo-2694393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    },
-    
+const FarmerDiaryComponent = ({queryObj, movePage, moveRead}) => {
 
-  ];
+  const [listData, setListData] = useState(initState)
+
+  
+
+  // Test (j1 project)
+  useEffect(() => {
+
+    queryObj.cateno = 3
+
+    getList(queryObj).then(data => {
+      console.log("Diary Component: " + data)
+      setListData(data)
+    })
+  },[queryObj])
+
+
   return ( 
 
-    <div className="flex container h-[1200px] mt-3 ">
+    <div className="h-[1200px] mt-3 ">
 
-      <ul className="flex flex-wrap container items-center justify-center mt-2 ">
+      <ul className="flex flex-wrap container justify-center">      
         
-        {/* <div className="items-center justify-center flex">
-          <input className="rounded-sm border-2 p-2"/>          
-          <button type="submit" className="border-2 p-2 w-20 hover:bg-black hover:text-white">검색</button>
-        </div> */}
-      
-        <div className=" w-full ">
+        {listData.dtoList.map(({bno,title,writer,regDate,nickname,rcnt,cateno, content}) => (
+          <li className="h-[300px] w-1/6 
+            m-2 p-2 rounded-md border-2 border-gray-400" key={bno}
+          onClick={() => moveRead(bno)}>
 
-          {farmers.map((farmer, index) => (
-            <li className="flex h-auto bg-white m-2 p-2 rounded-md border-2 border-gray-400" key={index}>
-              <div className="w-36">
-                {/* <div className="text-red-500 font-extrabold">No. {index + 1}</div> */}
-                <div className="flex  items-center hover:cursor-pointer">
-                  <img src={farmer.image} alt={farmer.name} className="w-36 h-32"></img>
-                </div>
-                <div className="text-center text-black font-extrabold mt-3">
-                  <div className="font-bold hover:cursor-pointer">{farmer.name}</div>
-                  <div className="text-red-600">{farmer.farmName}</div>
-                  {/* <div>리뷰 {farmer.reviews} 평점 {farmer.rating}</div> */}
-                </div>
+            <div className="justify-center">
 
+              <div className="hover:cursor-pointer w-36 h-32 mx-auto">
+                <img src="https://media.istockphoto.com/id/184276818/ko/%EC%82%AC%EC%A7%84/%EB%A0%88%EB%93%9C-%EC%82%AC%EA%B3%BC%EB%82%98%EB%AC%B4.jpg?s=612x612&w=0&k=20&c=qe0XwDHYbQFgVaqM2unXZWVqI7kV2SSfXrCYaHsdmWM=" 
+                  alt="defaultImg" className=""></img>
               </div>
 
-              <div className="w-full bg-sb-03 ml-5 whitespace-pre-line" >
-                <div className="ml-3">
-                {/* {this.props.data.content.split("\n").map((line) => { //this.props.data.content: 내용
-            return (
-              <span>
-                {line}
-                <br />
-              </span>
-            );
-          })} */}
+              <div className="justify-center mt-3">
+                <div className="text-center text-black font-bold hover:cursor-pointer mt-5">{title}</div>
+                <div className="text-center text-gray-500 text-xs">{regDate}</div>
+                
+              </div>
 
-          {/* {this.props.data.content} */}
-                  오늘은 가지를 수확했습니다!<br/>
-                  가지가 싱싱해요!<br/>
-                  구입문의 : 010-3333-5555
+            </div>
+
+            <div className="justify-center whitespace-pre-line" >
+              
+                <div className="font-bold hover:cursor-pointer mt-1 truncate">
+                  {content} <br></br>
+                  {content}<br></br>
+                  {content}<br></br>
+                  {content}<br></br>
                   
-                </div>
-              </div>
-            </li>
+                  </div>
+                {/* 오늘은 가지를 수확했습니다!<br/>
+                가지가 싱싱해요!<br/>
+                구입문의 : 010-3333-5555 */}
+                
+              
+            </div>
+          </li>
 
-          ))}
-        </div>
+        ))}        
+        
+        <FarmerPageComponent movePage={movePage}{...listData}></FarmerPageComponent>
 
       </ul>
+
+
     </div>
    );
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const FarmerSearchComponent = ( {moveSearch, queryObj, chgSize}) => {
@@ -30,9 +31,12 @@ const FarmerSearchComponent = ( {moveSearch, queryObj, chgSize}) => {
   return ( 
 
     <div className="items-center justify-center flex container mt-5">
+
+      <Link to="/farmer/qa/regist">
       <button className="border-2 m-2 p-2 w-16 rounded-md bg-lime-400 text-white"> 
       ADD            
       </button>
+      </Link>
             
         <select 
         className="border-2 m-2 p-2 " 

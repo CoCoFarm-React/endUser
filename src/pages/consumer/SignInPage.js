@@ -2,13 +2,9 @@
 const SignInPage = () => {
     return (  
         <div>
-            <div className="m-1">
-                <input type="texet" className="bg-purple-100"></input>
-            </div>
-            <div className="m-1">
-                <input type="texet" className="bg-purple-100"></input>
-            </div>
+
             <div>
+                <h1>TEST</h1>
                 <button>Login</button>
             </div>
         </div>
