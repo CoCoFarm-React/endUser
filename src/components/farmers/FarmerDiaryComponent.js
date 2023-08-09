@@ -29,7 +29,7 @@ const FarmerDiaryComponent = ({queryObj, movePage, moveRead}) => {
     queryObj.cateno = 3
 
     getList(queryObj).then(data => {
-      console.log("Diary Component: " + data)
+      console.log("Diary Component: " + data.dtoList[0])
       setListData(data)
     })
   },[queryObj])
@@ -37,7 +37,7 @@ const FarmerDiaryComponent = ({queryObj, movePage, moveRead}) => {
 
   return ( 
 
-    <div className="h-[1200px] mt-3 ">
+    <div className="h-[1200px] mt-3">
 
       <ul className="flex flex-wrap container justify-center">      
         
@@ -54,22 +54,20 @@ const FarmerDiaryComponent = ({queryObj, movePage, moveRead}) => {
               </div>
 
               <div className="justify-center mt-3">
-                <div className="text-center text-black font-bold hover:cursor-pointer mt-5">{title}</div>
-                <div className="text-center text-gray-500 text-xs">{regDate}</div>
-                
+                <div className="text-center text-orange-400 hover:cursor-pointer mt-5">No.{bno}</div>
+                <div className="text-center text-black font-bold hover:cursor-pointer mt-2">{title}</div>
+                <div className="text-center text-gray-500 text-xs">{regDate}</div>               
               </div>
 
             </div>
 
-            <div className="justify-center whitespace-pre-line" >
+            <div className="justify-center whitespace-pre-line bg-yellow-200" >
               
                 <div className="font-bold hover:cursor-pointer mt-1 truncate">
                   {content} <br></br>
-                  {content}<br></br>
-                  {content}<br></br>
-                  {content}<br></br>
+
                   
-                  </div>
+                </div>
                 {/* 오늘은 가지를 수확했습니다!<br/>
                 가지가 싱싱해요!<br/>
                 구입문의 : 010-3333-5555 */}
