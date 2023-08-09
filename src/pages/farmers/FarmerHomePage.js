@@ -28,7 +28,7 @@ const FarmerHomePage = () => {
       </div> */}
 
       <div>
-        <FarmerHomeComponent></FarmerHomeComponent>
+        <FarmerHomeComponent ></FarmerHomeComponent>
       </div>
 
       <div>
