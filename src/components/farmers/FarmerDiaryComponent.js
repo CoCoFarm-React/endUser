@@ -70,7 +70,8 @@ const FarmerDiaryComponent = ({queryObj, movePage, moveRead}) => {
                 </div>
                 {/* 오늘은 가지를 수확했습니다!<br/>
                 가지가 싱싱해요!<br/>
-                구입문의 : 010-3333-5555 */}
+                구입문의 : 010-3333-5555 
+                */}
                 
               
             </div>

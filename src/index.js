@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 // import router2 from './routers/rootConsumer';
 // import router from './routers/root';
@@ -11,9 +13,15 @@ import router2 from './routers/rootFarmer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <RouterProvider router={router2}>
-    <App />
-  </RouterProvider>
+
+  <Provider store={store}>
+    <RouterProvider router={router2}>
+      <App />
+    </RouterProvider>
+  </Provider>
+
+
+
 );
 
 // If you want to start measuring performance in your app, pass a function

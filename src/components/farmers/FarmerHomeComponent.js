@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
 import { getFarmerOne } from "../../api/FarmerAPI"
 import farmImage01 from "../../public/farmerImage01.jpg"
+import { getCookis } from "../../util/cookieUtil"
 
 const initState = {
+
   mno:0,
   email:'',
   intro:'',
@@ -12,18 +14,23 @@ const initState = {
 }
 
 const FarmerHomeComponent = ({mno}) => {
+
+  const sess = getCookis("login")
   
   const [board, setBoard] = useState(initState)
 
   useEffect(() => {
 
-    getFarmerOne(1).then(data => {
-      setBoard(data)
+    console.log("================================");
+    console.log(sess);
+    console.log("================================");
 
+    getFarmerOne(sess.mno).then(data => {
+      setBoard(data)
       console.log("Farmer ReadCom data:"+data)
     })
 
-  },[mno])
+  },[sess.mno])
   
   return ( 
 
