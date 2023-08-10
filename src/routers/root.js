@@ -1,23 +1,22 @@
 import { createBrowserRouter } from"react-router-dom";
-import FarmerSigninPage from "../pages/farmers/FarmerSigninPage";
-
-import ConsumerPage from "../pages/consumer/ConsumerPage";
-import SignInPage from "../pages/consumer/SignInPage";
-import MyPage from "../pages/consumer/MyPage";
+import BasicLayout from "../layouts/farmers/BasicLayout";
 import QNAPage from "../pages/consumer/QNAPage";
-import MainPage from "../pages/consumer/MainPage";
-import FarmerListPage from "../pages/consumer/FarmerListPage";
-import QNAReadComponent from "../components/consumer/QNAReadComponent";
-import LoadingPage from "../pages/consumer/LoadingPage";
 import { Suspense, lazy } from "react";
+import ConsumerPage from "../pages/consumer/ConsumerPage";
+import QNAReadPage from "../pages/consumer/QNAReadpage";
+import MyPage from "../pages/consumer/MyPage";
+import MainPage from "../pages/consumer/MainPage";
+import QNAModifyPage from "../pages/consumer/QNAModifyPage";
+import QNARegistPage from "../pages/consumer/QNARegistPage";
+import FarmerListPage from "../pages/consumer/FarmerListPage";
 
 
-const Loading = <LoadingPage></LoadingPage>
+// const Loading = <LoadingPage></LoadingPage>
 
-const Consumer_QNAPage = lazy(() => import("../pages/consumer/QNAPage"))
-const Consumer_QNAReadPage = lazy(() => import("../components/consumer/QNAReadComponent"))
-const Consumer_Mypage = lazy(() => import("../pages/consumer/MyPage"))
-const Consumer_MainPage = lazy(() => import("../pages/consumer/MainPage"))
+// const Consumer_QNAPage = lazy(() => import("../pages/consumer/QNAPage"))
+// const Consumer_QNAReadPage = lazy(() => import("../components/consumer/QNAReadComponent"))
+// const Consumer_Mypage = lazy(() => import("../pages/consumer/MyPage"))
+// const Consumer_MainPage = lazy(() => import("../pages/consumer/MainPage"))
 
 const router = createBrowserRouter([
     {
@@ -25,40 +24,50 @@ const router = createBrowserRouter([
         element: <BasicLayout></BasicLayout>
     },
     {
-        path:"farmersignin",
-        element: <FarmerSigninPage></FarmerSigninPage>
+        path:"consumer/qnapage",
+        element: <QNAPage></QNAPage>
     }
     ,
-    {
-        path:"farmerlistpage",
-        element: <FarmerListPage></FarmerListPage>
-    }
-    ,
+    // {
+    //     path:"consumer/farmerlistpage",
+    //     element: <FarmerListPage></FarmerListPage>
+    // }
+    // ,
     {
         path:"consumer",
-        element: <Suspense fallback={Loading}><ConsumerPage /></Suspense>,
-        children: [
-            {
-                path:"qnapage",
-                element: <Suspense fallback={Loading}><Consumer_QNAPage /></Suspense>
-            }
-            ,
-            {
-                path:"qnapage/read/:bno",
-                element: <Suspense fallback={Loading}><Consumer_QNAReadPage /></Suspense>
-            }
-            ,
-            {
-                path:"mypage",
-                element: <Suspense fallback={Loading}><Consumer_Mypage /></Suspense>
-            }
-            ,
-            {
-                path:"mainpage",
-                element: <Suspense fallback={Loading}><Consumer_MainPage /></Suspense>
-            },
-        ]
+        element: <ConsumerPage></ConsumerPage>
+    },
+    //         {
+    //             path:"consumer/qnapage",
+    //             element: <QNAPage></QNAPage>
+    //         }
+    ,
+    {
+        path:"consumer/qnapage/read/:bno",
+        element: <QNAReadPage></QNAReadPage>
     }
+    ,
+    {
+        path:"consumer/qnapage/read/modify/:bno",
+        element: <QNAModifyPage></QNAModifyPage>
+    }
+    ,
+    {
+        path:"consumer/qnapage/regist",
+        element: <QNARegistPage></QNARegistPage>
+    }
+    ,
+    {
+        path:"consumer/mypage",
+        element: <MyPage></MyPage>
+    }
+    ,
+    {
+        path:"consumer/mainpage",
+        element: <MainPage></MainPage>
+    }
+        
+    
 ])
 
 export default router;
