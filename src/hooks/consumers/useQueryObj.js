@@ -33,10 +33,12 @@ const useQueryObj = () => {
 
     const queryObj = checkNull({page, size, type, keyword})
 
+    console.log("queryObj: " + queryObj)
+
     const moveList = () => {
         const queryString = createSearchParams (queryObj).toString()
 
-        navigate(`../list?${queryString}`)
+        navigate(`/consumer/qnapage?${queryString}`)
     }
 
     const moveRead = (bno) => {
@@ -44,10 +46,20 @@ const useQueryObj = () => {
 
         const queryString = createSearchParams (queryObj).toString()
 
-        navigate(`../read/${bno}?${queryString}`)
+        navigate(`/consumer/qnapage/read/${bno}?${queryString}`)
     }
 
-    return {queryObj, setSearch, moveRead, moveList}
+    const moveModify = (bno) => {
+
+        console.log("moveModify: " + bno)
+    
+        const queryString = createSearchParams(queryObj).toString()
+    
+        navigate(`/consumer/qnapage/read/modify/${bno}?${queryString}`)
+    
+    }
+
+    return {queryObj, setSearch, moveList, moveRead, moveModify}
 
 }
  
