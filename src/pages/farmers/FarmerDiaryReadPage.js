@@ -11,7 +11,7 @@ const FarmerDiaryReadPage = () => {
   
   const {queryObj, moveDiaryList} = useQueryObj()
   const {bno} = useParams()
-
+  
   console.log(bno)
   console.log(queryObj)
 
