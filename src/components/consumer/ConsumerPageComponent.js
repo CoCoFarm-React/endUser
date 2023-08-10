@@ -9,7 +9,7 @@ const ConsumerPageComponent = ({ movePage, start, end, prev, next, pageNums, pag
     return ( 
         <div className="flex mb-5 justify-center">
         <ul className="flex">
-  
+
           {prev ? <li
                   className="m-2 p-2 bg-sb-02 border-2  
                   hover:underline hover:cursor-pointer rounded-md"
@@ -36,7 +36,6 @@ const ConsumerPageComponent = ({ movePage, start, end, prev, next, pageNums, pag
             > NEXT </li> : <></>}
   
         </ul>
-  
       </div>
     );
 }

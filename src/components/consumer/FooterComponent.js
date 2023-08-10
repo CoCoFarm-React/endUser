@@ -6,7 +6,7 @@ const FooterComponent = () => {
     return ( 
 
         <footer className="h-20 w-full relative flex justify-between items-center">
-            <div className="relative max-w-screen-lg h-full items-center justify-center">
+            <div className="relative max-w-screen-lg m-auto h-full items-center justify-center">
                 <div className="container items-center">
                     <div className="text-center font-serif m-auto items-center">
                     <span className="p-1 ">상호명 : Astro</span>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getCunsumerList, getList } from "../../api/ConsumerAPI"
+import { getCunsumerList} from "../../api/ConsumerAPI"
 
 
 const initState = {
@@ -16,7 +16,7 @@ const initState = {
 }
 
 
-const QNAComponent = ({queryObj}) => {
+const QNAComponent = ({queryObj, movePage, moveRead}) => {
 
     const [listData, setListData] = useState(initState)
 
@@ -33,12 +33,12 @@ const QNAComponent = ({queryObj}) => {
         <div>
             <table className="w-[1200px] items-center justify-center container">
                 <thead>
-                    <tr className="border-b-2 text-center h-12">
+                    <tr className="border-b-2 text-center h-12 font-serif">
                         <td className="w-1/12">NO.</td>
                         <td className="w-5/12">TITLE</td>
                         <td className="w-1/12">NICKNAME</td>
                         <td className="w-1/12">REGDATE</td>
-                        <td className="w-1/12">ReplyCnt</td>          
+                                 
                     </tr>
                 </thead>
 
@@ -46,18 +46,23 @@ const QNAComponent = ({queryObj}) => {
                     {listData.dtoList.map( ({bno,title,nickname,replyCount,regDate,rcnt}) => 
                         <tr 
                         className="border-b-2 h-20 text-center"
-                        key={bno}>
+                        key={bno}
+                        onClick={() => moveRead(bno)}
+                        >
                             <td>{bno}</td>
                             <td className="text-left hover:underline hover:cursor-pointer">
                                 {title}&nbsp;&nbsp;[{replyCount}]
                             </td>
                             <td>{nickname}</td>
                             <td>{regDate}</td>
-                            <td>{rcnt}</td>
+                            
                         </tr>
                     )}
                 </tbody>
             </table>
+            <div>
+                
+            </div>
         </div>
         
      );
