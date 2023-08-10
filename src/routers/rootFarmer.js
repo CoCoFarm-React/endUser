@@ -13,9 +13,7 @@ import FarmerQARegistPage from "../pages/farmers/FarmerQARegistPage";
 import FarmerHomeReadPage from "../pages/farmers/FarmerHomeReadPage";
 
 import LoginHandleComponent from "../components/member/LoginHandleComponent";
-
-
-
+import MemberModifyPage from "../pages/member/MemberModifyPage";
 
 const router2 = createBrowserRouter([
   {
@@ -49,7 +47,7 @@ const router2 = createBrowserRouter([
   {
     path:"/farmer/qa/regist",
     element: <FarmerQARegistPage></FarmerQARegistPage>
-  },   
+  },
   {
     path:"/farmer/subscriberlist",
     element: <FarmerSubListPage></FarmerSubListPage>
@@ -66,6 +64,10 @@ const router2 = createBrowserRouter([
     path:"/member/loginhandler",
     element: <LoginHandleComponent></LoginHandleComponent>
   },
+  {
+    path:"/member/modify",
+    element: <MemberModifyPage></MemberModifyPage>
+  } 
 
 
   

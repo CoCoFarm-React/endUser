@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
+import { insertMember } from "../../api/LoginApi"
 
 const initState = {
     email:'user00@aaa.com',
@@ -13,7 +14,7 @@ const initState = {
 
 const MemberModifyComponent = () => {
 
-    const loginSlice = useSelector(state => state.login)
+    // const loginSlice = useSelector(state => state.login)
 
     const [loginInfo , setloginInfo] = useState({...initState})
 
@@ -24,7 +25,30 @@ const MemberModifyComponent = () => {
         loginInfo[e.target.name] = e.target.value
         setloginInfo({...loginInfo})
 
+
     }
+
+    const registInsert = (e) => {
+
+        
+        if(loginInfo.pw !== loginInfo.pw2){
+            //나중에 모달로 바꿔야함
+            alert("비밀번호를 확인해주세요.");
+            return
+        }
+
+
+
+
+        
+        insertMember(loginInfo).then(data => {
+
+            console.log(data);
+
+        })
+
+    } 
+
 
     return (
         <div>
@@ -100,14 +124,17 @@ const MemberModifyComponent = () => {
                         </td>
                     </tr>
 
+
+                    
+
                     <tr>
                         <td className="">
                         </td>
                         <td className=" pt-2 pl-0">
-                            <button className="border-4 border-gray-600 p-2 rounded-xl" onClick={() => { }}>
+                            <button className="border-4 border-gray-600 p-2 rounded-xl" onClick={() => registInsert()}>
                                 수정완료
                             </button>
-                            <button className="ml-2 border-4 border-gray-600 p-2 rounded-xl" onClick={() => { }}>
+                            <button className="ml-2 border-4 border-gray-600 p-2 rounded-xl" onClick={() => nav("../consumer/list")}>
                                 취   소
                             </button>
                         </td>
