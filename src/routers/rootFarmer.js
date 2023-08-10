@@ -14,9 +14,7 @@ import FarmerHomeReadPage from "../pages/farmers/FarmerHomeReadPage";
 import FarmerQAModifyPage from "../pages/farmers/FarmerQAModifyPage";
 
 import LoginHandleComponent from "../components/member/LoginHandleComponent";
-
-
-
+import MemberModifyPage from "../pages/member/MemberModifyPage";
 
 const router2 = createBrowserRouter([
   {
@@ -71,6 +69,10 @@ const router2 = createBrowserRouter([
     path:"/member/loginhandler",
     element: <LoginHandleComponent></LoginHandleComponent>
   },
+  {
+    path:"/member/modify",
+    element: <MemberModifyPage></MemberModifyPage>
+  } 
 
 
   

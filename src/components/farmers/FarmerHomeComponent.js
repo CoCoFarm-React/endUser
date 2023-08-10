@@ -25,6 +25,8 @@ const FarmerHomeComponent = ({mno}) => {
     console.log(sess);
     console.log("================================");
 
+    
+
     getFarmerOne(sess.mno).then(data => {
       setBoard(data)
       console.log("Farmer ReadCom data:"+data)
@@ -64,6 +66,7 @@ const FarmerHomeComponent = ({mno}) => {
                 저희 농장 페이지를 방문해 주셔서 감사합니다.<br/>
                 구입문의 farmer1004@gamil.com */}
                 {board.intro}
+                
               </div>
             </div>
         </div>
