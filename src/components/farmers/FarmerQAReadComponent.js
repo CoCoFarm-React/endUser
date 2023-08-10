@@ -8,7 +8,8 @@ const initState = {
   writer:'',
   reg:'',
   modDate:'',
-  nickname:''
+  nickname:'',
+  email:''
   
 }
 
@@ -41,8 +42,8 @@ const FarmerQAReadComponent = ({bno}) => {
           </tr>
 
           <tr >
-              <td className="border-2 font-medium text-center">Title</td>
-              <td className="border-2">{board.title}</td>
+              <td className="border-2 font-medium text-center">Email</td>
+              <td className="border-2">{board.email}</td>
           </tr>
 
           <tr >
@@ -54,10 +55,15 @@ const FarmerQAReadComponent = ({bno}) => {
               <td className="border-2 font-medium text-center">ModDate</td>
               <td className="border-2">{board.modDate}</td>
           </tr>
+
+          <tr >
+              <td className="border-2 font-medium h-10 text-center">Title</td>
+              <td className="border-2">{board.title}</td>
+          </tr>
           
           <tr >
               <td className="border-2 font-medium h-80 text-center">Content</td>
-              <td className="border-2">{board.content}</td>
+              <td className="border-2">{board.content}</td>             
           </tr>
 
 

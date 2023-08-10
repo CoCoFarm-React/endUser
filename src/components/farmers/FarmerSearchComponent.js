@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 
-const FarmerSearchComponent = ( {moveSearch, queryObj, chgSize}) => {
+const FarmerSearchComponent = ( {moveSearch, queryObj, chgSize , hide}) => {
 
   const[searchObj, setSearchObj] = useState({type:'', keyword:''})
   const[changeSize, setChangeSize] = useState({size: 10})
@@ -19,8 +20,12 @@ const FarmerSearchComponent = ( {moveSearch, queryObj, chgSize}) => {
 
   const handleSize = (e) => {
 
-    changeSize.size = e.target.vlaue
-    chgSize(changeSize.size)
+    // changeSize.size = e.target.vlaue
+    // chgSize(changeSize.size)
+
+    const newSize = e.target.value
+    setChangeSize({...changeSize, size: newSize})
+    chgSize(newSize)
 
   }
 
@@ -30,9 +35,17 @@ const FarmerSearchComponent = ( {moveSearch, queryObj, chgSize}) => {
   return ( 
 
     <div className="items-center justify-center flex container mt-5">
-      <button className="border-2 m-2 p-2 w-16 rounded-md bg-lime-400 text-white"> 
+
+      {/* <Link to="/farmer/qa/regist"> */}
+      { hide ? <></> : 
+        <button className="border-2 m-2 p-2 w-16 rounded-md bg-lime-400 text-white"
+      
+      > 
       ADD            
       </button>
+
+      }
+      {/* </Link> */}
             
         <select 
         className="border-2 m-2 p-2 " 

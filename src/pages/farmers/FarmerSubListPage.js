@@ -1,3 +1,5 @@
+import { useState } from "react";
+import FarmerSearchComponent from "../../components/farmers/FarmerSearchComponent";
 import FarmerSubListComponent from "../../components/farmers/FarmerSubListComponent";
 import useQueryObj from "../../hooks/farmers/useQueryObj";
 import TopNav from "../../layouts/farmers/nav/TopNav";
@@ -6,6 +8,9 @@ import TopNav from "../../layouts/farmers/nav/TopNav";
 const FarmerSubListPage = () => {
 
   const {queryObj, setSearch, moveRead} = useQueryObj()
+
+  //게시판 등록 버튼 유무
+  const [addHide, setAddHide] = useState(false)
 
   console.log("queryObj: " + queryObj)
 
@@ -33,6 +38,12 @@ const FarmerSubListPage = () => {
     setSearch({...queryObj})
 
   }
+
+  const hide =  () => {
+
+    setAddHide(!addHide)
+
+  }
   
   return ( 
 
@@ -40,6 +51,15 @@ const FarmerSubListPage = () => {
       
       <div>
         <TopNav></TopNav>
+      </div>
+
+      <div>
+        <FarmerSearchComponent
+        hide={hide}        
+        moveSearch={moveSearch}
+        queryObj={queryObj}
+        chgSize={chgSize}
+        ></FarmerSearchComponent>
       </div>
 
       <div className="mt-5">

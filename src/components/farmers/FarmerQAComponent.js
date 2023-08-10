@@ -23,6 +23,8 @@ const FarmerQAComponent = ({queryObj, movePage, moveRead}) => {
   // Test (j1 project)
   useEffect(() => {
 
+    queryObj.cateno = 1
+
     getList(queryObj).then(data => {
       console.log("FarmerListComponent: " + data)
       setListData(data)
@@ -35,21 +37,11 @@ const FarmerQAComponent = ({queryObj, movePage, moveRead}) => {
   //     console.log("FarmerListComponent: " + data)
   //     setListData(data)
   //   })
-  // },[queryObj])
-
-
-  
+  // },[queryObj])  
 
   return ( 
 
     <div className="justify-center items-center container mt-3">
-
-      {/* <div className="w-full h-[100px] flex justify-center items-center ">
-        <div className="items-center justify-center flex">
-          <input className="rounded-sm border-2 p-2"/>          
-          <button type="submit" className="border-2 p-2 w-20 hover:bg-black hover:text-white">검색</button>
-        </div>
-      </div>       */}
       
       <table className="w-[1200px] items-center justify-center container">
 

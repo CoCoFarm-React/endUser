@@ -1,5 +1,3 @@
-import FarmerListComponent from "../../components/farmers/FarmerListComponent";
-import FarmerPageComponent from "../../components/farmers/FarmerPageComponent";
 import FarmerQAComponent from "../../components/farmers/FarmerQAComponent";
 import FarmerSearchComponent from "../../components/farmers/FarmerSearchComponent";
 import useQueryObj from "../../hooks/farmers/useQueryObj";
@@ -10,7 +8,7 @@ const FarmerQAPage = () => {
 
   const {queryObj, setSearch, moveRead} = useQueryObj()
 
-  console.log("queryObj: " + queryObj)
+  console.log("QA page queryObj: " + queryObj)
 
   //페이지 번호 받는
   const movePage = (num) => {

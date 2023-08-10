@@ -26,7 +26,7 @@ const useQueryObj = () => {
 
   //page, size 값이 없으면 초기값 설정
   const page = search.get("page") || 1
-  const size = search.get("size") || 2
+  const size = search.get("size") || 10
   const type = search.get("type")
   const keyword = search.get("keyword")
 
@@ -38,7 +38,23 @@ const useQueryObj = () => {
   const moveList = () => {
     const queryString = createSearchParams(queryObj).toString()
 
-    navigate(`/farmer/qa`) 
+    navigate(`/farmer/qa?${queryString}`) 
+
+    console.log("queryString..." + queryString)
+  }
+
+  const moveDiaryList = () => {
+    const queryString = createSearchParams(queryObj).toString()
+
+    navigate(`/farmer/diary`) 
+
+    console.log("queryString..." + queryString)
+  }
+
+  const moveBoardList = () => {
+    const queryString = createSearchParams(queryObj).toString()
+
+    navigate(`/farmer/home`) 
 
     console.log("queryString..." + queryString)
   }
@@ -54,7 +70,7 @@ const useQueryObj = () => {
 
   }
 
-  return {queryObj, setSearch, moveList, moveRead}
+  return {queryObj, setSearch, moveList, moveRead, moveDiaryList, moveBoardList}
 }
 
 export default useQueryObj;

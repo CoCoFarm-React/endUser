@@ -19,6 +19,10 @@ const FarmerQAReadPage = () => {
       <div>
         <TopNav></TopNav>
       </div>
+
+      <div className="text-xl mt-5 text-red-600">
+        Q&A Read Page
+      </div>
       
       <div className="mt-5">
         <FarmerQAReadComponent bno={bno}></FarmerQAReadComponent>
