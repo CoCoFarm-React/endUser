@@ -2,6 +2,7 @@ import ConsumerQAComponent from "../../components/consumer/ConsumerQAComponent"
 import SampleNav from "../../layout/consumernav/SampleNav"
 import useQueryObj from "../../hooks/farmers/useQueryObj";
 import BasicLayout from "../../layout/BasicLayout"
+import ConsumerSearchComponent from "../../components/consumer/ConsumerSearchComponent";
 
 
 
