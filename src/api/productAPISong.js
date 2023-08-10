@@ -16,7 +16,9 @@ export const getList = async (queryObj) => {
 
 export const readOne = async (pno) => {
 
-  const res = await axios.get(`${url}/api/${pno}`)
+  const res = await axios.get(`${url}/api/products/${pno}`)
+
+  // console.log("proAPI read res: "+res)
 
   return res.data
 }

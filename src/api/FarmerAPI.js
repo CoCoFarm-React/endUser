@@ -63,4 +63,35 @@ export const getDiaryList = async (queryObj) => {
 
 }
 
+export const getBoard = async (bno) => {
+
+  // const res = await jwtAxios.get(`${url}/api/board/${bno}`)
+  const res = await axios.get(`${url}/api/board/${bno}`)
+
+  return res.data
+}
+
+export const deleteBoard = async (bno) => {
+
+  // const res = await jwtAxios.delete(`${url}/api/board/${bno}`)
+  const res = await axios.delete(`${url}/api/board/${bno}`)
+
+  return res.data
+}
+
+export const putBoard = async (formData) => {
+
+  const header = {
+      headers: {
+          "Content-Type": "multipart/form-data",
+      }
+  }
+
+  // const res = await jwtAxios.post('http://localhost:8080/api/products/modify', formData, header)
+  const res = await axios.post(`${url}`+'/api/board', formData, header)
+
+  return res.data
+
+}
+
 

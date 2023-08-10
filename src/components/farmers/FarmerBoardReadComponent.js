@@ -66,15 +66,15 @@ const FarmerBoardReadComponent = ({pno}) => {
               <td className="border-2">{board.fname}</td>             
           </tr>
 
-          <tr>
+          {/* <tr>
             <td className="border-2 font-medium h-80 text-center">Fname</td>
             <td className="border-2">
               <ul>
-                {board.flist.map( list => <li>{list}</li>
+                {board.fname.map( fileList => <li>{fileList}</li>
                 )}
               </ul>
             </td>
-          </tr>
+          </tr> */}
 
             
         </thead>
