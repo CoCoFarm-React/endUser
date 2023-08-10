@@ -19,10 +19,7 @@ const router2 = createBrowserRouter([
         path:"/consumer/qa",
         element: <QAPage></QAPage>
     },
-    {
-        path:"/member/modify",
-        element: <MemberModifyPage></MemberModifyPage>
-    },
+
 ])
 
 export default router2;

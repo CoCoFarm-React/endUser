@@ -56,8 +56,7 @@ const KakaoMap = () => {
 
     } , [selectedAddress ])
 
-
-    return (     
+    return (
         <div className="relative">
             KakaoMap
             <div id="map" className="border-2 w-[500px] h-[500px]"></div>
