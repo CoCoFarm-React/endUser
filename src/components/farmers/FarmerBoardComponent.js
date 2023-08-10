@@ -1,117 +1,83 @@
+import { useEffect } from "react"
+import { useState } from "react"
+import { getList } from "../../api/productAPISong"
+import FarmerPageComponent from "./FarmerPageComponent"
+
+const initState = {
+  dtoList:[],
+  end:0,
+  start:0,
+  next:false,
+  prev:false,
+  pageNums:[],
+  page:0,
+  size:0,
+  requestDTO:null,
+  regDate:''
+}
+
+const FarmerBoardComponent = ({queryObj, movePage, moveRead}) => {
+
+  const [listData, setListData] = useState(initState)  
+
+  useEffect(() => {
+
+    // queryObj.cateno = 3
+
+    getList(queryObj).then(data => {
+      console.log("FarmBoard Component: " + data)
+      setListData(data)
+    })
+  },[queryObj])
 
 
-const FarmerBoardComponent = () => {
+  return ( 
 
+    <div className="h-[1200px] mt-3">
 
-  const farmers = [
-    {
-      name: "게시글1",
-      farmName: "이 게시글의 설명은 이곳에 입력됩니다",
-      image: "https://images.pexels.com/photos/73640/pexels-photo-73640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      reviews: 12,
-      rating: 4.5,
-    },
-    {
-      name: "게시글2",
-      farmName: "이 게시글의 설명은 이곳에 입력됩니다",
-      image: "https://images.pexels.com/photos/2694393/pexels-photo-2694393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      reviews: 12,
-      rating: 4.5,
-    },
-    {
-      name: "게시글3",
-      farmName: "이 게시글의 설명은 이곳에 입력됩니다",
-      image: "https://images.pexels.com/photos/17406430/pexels-photo-17406430.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      reviews: 12,
-      rating: 4.5,
-    },
-    {
-      name: "게시글4",
-      farmName: "이 게시글의 설명은 이곳에 입력됩니다",
-      image: "https://images.pexels.com/photos/73640/pexels-photo-73640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      reviews: 12,
-      rating: 4.5,
-    },
-    {
-      name: "게시글5",
-      farmName: "이 게시글의 설명은 이곳에 입력됩니다",
-      image: "https://images.pexels.com/photos/73640/pexels-photo-73640.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      reviews: 12,
-      rating: 4.5,
-    },
-    {
-      name: "게시글6",
-      farmName: "이 게시글의 설명은 이곳에 입력됩니다",
-      image: "https://images.pexels.com/photos/2694393/pexels-photo-2694393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      reviews: 12,
-      rating: 4.5,
-    },
-    {
-      name: "게시글7",
-      farmName: "이 게시글의 설명은 이곳에 입력됩니다",
-      image: "https://images.pexels.com/photos/2694393/pexels-photo-2694393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      reviews: 12,
-      rating: 4.5,
-    },
-    {
-      name: "게시글8",
-      farmName: "이 게시글의 설명은 이곳에 입력됩니다",
-      image: "https://images.pexels.com/photos/17406430/pexels-photo-17406430.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      reviews: 12,
-      rating: 4.5,
-    },
-    {
-      name: "게시글9",
-      farmName: "이 게시글의 설명은 이곳에 입력됩니다",
-      image: "https://images.pexels.com/photos/17406430/pexels-photo-17406430.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      reviews: 12,
-      rating: 4.5,
-    },
-    {
-      name: "게시글10",
-      farmName: "이 게시글의 설명은 이곳에 입력됩니다",
-      image: "https://mblogthumb-phinf.pstatic.net/MjAyMDA0MjdfMjU3/MDAxNTg3OTU0Mzk2NDIx.19AzVkM9-bWazLwBw2nON1C0A-NjHdvo2P1HVyu9Zm8g.bFBOOQssIda5snENXIq3aoDA3ijxt3kUcGW7XvvTBcEg.JPEG.shrinkles/2020_04_%EC%A7%81%EC%97%85_01_023_%EB%86%8D%EB%B6%801.jpg?type=w800",
-      reviews: 12,
-      rating: 4.5,
-    }
-    
-
-  ];
-
-  return (
-
-    <div className="flex container h-[1000px] mt-3 ">
-
-      <ul className="flex flex-wrap container justify-center mt-2 h-[500px] ">
-
+      <ul className="flex flex-wrap container justify-center">      
         
-          {farmers.map((farmer, index) => (
-            <li className="w-1/6 h-[220px] bg-white m-2 p-2 rounded-md border-2 
-            border-gray-400 items-center justify-center flex"            
-            key={index}>
-              
-              <div className="w-36 items-center justify-center">
-                {/* <div className="text-red-500 font-extrabold">No. {index + 1}</div> */}
-                
-                <div className="flex items-center justify-center hover:cursor-pointer ">
-                  <img src={farmer.image} alt={farmer.name} className="w-32 h-28"></img>
-                </div>
+        {listData.dtoList.map(({pno, pdesc, pname, price, fname}) => (
+          <li className="h-[300px] w-1/6 
+            m-2 p-2 rounded-md border-2 border-gray-400" key={pno}
+          onClick={() => moveRead(pno)}>
 
-                <div className="text-center text-gray-700 font-extrabold mt-3">
-                  {/* <div className="font-bold text-xl hover:cursor-pointer">{farmer.name}</div> */}
-                  <div className="text-red-500">{farmer.farmName}</div>
-                  <div>리뷰 {farmer.reviews} 평점 {farmer.rating}</div>
-                </div>
+            <div className="justify-center">
 
+              <div className="hover:cursor-pointer w-36 h-32 mx-auto mt-4">
+                <img src="https://cdn.mygoyang.com/news/photo/202006/55231_61251_4957.jpg" 
+                  alt="defaultImg" className="w-36 h-32"></img>
+                  {/* <img src={`http:192.168.0.74/${fname}`} 
+                  alt="defaultImg" className="w-36 h-32"></img> */}
               </div>
 
+              <div className="justify-center mt-5">
+                <div className="text-center text-gray-500">{pno}</div>
+                <div className="text-center text-black font-bold hover:cursor-pointer">{pname}</div>
+                <div className="text-center text-gray-500">{pdesc}</div>
+                
+              </div>
 
-            </li>
+            </div>
 
-          ))}
+            <div className="justify-center whitespace-pre-line mt-5" >
+              
+                <div className="font-bold hover:cursor-pointer mt-1 truncate text-center text-red-600">
+                  {(price+'').replace(/\B(?=(\d{3})+(?!\d))/g, ",")+'원'} <br></br>
+                  
+                </div>                
+              
+            </div>
+          </li>
+
+        ))}        
+        
         
 
       </ul>
+        
+      <FarmerPageComponent movePage={movePage}{...listData}></FarmerPageComponent>
+      
 
     </div>
 

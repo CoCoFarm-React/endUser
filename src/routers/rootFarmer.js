@@ -10,16 +10,26 @@ import FarmerSubReadPage from "../pages/farmers/FarmerSubReadPage";
 import FarmerDiaryReadPage from "../pages/farmers/FarmerDiaryReadPage";
 import FarmerSigninPage from "../pages/farmers/FarmerSigninPage";
 import FarmerQARegistPage from "../pages/farmers/FarmerQARegistPage";
+import FarmerHomeReadPage from "../pages/farmers/FarmerHomeReadPage";
+import FarmerQAModifyPage from "../pages/farmers/FarmerQAModifyPage";
+
+import LoginHandleComponent from "../components/member/LoginHandleComponent";
+
+
 
 
 const router2 = createBrowserRouter([
   {
-      path:"",
-      element: <BasicLayout></BasicLayout>
+    path:"",
+    element: <BasicLayout></BasicLayout>
   },
   {
-      path:"/farmer/home",
-      element: <FarmerHomePage></FarmerHomePage>
+    path:"/farmer/home",
+    element: <FarmerHomePage></FarmerHomePage>
+  },
+  {
+    path:"/farmer/home/read/:pno",
+    element: <FarmerHomeReadPage></FarmerHomeReadPage>
   },
   {
     path:"/farmer/diary",
@@ -40,7 +50,11 @@ const router2 = createBrowserRouter([
   {
     path:"/farmer/qa/regist",
     element: <FarmerQARegistPage></FarmerQARegistPage>
-  },   
+  },
+  {
+    path:"/farmer/qa/modify/:bno",
+    element: <FarmerQAModifyPage></FarmerQAModifyPage>
+  },      
   {
     path:"/farmer/subscriberlist",
     element: <FarmerSubListPage></FarmerSubListPage>
@@ -53,6 +67,13 @@ const router2 = createBrowserRouter([
     path:"/farmer/signin",
     element: <FarmerSigninPage></FarmerSigninPage>
   },
+  {
+    path:"/member/loginhandler",
+    element: <LoginHandleComponent></LoginHandleComponent>
+  },
+
+
+  
 ])
 
 export default router2;

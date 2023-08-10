@@ -5,7 +5,7 @@ import TopNav from "../../layouts/farmers/nav/TopNav";
 
 const FarmerQAReadPage = () => {
 
-  const {queryObj, moveList} = useQueryObj()
+  const {queryObj, moveList, moveModify} = useQueryObj()
   const {bno} = useParams()
 
   console.log(bno)
@@ -25,10 +25,18 @@ const FarmerQAReadPage = () => {
       </div>
       
       <div className="mt-5">
-        <FarmerQAReadComponent bno={bno}></FarmerQAReadComponent>
-        <button 
-            className="border-2 w-20 mt-4 p-2 rounded-md bg-gray-600 text-white "
-            onClick={() => moveList()}>List</button>
+        <FarmerQAReadComponent></FarmerQAReadComponent>
+        {/* <button         
+        onClick={() => moveModify({bno})}
+        className="bg-blue-600 rounded-md w-20 p-2 m-2 text-white"
+        >Modify
+      </button>
+
+      <button 
+        onClick={moveList}
+        className="bg-green-600 rounded-md w-20 p-2 m-2 ml-20 text-white"
+        >List
+      </button> */}
       </div>
 
       

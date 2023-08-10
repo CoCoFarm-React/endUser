@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { getOne } from "../../api/FarmerAPI";
+import useQueryObj from "../../hooks/farmers/useQueryObj";
+import { useParams } from "react-router";
 
 const initState = {
   bno:0,
@@ -13,7 +15,10 @@ const initState = {
   
 }
 
-const FarmerQAReadComponent = ({bno}) => {
+const FarmerQAReadComponent = () => {
+
+  const {queryObj, moveList, moveModify} = useQueryObj()
+  const {bno} = useParams()
 
   const [board, setBoard] = useState(initState)
 
@@ -29,6 +34,7 @@ const FarmerQAReadComponent = ({bno}) => {
   return ( 
     <div className="items-center justify-center container flex">
 
+      <div>
       <table className="w-[1200px] items-center justify-center">
         <thead className="">
           <tr className="bg-gray-200">
@@ -69,8 +75,25 @@ const FarmerQAReadComponent = ({bno}) => {
 
             
         </thead>
-    
+
+        <div className="flex">
+        <button         
+        onClick={() => moveModify(board.bno)}
+        className="bg-blue-600 rounded-md w-20 p-2 m-2 text-white"
+        >Modify
+        </button>
+
+       <button 
+        onClick={moveList}
+        className="bg-green-600 rounded-md w-20 p-2 m-2 ml-20 text-white"
+        >List
+        </button>
+      </div>
+         
       </table>
+
+      </div>
+      
 
     </div>
    );

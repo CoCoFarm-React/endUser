@@ -8,7 +8,7 @@ const FarmerQAPage = () => {
 
   const {queryObj, setSearch, moveRead} = useQueryObj()
 
-  console.log("queryObj: " + queryObj)
+  console.log("QA page queryObj: " + queryObj)
 
   //페이지 번호 받는
   const movePage = (num) => {
