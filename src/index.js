@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store/store';
+
+
+import router3 from './routers/rootConsumer';
+import router2 from './routers/rootFarmer';
 import router from './routers/root';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
