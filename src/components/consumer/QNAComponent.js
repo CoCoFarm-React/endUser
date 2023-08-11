@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { getCunsumerList} from "../../api/ConsumerAPI"
+import ListPageComponent from "../common/ListPageComponent"
 
 
 const initState = {
@@ -16,9 +17,10 @@ const initState = {
 }
 
 
-const QNAComponent = ({queryObj, movePage, moveRead}) => {
+const QNAComponent = ({queryObj, movePage, moveRead, moveRegist}) => {
 
     const [listData, setListData] = useState(initState)
+
 
     useEffect(() => {
         getCunsumerList(queryObj).then(data => {
@@ -61,8 +63,15 @@ const QNAComponent = ({queryObj, movePage, moveRead}) => {
                 </tbody>
             </table>
             <div>
-                
+                <button 
+                    className="bg-white-400 border-2 m-2 p-2 text-black font-bold"
+                    onClick={moveRegist}
+                >
+                    글쓰기
+                </button>
             </div>
+            <ListPageComponent movePage={movePage} {...listData}></ListPageComponent>
+
         </div>
         
      );

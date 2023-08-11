@@ -50,7 +50,7 @@ export const putConsumer = async(formData) => {
     }
   }
 
-  const res = await axios.post(`${url}/api/board/{}`, formData, header)
+  const res = await axios.put(`${url}/api/board`, formData, header)
 
   return res.data
 

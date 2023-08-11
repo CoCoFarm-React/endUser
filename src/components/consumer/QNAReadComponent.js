@@ -67,16 +67,7 @@ const QNAReadComponent = ({moveDelete, moveModify, moveList}) => {
                 <td className="border-2 font-medium h-80 text-center">Content</td>
                 <td className="border-2">{board.content}</td>             
             </tr>
-          </thead>
-          <tbody>
-                    <tr>
-                        <td className="border-2">{board.title}</td>
-                        <td className="border-2">{board.content}</td>
-                        <td className="border-2">{board.nickname}</td>
-                        <td className="border-2">{board.regDate}</td>
-                        <td className="border-2">{board.modDate}</td>
-                    </tr>
-            </tbody>
+          </thead>  
       
         </table>
         <div>

@@ -7,7 +7,7 @@ import SampleNav from "../../layout/consumernav/SampleNav";
 
 const QNAPage = () => {
 
-    const {queryObj, setSearch, moveRead} = useQueryObj()
+    const {queryObj, setSearch, moveRead, moveRegist} = useQueryObj()
     console.log("queryObj: " + queryObj)
 
     const movePage = (bno) => {
@@ -30,7 +30,8 @@ const QNAPage = () => {
                 <QNAComponent
                 queryObj={queryObj}
                 movePage={movePage}
-                moveRead={moveRead}>
+                moveRead={moveRead}
+                moveRegist={moveRegist}>
                 </QNAComponent>
             </div>
 
