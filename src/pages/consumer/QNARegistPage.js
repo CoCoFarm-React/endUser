@@ -1,31 +1,25 @@
 import { useNavigate } from "react-router-dom";
-import SampleLayout from "../../layout/consumer/SampleLayout";
-import QNARegistComponent from "../../components/consumer/QNARegistComponent";
-import FooterComponent from "../../components/consumer/FooterComponent";
+import RegisterComponent from "../../components/consumer/QNARegisterComponent";
+import QNARegisterComponent from "../../components/consumer/QNARegisterComponent";
 
-  const QNARegistPage = () => {
+const RegisterPage = () => {
 
-    const navigate = useNavigate()
+  const navigate = useNavigate()
 
-    const moveList = () => {
+  const moveList = () => {
+    navigate("/consumer/qapage")
+  }
 
-        navigate("/consumer/qnapage")
-    }
-
-    return ( 
-
-        <div className="container mx-[auto] w-[1280px] ">
-            <div>
-                <SampleLayout></SampleLayout>
-            </div>
-
-            <div className="text-2xl m-4">Q&A 등록페이지</div>
-                  
-            <QNARegistComponent moveList={moveList}></QNARegistComponent>
-            <FooterComponent></FooterComponent>
-        </div>
-
-    );
+  return (
+    <div>
+      <div
+        className="mt-4 text-3xl font-semibold"
+      >
+        Products Register Page
+      </div>
+      <QNARegisterComponent moveList={moveList}></QNARegisterComponent>
+    </div>
+  );
 }
- 
-export default QNARegistPage;
+
+export default RegisterPage;

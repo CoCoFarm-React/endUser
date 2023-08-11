@@ -22,7 +22,7 @@ const FarmerSubListComponent = ({queryObj, movePage, moveRead}) => {
 
   useEffect(() => {
 
-    getConsumerList(queryObj).then(data => {
+    getList(queryObj).then(data => {
       console.log("FarmerListComponent22: " + data)
       setListData(data)
     })
