@@ -19,7 +19,7 @@ export const insertMember = async(params) => {
 
   let header = {
     headers: {
-        "content-type": "application/x-www-form-urlencoded",
+      "Content-Type": "multipart/form-data",
     }
   }
   console.log("===========================================")

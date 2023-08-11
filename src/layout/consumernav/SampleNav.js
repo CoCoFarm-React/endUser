@@ -8,19 +8,25 @@ const SampleNav = () => {
                 <Link to="/">COCOFARM</Link>
             </div>
             <div  className='font-size-16px font-serif'>
-                <Link to="/consumer/about">ABOUT</Link>
+                <Link to="/about">ABOUT</Link>
             </div>
             <div  className='font-size-16px font-serif'>
                 <Link to="/farmer/home">FARMER</Link>
             </div>
             <div  className='font-size-16px font-serif'>
-                <Link to="/consumer/list">BOARD</Link>
+                <Link to="/consumer/qapage">QnA</Link>
             </div>
             <div  className='font-size-16px font-serif'>
-                <Link to="/consumer/qa">QnA</Link>
+                <Link to="/consumer/mypage">ACCOUNT</Link>
             </div>
             <div>
-                LOGIN
+                <Link to="/">
+                    <button 
+                    className="border-gray-400 m-3 mt-7 p-1 ml-32 border-2 rounded-md
+                    hover:bg-black hover:text-white text-center text-sm">
+                    LogOut
+                    </button>
+                </Link>
             </div>
         </div>
     );

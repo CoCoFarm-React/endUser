@@ -33,21 +33,46 @@ const useQueryObj = () => {
 
     const queryObj = checkNull({page, size, type, keyword})
 
+    //list
     const moveList = () => {
         const queryString = createSearchParams (queryObj).toString()
 
-        navigate(`../list?${queryString}`)
+        navigate(`/consumer/qapage`) 
     }
+    //regist
+    const moveRegist = () => {
+        const queryString = createSearchParams (queryObj).toString()
 
+        navigate(`regist`) 
+    }
+    //read
     const moveRead = (bno) => {
         console.log("moveRead: " + bno)
 
         const queryString = createSearchParams (queryObj).toString()
 
-        navigate(`../read/${bno}?${queryString}`)
+        navigate(`read/${bno}?${queryString}`)
+    }
+    //modify
+    const moveModify = (bno) => {
+        console.log("moveModify: " + bno)
+    
+        const queryString = createSearchParams (queryObj).toString()
+    
+        navigate(`/consumer/qapage/modify/${bno}?${queryString}`)
+    
+    }
+    //delete
+    const moveDelete = (bno) => {
+        console.log("moveDelete: " + bno)
+    
+        const queryString = createSearchParams (queryObj).toString()
+    
+        //navigate(`consumer/qapage`)
+    
     }
 
-    return {queryObj, setSearch, moveRead, moveList}
+    return {queryObj, setSearch, moveRead, moveList, moveModify, moveDelete, moveRegist}
 
 }
  

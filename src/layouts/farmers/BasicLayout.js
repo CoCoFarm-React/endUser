@@ -53,7 +53,7 @@ const BasicLayout = () => {
               <div className="mt-4 text-2xl flex items-center justify-center text-center">
                 소비자로그인
               </div>
-              <Link to="http://192.168.0.48:8080/oauth2/authorization/kakao">
+              <Link to="http://192.168.0.74:8080/oauth2/authorization/kakao">
               <img className="h-[200px] mt-12 rounded-md shadow-2xl hover:scale-125 hover:cursor-pointer" 
                   alt="mainWrap" src={memberLogin2} />
               </Link>
