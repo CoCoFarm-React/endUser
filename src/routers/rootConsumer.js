@@ -2,7 +2,6 @@ import { createBrowserRouter } from"react-router-dom";
 
 import BasicLayout from "../layouts/farmers/BasicLayout";
 
-
 import FarmerListComponent from "../components/farmers/FarmerListComponent";
 import QNAPage from "../pages/consumer/QNAPage";
 

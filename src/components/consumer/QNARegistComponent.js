@@ -26,18 +26,19 @@ const QNARegistComponent = ({moveList}) => {
 
       const formData = new FormData();
 
-          formData.append("TITLE", board.title)
-          formData.append("CONTENT", board.content)
-          formData.append("WRITER", board.writer)
-          formData.append("EMAIL", board.email)
-          formData.append("NICKNAME", board.nickname)
+        formData.append("TITLE", board.title)
+        formData.append("CONTENT", board.content)
+        formData.append("WRITER", board.writer)
+        formData.append("EMAIL", board.email)
+        formData.append("NICKNAME", board.nickname)
 
-          console.dir(fileRef.current)
+        console.dir(fileRef.current)
 
-          const arr = fileRef.current.files
+        const arr = fileRef.current.files
 
-          for(let file of arr){
-              formData.append("files", file) // files : 컨트롤러에서 받을 때 이름
+            for(let file of arr){
+            // files : 컨트롤러에서 받을 때 이름
+            formData.append("files", file) 
         }
     }
 

@@ -24,7 +24,7 @@ const QNAReadPage = () => {
                 <SampleNav></SampleNav>
             </div>
             <div className="text-xl mt-5">
-                Q&A Read Page
+                FARMER Read Page
             </div>
             
             <QNAReadComponent
