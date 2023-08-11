@@ -15,18 +15,18 @@ export const postLogin = async(params) => {
 }
 
 
-export const insertMember = async(params) => {
+export const modifyMember = async(params) => {
 
   let header = {
     headers: {
-        "content-type": "application/x-www-form-urlencoded",
+        "content-type": "multipart/form-data",
     }
   }
   console.log("===========================================")
   console.log(params);
   console.log("===========================================")
 
-  const res = await axios.post('http://192.168.0.74:8080/api/member/register',params,header)
+  const res = await axios.put('http://192.168.0.74:8080/api/member/modify',params)
 
   return res.data
   
