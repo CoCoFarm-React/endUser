@@ -44,10 +44,27 @@ const useQueryObj = () => {
 
         const queryString = createSearchParams (queryObj).toString()
 
-        navigate(`../read/${bno}?${queryString}`)
+        navigate(`/consumer/qnapage/read/${bno}?${queryString}`)
     }
 
-    return {queryObj, setSearch, moveRead, moveList}
+    const moveRead2 = (bno) => {
+        console.log("moveRead2: " + bno)
+
+        const queryString = createSearchParams (queryObj).toString()
+
+        navigate(`/consumer/farmerlistpage/read/${bno}?${queryString}`)
+    }
+
+    const moveModify = (bno) => {
+
+        console.log("moveModify: " + bno)
+    
+        const queryString = createSearchParams(queryObj).toString()
+    
+        navigate(`/consumer/qnapage/read/modify/${bno}?${queryString}`)
+    }
+
+    return {queryObj, setSearch, moveList, moveRead, moveRead2, moveModify}
 
 }
  

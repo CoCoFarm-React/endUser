@@ -1,5 +1,5 @@
 import { createBrowserRouter } from"react-router-dom";
-import BasicLayout from "../layouts/farmers/BasicLayout";
+//import BasicLayout from "../layouts/farmers/BasicLayout";
 import QNAPage from "../pages/consumer/QNAPage";
 import { Suspense, lazy } from "react";
 import ConsumerPage from "../pages/consumer/ConsumerPage";
@@ -9,6 +9,9 @@ import MainPage from "../pages/consumer/MainPage";
 import QNAModifyPage from "../pages/consumer/QNAModifyPage";
 import QNARegistPage from "../pages/consumer/QNARegistPage";
 import FarmerListPage from "../pages/consumer/FarmerListPage";
+import SampleLayout from "../layout/consumer/SampleLayout";
+import BasicLayout from "../layouts/farmers/BasicLayout";
+import FarmerListReadPage from "../pages/consumer/FarmerListReadPage";
 
 
 // const Loading = <LoadingPage></LoadingPage>
@@ -28,11 +31,16 @@ const router = createBrowserRouter([
         element: <QNAPage></QNAPage>
     }
     ,
-    // {
-    //     path:"consumer/farmerlistpage",
-    //     element: <FarmerListPage></FarmerListPage>
-    // }
-    // ,
+    {
+        path:"consumer/farmerlistpage",
+        element: <FarmerListPage></FarmerListPage>
+    }
+    ,
+    {
+        path:"consumer/farmerlistpage/read:bno",
+        element: <FarmerListReadPage></FarmerListReadPage>
+    }
+    ,
     {
         path:"consumer",
         element: <ConsumerPage></ConsumerPage>

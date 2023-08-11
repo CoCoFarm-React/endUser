@@ -55,7 +55,7 @@ const QNAComponent = ({queryObj, movePage, moveRead}) => {
                         onClick={() => moveRead(bno)}>
                             <td>{bno}</td>
                             <td className="text-left hover:underline hover:cursor-pointer">
-                                {title}&nbsp;&nbsp;[{replyCount}]
+                                {title}
                             </td>
                             <td>{nickname}</td>
                             <td>{regDate}</td>

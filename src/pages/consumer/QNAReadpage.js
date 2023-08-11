@@ -22,7 +22,7 @@ const QNAReadPage = () => {
                 <SampleLayout></SampleLayout>
             </div>
             <div className="text-xl mt-5">
-                Q&A Read Page
+                FARMER Read Page
             </div>
             
             <div className="m-auto">
