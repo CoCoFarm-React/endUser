@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
-import { getOne } from "../../api/ConsumerAPI"
-import { useParams } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { useNavigate, useParams } from "react-router"
 import useQueryObj from "../../hooks/consumers/useQueryObj"
+import { getOne } from "../../api/ConsumerAPI"
 
 
 const initState = {
@@ -14,11 +15,16 @@ const initState = {
 }
 
 
-const QNAReadComponent = ({bno}) => {
+const QNAReadComponent = ({moveDelete, moveModify, moveList}) => {
 
-    const {queryObj, moveList, moveModify} = useQueryObj()
-    // const {bno} = useParams()
+    //const {bno} = useParams()
     const [board, setBoard] = useState(initState)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const {bno} = useParams();
+
+    console.log(bno)
 
     useEffect(() => {
         getOne(bno).then(data => {
@@ -30,21 +36,21 @@ const QNAReadComponent = ({bno}) => {
 
     return ( 
 
-        <div className="flex items-center justify-center container">
-            <table className="w-[1200px] items-center justify-center">
+        <div className="w-[1200px] items-center justify-center m-auto">
+            <table className="w-full">
                 <thead>
                     <tr className="h-12 font-medium text-center">
-                        <td className="border-2 font-medium">NO.</td>
-                        <td className="border-2">TITLE</td>
-                        <td className="border-2">CONTENT</td>
-                        <td className="border-2">NICKNAME</td>
-                        <td className="border-2">REGDATE</td>
-                        <td className="border-2">MODDATE</td>
+                        <td className="border-2  w-32">NO.</td>
+                        <td className="border-2 ">TITLE</td>
+                        <td className="border-2 ">CONTENT</td>
+                        <td className="border-2 ">NICKNAME</td>
+                        <td className="border-2 ">REGDATE</td>
+                        <td className="border-2 ">MODDATE</td>
                     </tr>
                 </thead>
                 
                 <tbody>
-                    <tr className="h-12">
+                    <tr className="font-medium text-center">
                         <td className="border-2">{board.bno}</td>
                         <td className="border-2">{board.title}</td>
                         <td className="border-2">{board.content}</td>
@@ -53,20 +59,25 @@ const QNAReadComponent = ({bno}) => {
                         <td className="border-2">{board.modDate}</td>
                     </tr>
                 </tbody>
-
-                <div className="flex">
-                    <button         
-                    onClick={() => moveModify(board.bno)}
-                    className=" w-20 p-2 m-2 border-2 rounded-md">
-                        Modify
-                    </button>
-                    <button 
-                    onClick={moveList}
-                    className="w-20 p-2 m-2 ml-20 border-2 rounded-md">
-                        List
-                    </button>
-                </div>
             </table>
+            <div>
+                <button 
+                    className="bg-orange-400 border-2 m-2 p-2 text-white font-bold"
+                    onClick={() => moveModify(board.bno)}>
+                    Modify
+                </button>
+                <button 
+                    className="bg-blue-500 border-2 m-2 p-2 text-white font-bold"
+                    onClick={moveList}>
+                    List
+                </button>
+                <button 
+                    className="bg-blue-500 border-2 m-2 p-2 text-white font-bold"
+                    onClick={moveDelete}>
+                    Delete
+                </button>
+            </div>
+
         </div>
 
      );

@@ -20,9 +20,15 @@ const FarmerBoardReadComponent = ({pno}) => {
   useEffect(() => {
 
     readOne(pno).then(data => {
+
+      console.log("===================================================================================" ,data )
       setBoard(data)
 
       console.log("ReadCom data:"+data)
+    }).catch(e => {
+
+      alert("asd")
+
     })
   },[pno])
 

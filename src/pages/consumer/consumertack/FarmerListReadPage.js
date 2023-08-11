@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
-import useQueryObj from "../../hooks/consumer/useQueryObj"
-import FarmerListReadComponent from "../../components/consumer/FarmerListReadComponent"
-import SampleLayout from "../../layout/consumer/SampleLayout"
+import useQueryObj from "../../../hooks/consumers/useQueryObj"
+import FarmerListReadComponent from "../../../components/consumer/FarmerListReadComponent"
+import SampleLayout from "../../../layout/consumer/SampleLayout"
 
 const FarmerListReadPage = () => {
 

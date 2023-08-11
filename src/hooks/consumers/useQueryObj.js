@@ -68,7 +68,19 @@ const useQueryObj = () => {
     
     }
 
-    return {queryObj, setSearch, moveList, moveRead, moveModify}
+    const moveRegist = () => {
+
+        console.log("moveRegist: ")
+    
+        const queryString = createSearchParams(queryObj).toString()
+    
+        navigate(`/consumer/qnapage/regist`)
+    
+    }
+
+
+    
+    return {queryObj, setSearch, moveList, moveRead, moveRead2, moveModify ,moveRegist}
 
 }
  

@@ -1,17 +1,16 @@
 import { createBrowserRouter } from"react-router-dom";
 //import BasicLayout from "../layouts/farmers/BasicLayout";
-import QNAPage from "../pages/consumer/QNAPage";
-import { Suspense, lazy } from "react";
-import ConsumerPage from "../pages/consumer/ConsumerPage";
-import QNAReadPage from "../pages/consumer/QNAReadpage";
-import MyPage from "../pages/consumer/MyPage";
-import MainPage from "../pages/consumer/MainPage";
-import QNAModifyPage from "../pages/consumer/QNAModifyPage";
-import QNARegistPage from "../pages/consumer/QNARegistPage";
-import FarmerListPage from "../pages/consumer/FarmerListPage";
-import SampleLayout from "../layout/consumer/SampleLayout";
+import QNAPage from "../pages/consumer/consumertack/QNAPage";
+
+import ConsumerPage from "../pages/consumer/consumertack/ConsumerPage";
+import QNAReadPage from "../pages/consumer/consumertack/QNAReadpage";
+import MyPage from "../pages/consumer/consumertack/MyPage";
+import QNAModifyPage from "../pages/consumer/consumertack/QNAModifyPage";
+import QNARegistPage from "../pages/consumer/consumertack/QNARegistPage";
+import FarmerListPage from "../pages/consumer/consumertack/FarmerListPage";
+
 import BasicLayout from "../layouts/farmers/BasicLayout";
-import FarmerListReadPage from "../pages/consumer/FarmerListReadPage";
+import FarmerListReadPage from "../pages/consumer/consumertack/FarmerListReadPage";
 
 
 // const Loading = <LoadingPage></LoadingPage>
@@ -69,12 +68,7 @@ const router = createBrowserRouter([
         path:"consumer/mypage",
         element: <MyPage></MyPage>
     }
-    ,
-    {
-        path:"consumer/mainpage",
-        element: <MainPage></MainPage>
-    }
-        
+    
     
 ])
 
