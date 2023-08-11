@@ -20,9 +20,9 @@ export const getOne = async (bno) => {
   return res.data
 }
 
-    const res = await axios.get(`http://localhost:8080/api/board/${bno}`)
+    // const res = await axios.get(`http://localhost:8080/api/board/${bno}`)
   
-    return res.data
+    // return res.data
 
 
 
