@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 const initState = {
-
+    email: '',
+    pw:''
 }
 
 
-const LoginPage = () => {
+const LoginComponent = () => {
 
     const loginState = useSelector(state => state.login)
 
@@ -30,7 +31,9 @@ const LoginPage = () => {
                     <input 
                     type="text" 
                     name="email" 
-                    onChange={()=>{}}>            
+                    value={loginInfo.email} 
+                    onChange={()=>{}} 
+                    className="border-2 m-2 p-3 rounded-md w-[560px]">            
                     </input>
                 </div>
         
@@ -39,8 +42,12 @@ const LoginPage = () => {
             <div className="m-2">
                 <label className="font-bold">PASSWORD</label>
                 <div>
-                    <input type="password" name="pw" 
-                    onChange={()=>{}}>            
+                    <input 
+                    type="password" 
+                    name="pw" 
+                    value={loginInfo.pw} 
+                    onChange={()=>{}} 
+                    className="border-2 m-2 p-3 rounded-md w-[560px]">            
                     </input>
                 </div>        
             </div>
@@ -58,4 +65,4 @@ const LoginPage = () => {
 
 }
  
-export default LoginPage;
+export default LoginComponent;

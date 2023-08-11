@@ -21,18 +21,21 @@ const QNAReadPage = () => {
             <div>
                 <SampleLayout></SampleLayout>
             </div>
+            <div className="text-xl mt-5">
+                Q&A Read Page
+            </div>
             
             <div className="m-auto">
                 <QNAReadComponent bno={bno}></QNAReadComponent>
-                <button 
+                {/* <button 
                 className="border-2 w-20 m-auto text-center rounded-md" 
                 onClick={() => moveList()}>
                     List
-                </button>
+                </button> */}
             </div>
-            <FooterComponent></FooterComponent>
+            {/* <FooterComponent></FooterComponent> */}
         </div>
-  
+
      );
 
 }

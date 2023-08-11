@@ -37,7 +37,7 @@ const FarmerBoardComponent = ({queryObj, movePage, moveRead}) => {
 
       <ul className="flex flex-wrap container justify-center">      
         
-        {listData.dtoList.map(({pno, pdesc, pname, price}) => (
+        {listData.dtoList.map(({pno, pdesc, pname, price, fname}) => (
           <li className="h-[300px] w-1/6 
             m-2 p-2 rounded-md border-2 border-gray-400" key={pno}
           onClick={() => moveRead(pno)}>
@@ -47,6 +47,8 @@ const FarmerBoardComponent = ({queryObj, movePage, moveRead}) => {
               <div className="hover:cursor-pointer w-36 h-32 mx-auto mt-4">
                 <img src="https://cdn.mygoyang.com/news/photo/202006/55231_61251_4957.jpg" 
                   alt="defaultImg" className="w-36 h-32"></img>
+                  {/* <img src={`http:192.168.0.74/${fname}`} 
+                  alt="defaultImg" className="w-36 h-32"></img> */}
               </div>
 
               <div className="justify-center mt-5">

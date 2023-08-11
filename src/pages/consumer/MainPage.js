@@ -6,9 +6,8 @@ const MainPage = () => {
     return ( 
 
         <div className="container mx-[auto] w-[1280px]">
-            <SampleLayout>
-                <h2>MAIN PAGE</h2>
-            </SampleLayout>
+            <SampleLayout></SampleLayout>
+            <h2>MAIN PAGE</h2>
             <FooterComponent></FooterComponent>
         </div>
 

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { getList } from "../../api/ConsumerAPI"
+import PageComponent from "./PageComponent"
+import QNAReadComponent from "./QNAReadComponent"
 
 
 const initState = {
@@ -16,11 +18,14 @@ const initState = {
 }
 
 
-const QNAComponent = ({queryObj}) => {
+const QNAComponent = ({queryObj, movePage, moveRead}) => {
 
     const [listData, setListData] = useState(initState)
 
     useEffect(() => {
+
+        queryObj.cateno = 1
+
         getList(queryObj).then(data => {
             console.log("----------=====----------")
             console.log(data)
@@ -43,10 +48,11 @@ const QNAComponent = ({queryObj}) => {
                 </thead>
 
                 <tbody>
-                    {listData.dtoList.map( ({bno,title,nickname,replyCount,regDate,rcnt}) => 
+                    {listData.dtoList.map(({bno,title,nickname,replyCount,regDate,rcnt}) => 
                         <tr 
                         className="border-b-2 h-20 text-center"
-                        key={bno}>
+                        key={bno}
+                        onClick={() => moveRead(bno)}>
                             <td>{bno}</td>
                             <td className="text-left hover:underline hover:cursor-pointer">
                                 {title}&nbsp;&nbsp;[{replyCount}]
@@ -58,6 +64,9 @@ const QNAComponent = ({queryObj}) => {
                     )}
                 </tbody>
             </table>
+
+            <PageComponent movePage={movePage}{...listData}></PageComponent>
+            
         </div>
         
      );
