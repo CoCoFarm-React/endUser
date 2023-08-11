@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react"
-import { getOne } from "../../api/ConsumerAPI"
+import useQueryObj from "../../hooks/consumer/useQueryObj"
+import { useDispatch } from "react-redux"
+import { useNavigate, useParams } from "react-router"
+import { getCunsumerOne } from "../../api/ConsumerAPI"
 
 
 const initState = {
@@ -13,8 +16,7 @@ const initState = {
 
 
 const QNAReadComponent = ({moveDelete, moveModify, moveList}) => {
-
-    const {queryObj, moveList, moveModify} = useQueryObj()
+    // const {queryObj, moveList, moveModify} = useQueryObj()
     // const {bno} = useParams()
     const [board, setBoard] = useState(initState)
     const dispatch = useDispatch()
@@ -58,6 +60,27 @@ const QNAReadComponent = ({moveDelete, moveModify, moveList}) => {
                     </tr>
                 </tbody>
             </table>
+            <div>
+                <button 
+                    className="bg-orange-400 border-2 m-2 p-2 text-white font-bold"
+                    onClick={() => moveModify(board.bno)}
+                >
+                    Modify
+                </button>
+                <button 
+                    className="bg-blue-500 border-2 m-2 p-2 text-white font-bold"
+                    onClick={moveList}
+                >
+                    List
+                </button>
+                <button 
+                    className="bg-blue-500 border-2 m-2 p-2 text-white font-bold"
+                    onClick={moveDelete}
+                >
+                    Delete
+                </button>
+            </div>
+
         </div>
 
      );

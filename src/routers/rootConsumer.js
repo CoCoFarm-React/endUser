@@ -1,10 +1,14 @@
 import { createBrowserRouter } from"react-router-dom";
 
-// import BasicLayout from "../layout/BasicLayout";
 import BasicLayout from "../layouts/farmers/BasicLayout";
 
-import BoardPage from "../pages/consumer/BoardPage";
-import QAPage from "../pages/consumer/QAPage";
+
+import FarmerListComponent from "../components/farmers/FarmerListComponent";
+import QNAPage from "../pages/consumer/QNAPage";
+
+import QNAReadPage from "../pages/consumer/QNAReadpage";
+import QNAModifyPage from "../pages/consumer/QNAModifyPage";
+import QNARegistPage from "../pages/consumer/QNARegistPage";
 
 const router3 = createBrowserRouter([
     {
@@ -28,8 +32,8 @@ const router3 = createBrowserRouter([
         element: <QNAModifyPage></QNAModifyPage>
     },
     {
-        path:"/consumer/qa",
-        element: <QAPage></QAPage>
+        path:"/consumer/qapage/regist",
+        element: <QNARegistPage></QNARegistPage>
     }
 ])
 

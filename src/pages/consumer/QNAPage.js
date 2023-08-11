@@ -3,7 +3,7 @@ import QNAComponent from "../../components/consumer/QNAComponent";
 import useQueryObj from "../../hooks/consumers/useQueryObj";
 import SampleLayout from "../../layout/consumer/SampleLayout";
 import SampleNav from "../../layout/consumernav/SampleNav";
-//import PageComponent from "../../components/consumer/PageComponent";
+
 
 const QNAPage = () => {
 
@@ -31,9 +31,9 @@ const QNAPage = () => {
     return ( 
 
         <div className="container mx-[auto] w-[1280px] ">
-            <SampleLayout>
+            <SampleNav>
                 <h2>Q&A PAGE</h2>
-            </SampleLayout>
+            </SampleNav>
             <div>
                 <QNAComponent
                 queryObj={queryObj}

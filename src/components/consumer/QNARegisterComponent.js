@@ -27,7 +27,7 @@ const QNARegisterComponent = ({moveList}) => {
     formdata.append("content", board.content)
     formdata.append("cateno", 1)
 
-    formdata.append("mno" , )
+    formdata.append("mno" , 15)
 
     formdata.append("images", board.images)
     console.dir(fileRef.current)
