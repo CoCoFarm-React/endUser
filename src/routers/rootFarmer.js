@@ -16,6 +16,9 @@ import FarmerQAModifyPage from "../pages/farmers/FarmerQAModifyPage";
 import LoginHandleComponent from "../components/member/LoginHandleComponent";
 import MemberModifyPage from "../pages/member/MemberModifyPage";
 
+//차은우 추가 컨슈머로 이동시켜야함
+import BoardPage from "../pages/consumer/BoardPage";
+
 const router2 = createBrowserRouter([
   {
     path:"",
@@ -73,6 +76,17 @@ const router2 = createBrowserRouter([
     path:"/member/modify",
     element: <MemberModifyPage></MemberModifyPage>
   } 
+
+
+
+  
+
+  //차은우 추가 컨슈머로 이동시켜야함
+  ,{
+    path:"/consumer/list",
+    element: <BoardPage></BoardPage>
+  }
+
 
 
   

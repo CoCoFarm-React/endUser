@@ -16,8 +16,12 @@ const MyComponent = () => {
   //소셜로그인 첫 회원인지 판단
   const social = dataObj.social;
 
-  console.log(dataObj)
+  //rolename으로 재배자인지 소비자인지 판단.
+  const rolename = dataObj.roleName;
 
+  // console.log(dataObj)
+
+  console.log(rolename)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,7 +44,16 @@ const MyComponent = () => {
       alert("수정페이지로 이동합니다.")
       navigate('../member/modify')
     }else{
-      navigate('/')
+      console.log("rolename------------------------------------------------------")
+      console.log(rolename)
+      console.log("rolename------------------------------------------------------")
+
+      if(rolename === 'CONSUMER'){
+        navigate('../consumer/list')
+      }else if(rolename === 'FARMER'){
+        navigate('../farmer/home')
+      }
+
     } 
 
     loadCookie()
