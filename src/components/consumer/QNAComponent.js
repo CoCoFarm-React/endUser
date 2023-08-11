@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
-import { getList } from "../../api/ConsumerAPI"
-import PageComponent from "./PageComponent"
-import QNAReadComponent from "./QNAReadComponent"
+import { getCunsumerList} from "../../api/ConsumerAPI"
+import ListPageComponent from "../common/ListPageComponent"
 
 
 const initState = {
@@ -18,15 +17,13 @@ const initState = {
 }
 
 
-const QNAComponent = ({queryObj, movePage, moveRead}) => {
+const QNAComponent = ({queryObj, movePage, moveRead, moveRegist}) => {
 
     const [listData, setListData] = useState(initState)
 
+
     useEffect(() => {
-
-        queryObj.cateno = 1
-
-        getList(queryObj).then(data => {
+        getCunsumerList(queryObj).then(data => {
             console.log("----------=====----------")
             console.log(data)
             setListData({...data})
@@ -38,12 +35,12 @@ const QNAComponent = ({queryObj, movePage, moveRead}) => {
         <div>
             <table className="w-[1200px] items-center justify-center container">
                 <thead>
-                    <tr className="border-b-2 text-center h-12">
+                    <tr className="border-b-2 text-center h-12 font-serif">
                         <td className="w-1/12">NO.</td>
                         <td className="w-5/12">TITLE</td>
                         <td className="w-1/12">NICKNAME</td>
                         <td className="w-1/12">REGDATE</td>
-                        <td className="w-1/12">ReplyCnt</td>          
+                                 
                     </tr>
                 </thead>
 
@@ -59,14 +56,21 @@ const QNAComponent = ({queryObj, movePage, moveRead}) => {
                             </td>
                             <td>{nickname}</td>
                             <td>{regDate}</td>
-                            <td>{rcnt}</td>
+                            
                         </tr>
                     )}
                 </tbody>
             </table>
+            <div>
+                <button 
+                    className="bg-white-400 border-2 m-2 p-2 text-black font-bold"
+                    onClick={moveRegist}
+                >
+                    글쓰기
+                </button>
+            </div>
+            <ListPageComponent movePage={movePage} {...listData}></ListPageComponent>
 
-            <PageComponent movePage={movePage}{...listData}></PageComponent>
-            
         </div>
         
      );
