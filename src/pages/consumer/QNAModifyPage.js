@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom"
 
 
 import FooterComponent from "../../components/consumer/FooterComponent"
-import useQueryObj from "../../hooks/consumer/useQueryObj"
+import useQueryObj from "../../hooks/consumers/useQueryObj"
 import SampleNav from "../../layout/consumernav/SampleNav"
 import QNAModifyComponent from "../../components/consumer/QNAModifyComponent"
 

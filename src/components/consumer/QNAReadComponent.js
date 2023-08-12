@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import useQueryObj from "../../hooks/consumer/useQueryObj"
+import useQueryObj from "../../hooks/consumers/useQueryObj"
 import { useDispatch } from "react-redux"
 import { useNavigate, useParams } from "react-router"
 import { getCunsumerOne } from "../../api/ConsumerAPI"

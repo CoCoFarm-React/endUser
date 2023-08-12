@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getFarmerList } from "../../api/ConsumerAPI";
 import PageComponent from "./PageComponent";
-import { getFarmerOne } from "../../api/FarmerAPI";
+import { getFarmerOne, getList } from "../../api/FarmerAPI";
 
 
 const initState = {
@@ -17,13 +17,13 @@ const initState = {
 }
 
 
-const ParmerListComponent = ({queryObj, movePage, moveRead2}) => {
+const FarmerListComponent = ({queryObj, movePage, moveRead2}) => {
 
     const [listData, setListData] = useState(initState)
 
     useEffect(() => {
 
-      getFarmerOne(queryObj).then(data => {
+      getList(queryObj).then(data => {
             console.log("====================")
             console.log(data)
             setListData({...data})
@@ -33,44 +33,36 @@ const ParmerListComponent = ({queryObj, movePage, moveRead2}) => {
 
     return ( 
         <div>
-            <div className="m-auto text-center">
-                FARMERLIST COMPONENT
-                
-                <table className="w-[1200px] items-center justify-center container">
-                    <thead>
-                        <tr className="h-12 bg-blue-300">
-                            <th className="w-1/12">NO.</th>
-                            <th className="w-5/12">TITLE</th>
-                            <th className="w-1/12">WRITER</th>
-                            <th className="w-1/12">NICKNAME</th>
-                            <th className="w-1/12">REGDATE</th>
-                            <th className="w-1/12">ReplyCnt</th>   
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        {listData.dtoList.map(({bno,title,writer,nickname,replyCount,regDate,rcnt}) => 
-                            <tr 
-                            className="border-b-2 h-20 text-center"
-                            key={bno}
-                            onClick={() => moveRead2(bno)}>
-                                <td>{bno}</td>
-                                <td className="text-left hover:underline hover:cursor-pointer">
-                                    {title}&nbsp;&nbsp;[{replyCount}]
-                                </td>
-                                <td>{writer}</td>
-                                <td>{nickname}</td>
-                                <td>{regDate}</td>
-                                <td>{rcnt}</td>
-                            </tr>
-                        )}
-                    </tbody>             
-                </table>
-
-            </div>
-            <PageComponent movePage={movePage} {...listData}></PageComponent>
+            <ul className="flex flex-wrap mt-5 border border-[#ddd]">
+          {listData.dtoList.map( ({pno, pname, price, fname, reviewCnt, reviewAvg}) => 
+            <li
+              className="w-1/2 p-10 font-semibold border-b odd:border-r"
+              key={pno}
+              onClick={() => moveRead2(pno)}
+            >
+            <div className="text-center">
+                <div className="text-2xl mb-3">{pno}</div>
+                <div className="text-center">
+                  <img className="inline-block" src={`http://localhost/s_${fname}`}/>
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl mt-3">
+                  {pname}
+                </div>
+                <div className="text-center text-2xl">
+                  Price: {price}
+                  <div className="text-xl font-normal">
+                    <span className="mr-5">ReviewAvg: ({reviewAvg})</span>
+                    <span>ReviewCnt: ({reviewCnt})</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+          )}
+        </ul>
         </div>
-    );
-}
- 
-export default ParmerListComponent;
+            
+
+ )}
+export default FarmerListComponent;

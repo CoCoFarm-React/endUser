@@ -8,6 +8,8 @@ import QNAPage from "../pages/consumer/QNAPage";
 import QNAReadPage from "../pages/consumer/QNAReadpage";
 import QNAModifyPage from "../pages/consumer/QNAModifyPage";
 import QNARegistPage from "../pages/consumer/QNARegistPage";
+import FarmerListPage from "../pages/consumer/FarmerListPage";
+import FarmerListReadPage from "../pages/consumer/FarmerListReadPage";
 
 const router3 = createBrowserRouter([
     {
@@ -15,25 +17,15 @@ const router3 = createBrowserRouter([
         element: <BasicLayout></BasicLayout>
     },
     {
-        path:"/consumer",
-        element: <FarmerListComponent></FarmerListComponent>
-    },
-    {
-        path:"/consumer/qapage",
-        element: <QNAPage></QNAPage>
-    },
-    {
-        path:"/consumer/qapage/read/:bno",
-        element: <QNAReadPage></QNAReadPage>
-    },
-    {
-        path:"/consumer/qapage/modify/:bno",
-        element: <QNAModifyPage></QNAModifyPage>
-    },
-    {
-        path:"/consumer/qapage/regist",
-        element: <QNARegistPage></QNARegistPage>
+        path:"consumer/farmerlistpage",
+        element: <FarmerListPage></FarmerListPage>
     }
+    ,
+    {
+        path:"consumer/farmerlistpage/read:bno",
+        element: <FarmerListReadPage></FarmerListReadPage>
+    }
+    
 ])
 
 export default router3;

@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom"
-import useQueryObj from "../../hooks/consumer/useQueryObj"
+import useQueryObj from "../../hooks/consumers/useQueryObj"
 import FarmerListReadComponent from "../../components/consumer/FarmerListReadComponent"
 import SampleLayout from "../../layout/consumer/SampleLayout"
+import SampleNav from "../../layout/consumernav/SampleNav"
 
 const FarmerListReadPage = () => {
 
@@ -18,10 +19,10 @@ const FarmerListReadPage = () => {
 
         <div className="container mx-[auto] w-[1280px]">
             <div>
-                <SampleLayout></SampleLayout>
+                <SampleNav></SampleNav>
             </div>
             <div className="text-xl mt-5">
-                FARMER LIST READ PAGE
+                FARMER PAGE
             </div>
             
             <div className="m-auto">
