@@ -14,6 +14,8 @@ import FarmerHomeReadPage from "../pages/farmers/FarmerHomeReadPage";
 import FarmerQAModifyPage from "../pages/farmers/FarmerQAModifyPage";
 
 import LoginHandleComponent from "../components/member/LoginHandleComponent";
+import FarmerHomeRegistPage from "../pages/farmers/FarmerHomeRegistPage";
+
 
 
 
@@ -30,6 +32,11 @@ const router2 = createBrowserRouter([
   {
     path:"/farmer/home/read/:pno",
     element: <FarmerHomeReadPage></FarmerHomeReadPage>
+  },
+  ,
+  {
+    path:"/farmer/home/register",
+    element: <FarmerHomeRegistPage></FarmerHomeRegistPage>
   },
   {
     path:"/farmer/diary",
