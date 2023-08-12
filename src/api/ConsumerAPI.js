@@ -1,35 +1,52 @@
 import axios from "axios"
 import { createSearchParams } from "react-router-dom"
+const url = 'http://192.168.0.74:8080'
+// const url = 'http://loaclhost:8080'
 
+//list
+export const getCunsumerList = async (queryObj) => {
 
-export const getList = async (queryObj) => {
-
-<<<<<<< HEAD
-  const queryString = createSearchParams(queryObj).toString()
-
-  const res = await axios.get(`http://localhost:8080/api/board/list?${queryString}`)
-
-  return res.data
-
-=======
     const queryString = createSearchParams(queryObj).toString();
   
-    const res = await axios.get(`http://localhost:8080/api/board/list?${queryString}`)
+    const res = await axios.get(`${url}/api/board/list?${queryString}`)
   
     return res.data
->>>>>>> a5cbb7d8a3b5edec4f8d462238e29a850be7bbae
 }
+
 
 export const getOne = async (bno) => {
 
-<<<<<<< HEAD
   const res = await axios.get(`http://localhost:8080/api/board/${bno}`)
 
   return res.data
+
 }
-=======
-    const res = await axios.get(`http://localhost:8080/api/board/${bno}`)
+
+export const deleteBoard = async (bno) => {
+
+    const res = await axios.delete(`http://localhost:8080/api/board/${bno}`)
   
     return res.data
+}
+  
+
+export const putBoard = async (formData) => {
+  
+    const header = {
+        headers: {
+            "Content-Type": "multipart/form-data",
+        }
+    }
   }
->>>>>>> a5cbb7d8a3b5edec4f8d462238e29a850be7bbae
+
+  
+
+export const getFarmerList = async (queryObj) =>{
+
+    const queryString = createSearchParams(queryObj).toString();
+    
+    const res = await axios.get(`http://localhost:8080/api/admin/farmer?${queryString}`)
+  
+    return res.data
+    
+  }

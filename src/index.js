@@ -8,8 +8,8 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 
 
-import router3 from './routers/rootConsumer';
-import router2 from './routers/rootFarmer';
+import router2 from './routers/root';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
