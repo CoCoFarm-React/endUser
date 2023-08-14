@@ -10,9 +10,9 @@ const BasicLayout = ({children}) => {
                 <SampleNav></SampleNav>
             </div>
             <div>
-            <div className="p-4 pb-0 pt-10">
-                {children}
-            </div>
+                <div className="p-4 pb-0 pt-10">
+                    {children}
+                </div>
             </div>
         </div>
         

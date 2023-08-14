@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-import { getOne } from "../../api/ConsumerAPI"
+import { getCunsumerOne, getOne } from "../../api/ConsumerAPI"
+import { useNavigate, useParams } from "react-router-dom"
 
 
 const initState = {
@@ -14,11 +15,7 @@ const initState = {
 
 const QNAReadComponent = ({moveDelete, moveModify, moveList}) => {
 
-    const {queryObj, moveList, moveModify} = useQueryObj()
-    // const {bno} = useParams()
     const [board, setBoard] = useState(initState)
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
 
     const {bno} = useParams();
 
