@@ -107,7 +107,7 @@ const BasicLayout = () => {
                 생산자로그인
               </div>
               
-              <Link to="/farmer/signin">
+              <Link to="/member/singup">
               <img className="h-[200px] mt-12 rounded-md shadow-2xl hover:scale-125 hover:cursor-pointer" 
                   alt="mainWrap" src={farmerLogin} />
               </Link>

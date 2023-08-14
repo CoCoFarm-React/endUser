@@ -40,6 +40,11 @@ import FarmerListReadPage from "../pages/consumer/consumertack/FarmerListReadPag
 // const Consumer_Mypage = lazy(() => import("../pages/consumer/MyPage"))
 // const Consumer_MainPage = lazy(() => import("../pages/consumer/MainPage"))
 
+
+import FarmerSignUpComponent from "../components/member/FarmerSignUpComponent";
+
+
+
 const router = createBrowserRouter([
     {
         path:"",
@@ -70,9 +75,79 @@ const router = createBrowserRouter([
     {
         path:"consumer/mypage",
         element: <MyPage></MyPage>
-    }
+    },
+    {
+        path:"consumer/mainpage",
+        element: <MainPage></MainPage>
+    },
+    {
+        path:"",
+        element: <BasicLayout></BasicLayout>
+      },
+      {
+        path:"/farmer/home",
+        element: <FarmerHomePage></FarmerHomePage>
+      },
+      {
+        path:"/farmer/home/read/:pno",
+        element: <FarmerHomeReadPage></FarmerHomeReadPage>
+      },
+      {
+        path:"/farmer/diary",
+        element: <FarmerDiaryPage></FarmerDiaryPage>
+      },
+      {
+        path:"/farmer/diary/read/:bno",
+        element: <FarmerDiaryReadPage></FarmerDiaryReadPage>
+      },
+      {
+        path:"/farmer/qa",
+        element: <FarmerQAPage></FarmerQAPage>
+      },
+      {
+        path:"/farmer/qa/read/:bno",
+        element: <FarmerQAReadPage></FarmerQAReadPage>
+      },
+      {
+        path:"/farmer/qa/regist",
+        element: <FarmerQARegistPage></FarmerQARegistPage>
+      },
+      {
+        path:"/farmer/qa/modify/:bno",
+        element: <FarmerQAModifyPage></FarmerQAModifyPage>
+      },      
+      {
+        path:"/farmer/subscriberlist",
+        element: <FarmerSubListPage></FarmerSubListPage>
+      },
+      {
+        path:"/farmer/subscriberlist/read/:mno",
+        element: <FarmerSubReadPage></FarmerSubReadPage>
+      },
+      {
+        path:"/farmer/signin",
+        element: <FarmerSigninPage></FarmerSigninPage>
+      },
+      {
+        path:"/member/loginhandler",
+        element: <LoginHandleComponent></LoginHandleComponent>
+      },
+      {
+        path:"/member/modify",
+        element: <MemberModifyPage></MemberModifyPage>
+      } 
     
+      //차은우 추가 컨슈머로 이동시켜야함
+      ,{
+        path:"/consumer/list",
+        element: <BoardPage></BoardPage>
+      }
+      ,{
+        path:"/member/singup",
+        element: <FarmerSignUpComponent></FarmerSignUpComponent>
+      }
     
+      
     
         
     
