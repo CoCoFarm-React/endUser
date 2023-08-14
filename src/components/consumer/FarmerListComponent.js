@@ -34,27 +34,27 @@ const FarmerListComponent = ({queryObj, movePage, moveRead2}) => {
     return ( 
         <div>
             <ul className="flex flex-wrap mt-5 border border-[#ddd]">
-          {listData.dtoList.map( ({pno, pname, price, fname, reviewCnt, reviewAvg}) => 
+          {listData.dtoList.map( ({mno, email, nickname, rolename, fname}) => 
             <li
               className="w-1/2 p-10 font-semibold border-b odd:border-r"
-              key={pno}
-              onClick={() => moveRead2(pno)}
+              key={mno}
+              onClick={() => moveRead2(mno)}
             >
             <div className="text-center">
-                <div className="text-2xl mb-3">{pno}</div>
+                <div className="text-2xl mb-3">{mno}</div>
                 <div className="text-center">
                   <img className="inline-block" src={`http://localhost/s_${fname}`}/>
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-3xl mt-3">
-                  {pname}
+                  {nickname}
                 </div>
                 <div className="text-center text-2xl">
-                  Price: {price}
+                  Price: {nickname}
                   <div className="text-xl font-normal">
-                    <span className="mr-5">ReviewAvg: ({reviewAvg})</span>
-                    <span>ReviewCnt: ({reviewCnt})</span>
+                    {/* <span className="mr-5">ReviewAvg: ({reviewAvg})</span>
+                    <span>ReviewCnt: ({reviewCnt})</span> */}
                   </div>
                 </div>
               </div>
