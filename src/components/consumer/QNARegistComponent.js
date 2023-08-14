@@ -24,7 +24,7 @@ const QNARegistComponent = ({moveList}) => {
 
     const handleClickSave = (e) => {
 
-      const formData = new FormData();
+        const formData = new FormData();
 
         formData.append("TITLE", board.title)
         formData.append("CONTENT", board.content)
@@ -32,14 +32,18 @@ const QNARegistComponent = ({moveList}) => {
         formData.append("EMAIL", board.email)
         formData.append("NICKNAME", board.nickname)
 
-        console.dir(fileRef.current)
+        // console.dir(fileRef.current)
 
-        const arr = fileRef.current.files
+        // const arr = fileRef.current.files
 
-            for(let file of arr){
-            // files : 컨트롤러에서 받을 때 이름
-            formData.append("files", file) 
-        }
+        //     for(let file of arr){
+        //     // files : 컨트롤러에서 받을 때 이름.
+        //     formData.append("files", file) 
+        // }
+
+
+        //등록하는 api호출
+
     }
 
     const handleClickClear = (e) => {
@@ -94,7 +98,7 @@ const QNARegistComponent = ({moveList}) => {
                 </input>
             </div>
 
-            <div className="m-auto border-2 font-bold">
+            {/* <div className="m-auto border-2 font-bold">
                 <input 
                 className="m-auto items-center" 
                 type='file' 
@@ -103,7 +107,7 @@ const QNARegistComponent = ({moveList}) => {
                 name='images' 
                 onChange={handleChange}>
                 </input>
-            </div>
+            </div> */}
 
             <div className="mt-2">
                 <button 

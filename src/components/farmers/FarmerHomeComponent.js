@@ -19,11 +19,13 @@ const FarmerHomeComponent = ({mno}) => {
   
   const [board, setBoard] = useState(initState)
 
+  
+
   useEffect(() => {
 
     console.log("================================");
     console.log(sess);
-    console.log("================================");
+    console.log("================================");    
 
     
 
@@ -39,9 +41,13 @@ const FarmerHomeComponent = ({mno}) => {
     <div className="flex container h-[200px] mt-3 ">
         
       <div className=" w-[300px] flex justify-center items-center">
-        <img src={farmImage01} alt="farmImage01" 
+        {/* <img src={farmImage01} alt="farmImage01" 
         className="rounded-[50%] object-cover w-[180px] h-[180px] justify-center flex">
 
+        </img> */}
+        <img alt="farmImage01" 
+        className="rounded-[50%] object-cover w-[180px] h-[180px] justify-center flex">
+          {board.profile}
         </img>
       </div>
 

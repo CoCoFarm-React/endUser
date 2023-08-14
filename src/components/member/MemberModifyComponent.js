@@ -1,10 +1,13 @@
 import { useState } from "react"
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import { insertMember } from "../../api/LoginApi"
+import { insertMember, modifyMember } from "../../api/LoginApi"
 import DaumPostcode from 'react-daum-postcode';
+import { getCookies } from "../../util/cookieUtil";
+import { useEffect } from "react";
 
 const initState = {
+    mno:0,
     email:'user00@aaa.com',
     pw:'1111',
     pw2:'1111',
@@ -21,6 +24,12 @@ const MemberModifyComponent = () => {
     // const loginSlice = useSelector(state => state.login)
 
     const [loginInfo , setloginInfo] = useState({...initState})
+
+    const cookie = getCookies('login')
+    initState.mno = cookie.mno
+
+    console.log(cookie.mno);
+    console.log(initState.mno);
 
     const nav = useNavigate()
 
@@ -45,7 +54,7 @@ const MemberModifyComponent = () => {
 
         console.log(loginInfo)
         
-        insertMember(loginInfo).then(data => {
+        modifyMember(loginInfo).then(data => {
 
             console.log(data);
 
@@ -87,6 +96,16 @@ const MemberModifyComponent = () => {
         }
 
 
+
+
+
+    useEffect(() => {
+        initState.mno = cookie.mno
+        initState.email = cookie.email
+        setloginInfo(initState)
+    },[])
+
+
     return (
         <div>
 
@@ -97,6 +116,14 @@ const MemberModifyComponent = () => {
                     <div className="m-2 pl-2">*표시는 필수 입력사항</div>
                 </div>
                 <table className="m-4">
+                    <tr className="">
+                        <td>
+                            <label>*mno</label>
+                        </td>
+                        <td className="border-2 bg-white">
+                            <input type="text" name="mno" value={loginInfo.mno} ></input>
+                        </td>
+                    </tr>
                     <tr className="">
                         <td>
                             <label>*Email</label>

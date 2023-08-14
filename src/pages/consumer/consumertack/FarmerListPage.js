@@ -1,9 +1,8 @@
-import FarmerListComponent from "../../components/consumer/FarmerListComponent";
-import FooterComponent from "../../components/consumer/FooterComponent";
-import SearchComponent from "../../components/consumer/SearchComponent";
-import useQueryObj from "../../hooks/consumers/useQueryObj";
-import SampleLayout from "../../layout/consumer/SampleLayout";
-import SampleNav from "../../layout/consumernav/SampleNav";
+import FarmerListComponent from "../../../components/consumer/FarmerListComponent";
+import FooterComponent from "../../../components/consumer/FooterComponent";
+import SearchComponent from "../../../components/consumer/SearchComponent";
+import useQueryObj from "../../../hooks/consumers/useQueryObj";
+import SampleNav from "../../../layout/consumernav/SampleNav";
 
 
 const FarmerListPage = () => {

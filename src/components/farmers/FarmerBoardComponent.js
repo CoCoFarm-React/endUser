@@ -2,6 +2,8 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { getList } from "../../api/productAPISong"
 import FarmerPageComponent from "./FarmerPageComponent"
+import { Link } from "react-router-dom"
+import useQueryObj from "../../hooks/farmers/useQueryObj"
 
 const initState = {
   dtoList:[],
@@ -19,14 +21,16 @@ const initState = {
 const FarmerBoardComponent = ({queryObj, movePage, moveRead}) => {
 
   const [listData, setListData] = useState(initState)  
+  
 
   useEffect(() => {
 
     // queryObj.cateno = 3
 
     getList(queryObj).then(data => {
-      console.log("FarmBoard Component: " + data)
-      setListData(data)
+      console.log("FarmBoard Component: " + data.dtoList)
+      setListData(data) 
+      
     })
   },[queryObj])
 
@@ -34,6 +38,11 @@ const FarmerBoardComponent = ({queryObj, movePage, moveRead}) => {
   return ( 
 
     <div className="h-[1200px] mt-3">
+
+        {/* 임시버튼 */}
+        <div className="text-3xl">
+          <button><Link to={"/farmer/home/register"}>REG</Link></button>
+        </div>
 
       <ul className="flex flex-wrap container justify-center">      
         
@@ -45,7 +54,7 @@ const FarmerBoardComponent = ({queryObj, movePage, moveRead}) => {
             <div className="justify-center">
 
               <div className="hover:cursor-pointer w-36 h-32 mx-auto mt-4">
-                <img src="https://cdn.mygoyang.com/news/photo/202006/55231_61251_4957.jpg" 
+                <img src={`http://192.168.0.74/s_${fname}`} 
                   alt="defaultImg" className="w-36 h-32"></img>
                   {/* <img src={`http:192.168.0.74/${fname}`} 
                   alt="defaultImg" className="w-36 h-32"></img> */}

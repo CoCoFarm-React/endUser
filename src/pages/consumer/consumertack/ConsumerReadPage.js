@@ -1,4 +1,4 @@
-import useQueryObj from "../../hooks/consumers/useQueryObj"
+import useQueryObj from "../../../hooks/consumers/useQueryObj"
 
 const ConsumerReadPage = () => {
 

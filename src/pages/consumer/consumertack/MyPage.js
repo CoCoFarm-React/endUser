@@ -1,5 +1,5 @@
-import FooterComponent from "../../components/consumer/FooterComponent";
-import SampleLayout from "../../layout/consumer/SampleLayout";
+import FooterComponent from "../../../components/consumer/FooterComponent";
+import SampleLayout from "../../../layout/consumer/SampleLayout";
 
 const MyPage = () => {
 

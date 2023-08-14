@@ -1,5 +1,6 @@
 import FarmerBoardComponent from "../../components/farmers/FarmerBoardComponent";
 import FarmerHomeComponent from "../../components/farmers/FarmerHomeComponent";
+import FarmerSearchComponent from "../../components/farmers/FarmerSearchComponent";
 import useQueryObj from "../../hooks/farmers/useQueryObj";
 import TopNav from "../../layouts/farmers/nav/TopNav";
 
@@ -44,6 +45,14 @@ const FarmerHomePage = () => {
 
       <div>
         <FarmerHomeComponent ></FarmerHomeComponent>
+      </div>
+
+      <div>
+        <FarmerSearchComponent
+        moveSearch={moveSearch}
+        queryObj={queryObj}
+        chgSize={chgSize}
+        ></FarmerSearchComponent>
       </div>
 
       <div>

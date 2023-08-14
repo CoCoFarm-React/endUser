@@ -5,11 +5,11 @@ const ListPageComponent = ({movePage, start, end, prev, next, pageNums, page}) =
   }
 
   return (
-  <div className="flex mb-5 justify-center">
+  <div className="flex mt-3 mb-3 justify-center">
     <ul className="flex">
 
       {prev ? <li
-              className="m-2 p-2 bg-sb-02 border-2  
+              className="m-2 bg-sb-02 
               hover:underline hover:cursor-pointer rounded-md"
               onClick={() => handleClickPage(start - 1)}        
       
@@ -17,7 +17,7 @@ const ListPageComponent = ({movePage, start, end, prev, next, pageNums, page}) =
 
       {pageNums.map(num => 
         <li
-          className="m-2 p-2 w-9 text-center border-2
+          className="m-2 w-9 text-center
                      font-bold hover:underline hover:cursor-pointer rounded-md"
           onClick={() => handleClickPage(num)}
           key={num}
@@ -27,7 +27,7 @@ const ListPageComponent = ({movePage, start, end, prev, next, pageNums, page}) =
         </li>)}
 
         {next ? <li
-          className="m-2 p-2 bg-sb-02 border-2   
+          className="m-2 bg-sb-02   
           hover:underline hover:cursor-pointer rounded-md"
           onClick={() => handleClickPage(end + 1)}
 

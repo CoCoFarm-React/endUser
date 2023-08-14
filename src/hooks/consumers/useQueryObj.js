@@ -40,6 +40,12 @@ const useQueryObj = () => {
 
         navigate(`/consumer/qnapage?${queryString}`)
     }
+    //main 페이지 이동
+    const moveList2 = () => {
+        const queryString = createSearchParams (queryObj).toString()
+
+        navigate(`/consumer/farmerlistpage`)
+    }
 
     const moveRead = (bno) => {
         console.log("moveRead: " + bno)
@@ -68,7 +74,19 @@ const useQueryObj = () => {
     
     }
 
-    return {queryObj, setSearch, moveList, moveRead, moveModify}
+    const moveRegist = () => {
+
+        console.log("moveRegist: ")
+    
+        const queryString = createSearchParams(queryObj).toString()
+    
+        navigate(`/consumer/qnapage/regist`)
+    
+    }
+
+
+    
+    return {queryObj, setSearch, moveList, moveList2, moveRead, moveRead2, moveModify ,moveRegist}
 
 }
  

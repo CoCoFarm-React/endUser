@@ -14,7 +14,12 @@ import FarmerHomeReadPage from "../pages/farmers/FarmerHomeReadPage";
 import FarmerQAModifyPage from "../pages/farmers/FarmerQAModifyPage";
 
 import LoginHandleComponent from "../components/member/LoginHandleComponent";
+import FarmerHomeRegistPage from "../pages/farmers/FarmerHomeRegistPage";
+
 import MemberModifyPage from "../pages/member/MemberModifyPage";
+
+//차은우 추가 컨슈머로 이동시켜야함
+import BoardPage from "../pages/consumer/BoardPage";
 
 const router2 = createBrowserRouter([
   {
@@ -28,6 +33,11 @@ const router2 = createBrowserRouter([
   {
     path:"/farmer/home/read/:pno",
     element: <FarmerHomeReadPage></FarmerHomeReadPage>
+  },
+  ,
+  {
+    path:"/farmer/home/register",
+    element: <FarmerHomeRegistPage></FarmerHomeRegistPage>
   },
   {
     path:"/farmer/diary",
@@ -73,6 +83,17 @@ const router2 = createBrowserRouter([
     path:"/member/modify",
     element: <MemberModifyPage></MemberModifyPage>
   } 
+
+
+
+  
+
+  //차은우 추가 컨슈머로 이동시켜야함
+  ,{
+    path:"/consumer/list",
+    element: <BoardPage></BoardPage>
+  }
+
 
 
   

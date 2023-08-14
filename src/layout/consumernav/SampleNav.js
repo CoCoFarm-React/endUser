@@ -17,7 +17,7 @@ const SampleNav = () => {
                 </div>
             </div>
             <div className='font-size-16px font-serif text-center' >
-                <Link to="/">COCOFARM</Link>
+                <Link to="/consumer/farmerlistpage">COCOFARM</Link>
             </div>
             
             <div>
