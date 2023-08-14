@@ -31,3 +31,23 @@ export const modifyMember = async(params) => {
   return res.data
   
 }
+
+export const signupMember = async(params) => {
+
+  let header = {
+    headers: {
+        "content-type": "multipart/form-data",
+    }
+  }
+  console.log("===========================================")
+  console.log(params);
+  console.log("===========================================")
+
+  const res = await axios.post('http://192.168.0.48:8080/api/member',params,header)
+
+  return res.data
+  
+}
+
+
+

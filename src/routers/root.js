@@ -34,6 +34,11 @@ import MemberModifyPage from "../pages/member/MemberModifyPage";
 //차은우 추가 컨슈머로 이동시켜야함
 import BoardPage from "../pages/consumer/consumertack/BoardPage";
 
+
+import FarmerSignUpComponent from "../components/member/FarmerSignUpComponent";
+
+
+
 const router = createBrowserRouter([
     {
         path:"",
@@ -131,8 +136,12 @@ const router = createBrowserRouter([
         path:"/consumer/list",
         element: <BoardPage></BoardPage>
       }
+      ,{
+        path:"/member/singup",
+        element: <FarmerSignUpComponent></FarmerSignUpComponent>
+      }
     
-    
+      
     
         
     

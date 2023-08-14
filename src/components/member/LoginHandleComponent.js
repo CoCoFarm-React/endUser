@@ -36,13 +36,15 @@ const MyComponent = () => {
       if (loginObj) {
         return
       }
-
+      
       return setCookie("login", JSON.stringify(dataObj), 1)
     }
     
     if(social){
+      
       alert("수정페이지로 이동합니다.")
       navigate('../member/modify')
+      
     }else{
       console.log("rolename------------------------------------------------------")
       console.log(rolename)
@@ -60,8 +62,6 @@ const MyComponent = () => {
   }, [])
 
   
-
-
   return (
     <div>
       잘들어왔어 반가워

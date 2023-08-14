@@ -28,8 +28,17 @@ const FarmerSiginComponent = () => {
   
   const handleChange = (e) => {
 
-      loginInfo[e.target.name] = e.target.value
-      setloginInfo({...loginInfo})
+    loginInfo[e.target.name] = e.target.value
+    setloginInfo({...loginInfo})
+      
+  } 
+
+
+  const handleSignUp = (e) => {
+
+    nav("../member/FarmerSignUpComponent")
+    
+    
   }
   
   const dispatch = useDispatch()
@@ -102,15 +111,20 @@ return (
 
       <div className="h-[20vh] text-center">
         
-          <button 
+          <button
             className="bg-blue-400 font-semibold text-center mt-5 h-14 w-4/6 rounded-md" 
             // onClick={() => {window.location.href = "http://localhost:3000/farmer/home"}}
             onClick={handleLogin}
-
-            
             >
             LOGIN
-          </button>         
+          </button>
+          <button 
+            className="bg-blue-400 font-semibold text-center mt-5 h-14 w-4/6 rounded-md" 
+            // onClick={() => {window.location.href = "http://localhost:3000/farmer/home"}}
+            onClick={handleSignUp}
+            >
+            SignUp
+          </button>
 
       </div>
 
