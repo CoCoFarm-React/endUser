@@ -17,9 +17,11 @@ import LoginHandleComponent from "../components/member/LoginHandleComponent";
 import FarmerHomeRegistPage from "../pages/farmers/FarmerHomeRegistPage";
 
 import MemberModifyPage from "../pages/member/MemberModifyPage";
+import BoardPage from "../pages/consumer/consumertack/BoardPage";
+import FarmerHomeModifyPage from "../pages/farmers/FarmerHomeModifyPage";
 
 //차은우 추가 컨슈머로 이동시켜야함
-import BoardPage from "../pages/consumer/BoardPage";
+// import BoardPage from "../pages/consumer/BoardPage";
 
 const router2 = createBrowserRouter([
   {
@@ -38,6 +40,10 @@ const router2 = createBrowserRouter([
   {
     path:"/farmer/home/register",
     element: <FarmerHomeRegistPage></FarmerHomeRegistPage>
+  },
+  {
+    path:"/farmer/home/modify/:pno",
+    element: <FarmerHomeModifyPage></FarmerHomeModifyPage>
   },
   {
     path:"/farmer/diary",

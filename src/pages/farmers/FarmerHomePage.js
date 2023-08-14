@@ -35,6 +35,7 @@ const FarmerHomePage = () => {
     setSearch({...queryObj})
 
   }
+  
   return ( 
 
     <div className="container mx-[auto] w-[1280px] ">
@@ -52,6 +53,7 @@ const FarmerHomePage = () => {
         moveSearch={moveSearch}
         queryObj={queryObj}
         chgSize={chgSize}
+        addUrl={{url: "/farmer/home/regist"}} 
         ></FarmerSearchComponent>
       </div>
 

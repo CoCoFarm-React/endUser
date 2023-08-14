@@ -40,9 +40,9 @@ const FarmerBoardComponent = ({queryObj, movePage, moveRead}) => {
     <div className="h-[1200px] mt-3">
 
         {/* 임시버튼 */}
-        <div className="text-3xl">
+        {/* <div className="text-3xl">
           <button><Link to={"/farmer/home/register"}>REG</Link></button>
-        </div>
+        </div> */}
 
       <ul className="flex flex-wrap container justify-center">      
         

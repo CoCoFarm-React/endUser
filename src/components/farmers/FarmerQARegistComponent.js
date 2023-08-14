@@ -1,4 +1,5 @@
 import { useRef, useState } from "react"
+import { registBoard } from "../../api/FarmerAPI"
 
 const initState = {
   title:'제목 TEST',
@@ -11,13 +12,14 @@ const initState = {
 
 const FarmerQARegistComponent = ({moveList}) => {
 
-  const fileRef = useRef()
+    const fileRef = useRef()
 
     const [board, setBoard] = useState({...initState})
 
+
     const handleChange = (e) => {
 
-      board[e.target.name] = e.target.value
+        board[e.target.name] = e.target.value
 
         setBoard({...board})
     }
@@ -28,8 +30,7 @@ const FarmerQARegistComponent = ({moveList}) => {
 
         formData.append("title", board.title)
         formData.append("content", board.content)
-        formData.append("writer", board.writer)
-        formData.append("email", board.email)
+        // formData.append("email", board.email)
         formData.append("nickname", board.nickname)
 
         console.dir(fileRef.current)
@@ -40,11 +41,9 @@ const FarmerQARegistComponent = ({moveList}) => {
             formData.append("files", file) // files : 컨트롤러에서 받을 때 이름
         }
 
-        // postProduct(formData).then(data => {
-        //     const rno = data.result
-        //     alert(`${rno}번 상품이 등록되었습니다.`)
-        //     moveList()
-        // })
+        registBoard(formData).then(data => {
+        moveList()
+        })
         
     }
 
@@ -95,17 +94,7 @@ const FarmerQARegistComponent = ({moveList}) => {
                 </input>
             </div>
 
-            <div className="m-2 p-2 border-2">
-                <div className="text-orange-500 font-bold">Email</div>
-                <input 
-                type='text' 
-                name='email' 
-                value={board.email} 
-                onChange={handleChange}
-                className="border-2 mt-2 mb-2 h-10">
 
-                </input>
-            </div>
 
             <div className="m-2 p-2 border-2">                 
                 <input 
