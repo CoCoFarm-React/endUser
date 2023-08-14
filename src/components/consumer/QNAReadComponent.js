@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
-import { useNavigate, useParams } from "react-router"
-import useQueryObj from "../../hooks/consumers/useQueryObj"
 import { getOne } from "../../api/ConsumerAPI"
+import { useParams } from "react-router-dom"
 
 
 const initState = {
@@ -17,10 +15,9 @@ const initState = {
 
 const QNAReadComponent = ({moveDelete, moveModify, moveList}) => {
 
-    //const {bno} = useParams()
+    // const {queryObj, moveList, moveModify} = useQueryObj()
+    // const {bno} = useParams()
     const [board, setBoard] = useState(initState)
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
 
     const {bno} = useParams();
 
