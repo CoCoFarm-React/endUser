@@ -6,7 +6,7 @@ import FarmerSiginComponent from "../../../components/farmers/FarmerSigninCompon
 const TopNav = ({hide}) => {
   return ( 
 
-    <div className="flex container h-[70px] text-black font-bold border-b-2 mt-2">
+    <div className="flex container h-[70px] text-black font-bold border-b-2 mt-2 ">
 
       <div className="flex justify-between">
 

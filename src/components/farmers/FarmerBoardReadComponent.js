@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { readOne } from "../../api/productAPISong";
+import useQueryObj from "../../hooks/farmers/useQueryObj";
 
 const initState = {
   pno:0,
@@ -9,22 +10,31 @@ const initState = {
   reg:'',
   modDate:'',
   fname:'',
-  flist:['123.jpg','aaa.jpg']  
+  images:[],  
   
 }
 
 const FarmerBoardReadComponent = ({pno}) => {
 
   const [board, setBoard] = useState(initState)
+  const [files, setFiles] = useState([]);
+
+  const {queryObj, moveBoardList, moveProductModify} = useQueryObj()
+
+  
 
   useEffect(() => {
 
     readOne(pno).then(data => {
 
-      console.log("===================================================================================" ,data )
+      console.log("========================================" ,data )
       setBoard(data)
+      
+      const fileList = data.fname ? data.fname.split(',') : [];       
+      setFiles(fileList);
 
-      console.log("ReadCom data:"+data)
+      console.log("ReadCom data:"+ data)
+
     }).catch(e => {
 
       alert("asd")
@@ -33,62 +43,73 @@ const FarmerBoardReadComponent = ({pno}) => {
   },[pno])
 
   return ( 
-    <div className="items-center justify-center container flex">
+   
+    <div className="m-2 p-2">
 
-      <table className="w-[1200px] items-center justify-center">
-        <thead className="">
-          <tr className="bg-gray-200">
-              <td className="border-2 font-medium w-32 text-center ">Pno</td>
-              <td className="border-2">{board.pno}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium text-center">Pname</td>
-              <td className="border-2">{board.pname}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium text-center">Price</td>
-              <td className="border-2">{board.price}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium text-center">RegDate</td>
-              <td className="border-2">{board.reg}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium text-center">ModDate</td>
-              <td className="border-2">{board.modDate}</td>
-          </tr>
-
-          {/* <tr >
-              <td className="border-2 font-medium h-10 text-center">Title</td>
-              <td className="border-2">{board.title}</td>
-          </tr> */}
+      <div className="m-2 p-2 border-2">
+          <div className="text-orange-500 font-bold">Pno</div>
+          <div>{board.pno}</div>
+      </div>
           
-          <tr >
-              <td className="border-2 font-medium h-80 text-center">Fname</td>
-              <td className="border-2">{board.fname}</td>             
-          </tr>
+      <div className="m-2 p-2 border-2">
+          <div className="text-orange-500 font-bold">상품이름</div>
+          <div>{board.pname}</div>
+      </div>
 
-          {/* <tr>
-            <td className="border-2 font-medium h-80 text-center">Fname</td>
-            <td className="border-2">
-              <ul>
-                {board.fname.map( fileList => <li>{fileList}</li>
-                )}
-              </ul>
-            </td>
-          </tr> */}
+      <div className="m-2 p-2 border-2">
+          <div className="text-orange-500 font-bold">Reg</div>
+          <div>{board.reg}</div>
+      </div>
 
-            
-        </thead>
+      <div className="m-2 p-2 border-2">
+          <div className="text-orange-500 font-bold">ModDate</div>
+          <div>{board.modDate}</div>
+      </div>
+
+      <div className="m-2 p-2 border-2">
+          <div className="text-orange-500 font-bold">상품설명</div>
+          <div>{board.pdesc}</div>
+      </div>
+
+      <div className="m-2 p-2 border-2">
+          <div className="text-orange-500 font-bold">상품가격</div>
+          <div>{board.price}</div>
+      </div>
+
+      <div className="m-2 p-2 border-2">
+        <div className="text-orange-500 font-bold">상품사진</div>                 
+        <div>
+          <ul className="list-none">
+            {files.map((filelist, idx) =>                     
+              <li key={idx}
+                  className="mb-2"
+              >
+                <img src={`http://192.168.0.74/${filelist}`} alt='ddd' className="w-[600px] h-[600px]"></img>
+              </li>
+            )}
+          </ul>
+        </div>
+      </div>
+
+      {/* 상품 이미지 map //end */}
+
+      <div>
+
+        <button 
+          className="bg-blue-600 rounded-md w-20 p-2 m-2 text-white"
+          onClick={() => moveProductModify(board.pno)}
+      
+          >Modify</button>
+        <button 
+          className="border-2 w-20 mt-4 p-2 rounded-md bg-gray-600 text-white "
+          onClick={() => moveBoardList()}
+      
+          >List</button>
     
-      </table>
+      </div>
 
     </div>
-   );
+  );
 }
  
 export default FarmerBoardReadComponent;

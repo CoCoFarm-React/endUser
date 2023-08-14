@@ -17,47 +17,48 @@ const initState = {
 const FarmerBoardRegistComponent = () => {
 
   const fileRef = useRef()    // 참조값 물기
-    const [product, setProduct] = useState({...initState})
-    const nav = useNavigate()
     
-    const cookie = getCookies()
-    const {moveHomeList} = useQueryObj()
-    
+  const [product, setProduct] = useState({...initState})
+  const nav = useNavigate()
+  
+  const cookie = getCookies()
+  const {moveHomeList} = useQueryObj()
+  
 
-    const handleChange = (e) => {
+  const handleChange = (e) => {
 
         product[e.target.name] = e.target.value
         setProduct({ ...product })
 	}
 
-    const handleClickSave = (e) => {
+  const handleClickSave = (e) => {
 
-        const formData = new FormData()
+      const formData = new FormData()
 
-        formData.append("pname", product.pname)
-        formData.append("pdesc", product.pdesc)
-        formData.append("price", product.price)
-        formData.append("procateno", product.procateno)
-        formData.append("mno", 502)
-        formData.append("view", product.view)
+      formData.append("pname", product.pname)
+      formData.append("pdesc", product.pdesc)
+      formData.append("price", product.price)
+      formData.append("procateno", product.procateno)
+      formData.append("mno", 502)
+      formData.append("view", product.view)
 
-        console.log(fileRef.current)
-        console.log(product)
+      console.log(fileRef.current)
+      console.log(product)
 
-        const arr = fileRef.current.files
+      const arr = fileRef.current.files
 
-        for(let file of arr) {
-            formData.append("files", file)
-        }
+      for(let file of arr) {
+          formData.append("files", file)
+      }
 
-        console.log(fileRef.current)
-        console.log(product)
+      console.log(fileRef.current)
+      console.log(product)
 
-        registerProduct(formData).then(data => {
-        moveHomeList()
-        })
+      registerProduct(formData).then(data => {
+      moveHomeList()
+      })
         
-    }
+  }
 
   const handleClickClear = (e) => {
       

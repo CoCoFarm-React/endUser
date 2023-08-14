@@ -1,3 +1,4 @@
+import FarmerDiaryReadComponent from "../../components/farmers/FarmerDiaryReadComponent";
 import FarmerQAComponent from "../../components/farmers/FarmerQAComponent";
 import FarmerSearchComponent from "../../components/farmers/FarmerSearchComponent";
 import useQueryObj from "../../hooks/farmers/useQueryObj";
@@ -47,15 +48,16 @@ const FarmerQAPage = () => {
         moveSearch={moveSearch}
         queryObj={queryObj}
         chgSize={chgSize}
+        addUrl={{url: "/farmer/qa/regist"}} 
         ></FarmerSearchComponent>
       </div>
 
       <div>
-        <FarmerQAComponent
+        <FarmerDiaryReadComponent
         queryObj={queryObj}
         movePage={movePage}
         moveRead={moveRead}
-        ></FarmerQAComponent>
+        ></FarmerDiaryReadComponent>
       </div>
 
 
