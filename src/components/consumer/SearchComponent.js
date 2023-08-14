@@ -14,7 +14,7 @@ const SearchComponent = ({queryObj, moveSearch}) => {
     }, [queryObj])
     
     return ( 
-        <div className="items-center justify-center flex container mt-5">
+        <div className="items-center justify-center flex container mb-3">
             <select 
             className="m-2 p-2 border-2" 
             value={searchObj.type}

@@ -45,8 +45,15 @@ export const getFarmerList = async (queryObj) =>{
 
     const queryString = createSearchParams(queryObj).toString();
     
-    const res = await axios.get(`http://localhost:8080/api/admin/farmer?${queryString}`)
+    const res = await axios.get(`${url}/api/admin/farmer?${queryString}`)
   
     return res.data
     
-  }
+}
+export const getFarmerOne = async (mno) => {
+
+  const res = await axios.get(`${url}/api/admin/${mno}`)
+
+  return res.data
+
+}

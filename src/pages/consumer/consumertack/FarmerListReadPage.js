@@ -1,15 +1,16 @@
 import { useParams } from "react-router-dom"
 import useQueryObj from "../../../hooks/consumers/useQueryObj"
 import FarmerListReadComponent from "../../../components/consumer/FarmerListReadComponent"
-import SampleLayout from "../../../layout/consumer/SampleLayout"
+import SampleNav from "../../../layout/consumernav/SampleNav"
+import FooterComponent from "../../../components/consumer/FooterComponent"
 
 const FarmerListReadPage = () => {
 
-    const {queryObj, moveList} = useQueryObj()
+    const {queryObj, moveList2} = useQueryObj()
       
-    const {bno} = useParams()
+    const {mno} = useParams()
 
-    console.log(bno)
+    console.log(mno)
     console.log(queryObj)
     console.log(useQueryObj)
     console.log("==========----------==========")
@@ -18,15 +19,20 @@ const FarmerListReadPage = () => {
 
         <div className="container mx-[auto] w-[1280px]">
             <div>
-                <SampleLayout></SampleLayout>
+                <SampleNav></SampleNav>
             </div>
-            <div className="text-xl mt-5">
-                FARMER LIST READ PAGE
+            <div className="font-size-16px font-serif text-center mt-5 mb-9">
+                FARMER
             </div>
             
             <div className="m-auto">
-                <FarmerListReadComponent bno={bno}></FarmerListReadComponent>
+                <FarmerListReadComponent 
+                    mno={mno}
+                    moveList2={moveList2}
+                    ></FarmerListReadComponent>
             </div>
+
+            <FooterComponent></FooterComponent>
         </div>
     );
 }

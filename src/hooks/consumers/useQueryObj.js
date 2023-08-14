@@ -40,6 +40,12 @@ const useQueryObj = () => {
 
         navigate(`/consumer/qnapage?${queryString}`)
     }
+    //main 페이지 이동
+    const moveList2 = () => {
+        const queryString = createSearchParams (queryObj).toString()
+
+        navigate(`/consumer/farmerlistpage`)
+    }
 
     const moveRead = (bno) => {
         console.log("moveRead: " + bno)
@@ -80,7 +86,7 @@ const useQueryObj = () => {
 
 
     
-    return {queryObj, setSearch, moveList, moveRead, moveRead2, moveModify ,moveRegist}
+    return {queryObj, setSearch, moveList, moveList2, moveRead, moveRead2, moveModify ,moveRegist}
 
 }
  

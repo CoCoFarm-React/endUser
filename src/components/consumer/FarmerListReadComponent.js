@@ -1,65 +1,75 @@
 import { useEffect, useState } from "react";
 import useQueryObj from "../../hooks/consumers/useQueryObj";
-import { getOne } from "../../api/ConsumerAPI";
+import { getFarmerOne } from "../../api/ConsumerAPI";
+import { useParams } from "react-router-dom";
 
 
 const initState = {
-    bno:0,
-    title:'',
-    content:'',
-    writer:'',
+    mno:0,
+    email:'',
     nickname:'',
+    rolename:'',
+    fname:'',
     regDate:'',
     modDate:'',
 }
 
 
-const FarmerListReadComponent = ({bno}) => {
+const FarmerListReadComponent = ({moveList2}) => {
 
-    const {queryObj, moveList} = useQueryObj()
+    //const {mno} = useParams()
+
+    // const {queryObj, moveList2} = useQueryObj()
     const [board, setBoard] = useState(initState)
 
+    
+
+    const {mno} = useParams()
+
+    console.log(mno)
+
     useEffect(() => {
-        getOne(bno).then(data => {
+        getFarmerOne(mno).then(data => {
             console.log("==========-----==========")
             console.log(data)
             setBoard(data)
         })
-    }, [bno])
+    }, [mno])
 
     return ( 
         
-        <div className="flex items-center justify-center container">
-            <table className="w-[1200px] items-center justify-center">
+        <div className="items-center justify-center container">
+            <table className="w-[1200px] items-center m-auto">
                 <thead>
                     <tr className="h-12 font-medium text-center">
-                        <td className="border-2 font-medium">NO.</td>
-                        <td className="border-2">TITLE</td>
-                        <td className="border-2">CONTENT</td>
-                        <td className="border-2">NICKNAME</td>
-                        <td className="border-2">REGDATE</td>
+                        <td className="border-2 font-medium">NO</td>
+                        <td className="border-2">Email</td>
+                        <td className="border-2">Nickname</td>
+                        <td className="border-2">Rolename</td>
+                        <td className="border-2">FILE</td>
                     </tr>
                 </thead>
                 
                 <tbody>
                     <tr className="h-12">
-                        <td className="border-2">{board.bno}</td>
-                        <td className="border-2">{board.title}</td>
-                        <td className="border-2">{board.content}</td>
+                        <td className="border-2">{board.mno}</td>
+                        <td className="border-2">{board.email}</td>
                         <td className="border-2">{board.nickname}</td>
-                        <td className="border-2">{board.regDate}</td>
+                        <td className="border-2">{board.rolename}</td>
+                        <td className="border-2">{board.fname}</td>
                     </tr>
                 </tbody>
 
-                <div className="flex">
-                    <button 
-                    onClick={moveList}
-                    className="w-20 p-2 m-2 ml-20 border-2 rounded-md">
-                        List
-                    </button>
-                </div>
             </table>
+            <div className="font-size-16px font-serif text-center mt-5 mb-9">
+                    <button 
+                    onClick={moveList2}
+                    className="w-20 border-2">
+                        LIST
+                    </button>
+                </div>  
         </div>
+        
     );
 }
  
