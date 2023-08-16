@@ -11,13 +11,12 @@ export const getCunsumerList = async (queryObj) => {
     const res = await axios.get(`${url}/api/board/list?${queryString}`)
   
     return res.data
-}
 
+}
 
 export const getOne = async (bno) => {
 
-
-  console.log(":asdasdasdadasasd")
+  console.log("asdasdasdasd")
 
   const res = await axios.get(`${url}/api/board/${bno}`)
 
@@ -31,7 +30,6 @@ export const deleteBoard = async (bno) => {
   
     return res.data
 }
-  
 
 export const putBoard = async (formData) => {
   
@@ -40,9 +38,7 @@ export const putBoard = async (formData) => {
             "Content-Type": "multipart/form-data",
         }
     }
-  }
-
-  
+}
 
 export const getFarmerList = async (queryObj) =>{
 
@@ -53,10 +49,13 @@ export const getFarmerList = async (queryObj) =>{
     return res.data
     
 }
+
 export const getFarmerOne = async (mno) => {
 
-  const res = await axios.get(`${url}/api/admin/${mno}`)
+  const res = await axios.get(`${url}/api/admin/read/${mno}`)
 
   return res.data
 
 }
+
+

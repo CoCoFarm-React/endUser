@@ -31,6 +31,8 @@ import QNARegistPage from "../pages/consumer/consumertack/QNARegistPage";
 import LoginHandleComponent from "../components/member/LoginHandleComponent";
 import MemberModifyPage from "../pages/member/MemberModifyPage";
 
+//차은우 추가 컨슈머로 이동시켜야함
+import BoardPage from "../pages/consumer/consumertack/BoardPage";
 
 // const Loading = <LoadingPage></LoadingPage>
 
@@ -75,9 +77,15 @@ const router = createBrowserRouter([
     }
     ,
     {
-        path:"consumer/mypage",
+        path:"/mypage",
         element: <MyPage></MyPage>
-    },
+    }
+    ,
+    {
+        path:"/about",
+        element: <AboutPage></AboutPage>
+    }
+    ,
     {
         path:"consumer/mainpage",
         element: <MainPage></MainPage>
@@ -146,22 +154,26 @@ const router = createBrowserRouter([
     
       //차은우 추가 컨슈머로 이동시켜야함
       ,{
-        path:"/consumer/list",
-        element: <BoardPage></BoardPage>
+        path:"/consumer/farmer/list",
+        element: <FarmerListPage></FarmerListPage>
       }
       ,{
-        path:"/member/singup",
-        element: <FarmerSignUpComponent></FarmerSignUpComponent>
+        path:"/consumer/farmerlistpage",
+        element: <FarmerListPage></FarmerListPage>
+      },
+      {
+        path:"/consumer/farmerlistpage/read/:mno",
+        element:<FarmerListReadPage></FarmerListReadPage>
+      },
+      {
+        path:"/consumer/modify",
+        element:<ModifyPage></ModifyPage>
       }
-    
+
       
     
         
     
 ])
-
-
-
-
 
 export default router;
