@@ -8,7 +8,7 @@ export const postLogin = async(params) => {
       }
   }
 
-  const res = await axios.post('http://192.168.0.74:8080/api/member/login', params, header)
+  const res = await axios.post('http://192.168.0.48:8080/api/member/login', params, header)
 
   return res.data
   

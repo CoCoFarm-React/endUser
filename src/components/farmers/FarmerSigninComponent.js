@@ -36,7 +36,7 @@ const FarmerSiginComponent = () => {
 
   const handleSignUp = (e) => {
 
-    nav("../member/FarmerSignUpComponent")
+    nav("../member/signup")
     
     
   }

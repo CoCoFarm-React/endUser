@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useSelector } from "react-redux"
-import { useNavigate } from "react-router-dom"
+import { createSearchParams, useNavigate } from "react-router-dom"
 import { insertMember, modifyMember, signupMember } from "../../api/LoginApi"
 import DaumPostcode from 'react-daum-postcode';
 import { useEffect } from "react";
@@ -13,8 +13,10 @@ const initState = {
     tel:'010-1111-2222',
     nickname:'차은우',
     address:'한천로',
-    zonecode:'4457',
+    intro:'자기소개',
     ebaddress:'상세한 주소',
+    roleName:'FARMER',
+    social:false,
     profile:[]
 }
 
@@ -35,11 +37,25 @@ const FarmerSignUpComponent = () => {
     }
 
     const registInsert = (e) => {
-        alert("asd")
+        alert("가입 테스트")
 
-        signupMember(loginInfo).then(data => {
-            console.log(data);
+        signupMember(loginInfo).then(mno => {
+            
+            console.log(loginInfo);
+            const data = createSearchParams(loginInfo).toString();
+            console.log("mnomnomnomnomnomnomno");
+            console.log(mno.result);
+            console.log("mnomnomnomnomnomnomno");
+
             //네이게이션 으로 바꿔줘야함
+
+            //쿠키 작업해야함
+            nav("/member/loginhandler?mno="+ mno.result + "&" + data)
+
+            // alert("다끝났어 여길로 다시들어왔어")
+                        
+            nav("/farmer/signin")
+
         })
         
     }
