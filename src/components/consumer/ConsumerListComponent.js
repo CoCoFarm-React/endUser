@@ -1,6 +1,8 @@
 
 const ConsumerListComponent = () => {
+
     return ( 
+
         <div className="justify-center items-center container mt-3">
             <div className="w-full h-[100px] flex justify-center items-center ">
                 <div className="items-center justify-center flex">
@@ -26,9 +28,10 @@ const ConsumerListComponent = () => {
                     <td className="w-1/12">1</td>          
                 </tr>
             </table>
-
         </div>
+
      );
+     
 }
  
 export default ConsumerListComponent;

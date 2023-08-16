@@ -27,11 +27,13 @@ const QNAReadComponent = ({moveDelete, moveModify, moveList}) => {
     console.log(bno)
 
     useEffect(() => {
+
         getOne(bno).then(data => {
             console.log("==========-----==========")
             console.log(data)
             setBoard(data)
         })
+        
     }, [bno])
 
     return ( 
@@ -62,22 +64,21 @@ const QNAReadComponent = ({moveDelete, moveModify, moveList}) => {
             </table>
             <div>
                 <button 
-                    className="bg-orange-400 border-2 m-2 p-2 text-white font-bold"
+                    className="bg-orange-400 border-2 m-2 p-2 font-bold"
                     onClick={() => moveModify(board.bno)}>
-                    Modify
+                    MODIFY
                 </button>
                 <button 
-                    className="bg-blue-500 border-2 m-2 p-2 text-white font-bold"
+                    className="bg-blue-500 border-2 m-2 p-2 font-bold"
                     onClick={moveList}>
-                    List
+                    LIST
                 </button>
                 <button 
-                    className="bg-blue-500 border-2 m-2 p-2 text-white font-bold"
+                    className="bg-blue-500 border-2 m-2 p-2 font-bold"
                     onClick={moveDelete}>
-                    Delete
+                    DELETE
                 </button>
             </div>
-
         </div>
 
      );

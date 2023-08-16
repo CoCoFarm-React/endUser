@@ -16,7 +16,7 @@ export const getCunsumerList = async (queryObj) => {
 
 export const getOne = async (bno) => {
 
-  const res = await axios.get(`http://localhost:8080/api/board/${bno}`)
+  const res = await axios.get(`${url}/api/board/${bno}`)
 
   return res.data
 
@@ -37,10 +37,21 @@ export const putBoard = async (formData) => {
             "Content-Type": "multipart/form-data",
         }
     }
-  }
+}
+
+
+export const postBoard = async (formData) => {
+
+    const header = {
+        headers: {
+            "Content-Type": "multipart/form-data",
+        }
+    }
+    const res = await axios.post('http://localhost:8080/api/products/', formData, header)
+
+}
 
   
-
 export const getFarmerList = async (queryObj) =>{
 
     const queryString = createSearchParams(queryObj).toString();

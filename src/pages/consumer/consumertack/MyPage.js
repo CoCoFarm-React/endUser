@@ -3,6 +3,8 @@ import SampleLayout from "../../../layout/consumer/SampleLayout";
 
 const MyPage = () => {
 
+    // const {user} = useUserState();
+
     return ( 
 
         <div className="container mx-[auto] w-[1280px] ">

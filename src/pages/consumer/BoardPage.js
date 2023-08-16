@@ -1,6 +1,6 @@
-import ConsumerListComponent from "../../../components/consumer/ConsumerListComponent";
-import BodyNav from "../../../layout/consumernav/BodyNav";
-import SampleNav from "../../../layout/consumernav/SampleNav";
+import ConsumerListComponent from "../../components/consumer/ConsumerListComponent";
+import BodyNav from "../../layout/consumernav/BodyNav";
+import SampleNav from "../../layout/consumernav/SampleNav";
 
 const BoardPage = () => {
 

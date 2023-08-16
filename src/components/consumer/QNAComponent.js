@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { getCunsumerList} from "../../api/ConsumerAPI"
 import ListPageComponent from "../common/ListPageComponent"
 import { isContentEditable } from "@testing-library/user-event/dist/utils"
+import PageComponent from "./PageComponent"
 
 
 const initState = {
@@ -60,20 +61,21 @@ const QNAComponent = ({queryObj, movePage, moveRead, moveRegist}) => {
                             <td>{content}</td>
                             <td>{nickname}</td>
                             <td>{regDate}</td>
-                            <td>{rcnt}</td>
-                            
+                            <td>{rcnt}</td>  
                         </tr>
                     )}
                 </tbody>
             </table>
+
             <div>
                 <button 
-                    className="border-2 m-2 p-2 font-bold"
-                    onClick={moveRegist}>
+                className="border-2 m-2 p-2 font-bold"
+                onClick={moveRegist}>
                     글쓰기
                 </button>
             </div>
-            <ListPageComponent movePage={movePage} {...listData}></ListPageComponent>
+
+            <PageComponent movePage={movePage} {...listData}></PageComponent>
 
         </div>
         

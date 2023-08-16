@@ -20,7 +20,7 @@ const FooterComponent = () => {
             </div>
         </footer>
 
-     );
+    );
 
 }
  

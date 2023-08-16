@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { postBoard } from "../../api/ConsumerAPI";
 
 
 const initState = {
@@ -19,7 +20,8 @@ const QNARegistComponent = ({moveList}) => {
 
         board[e.target.name] = e.target.value
 
-        setBoard({...board})
+        setBoard
+        ({...board})
     }
 
     const handleClickSave = (e) => {
@@ -32,17 +34,21 @@ const QNARegistComponent = ({moveList}) => {
         formData.append("EMAIL", board.email)
         formData.append("NICKNAME", board.nickname)
 
-        // console.dir(fileRef.current)
+        console.dir(fileRef.current)
 
-        // const arr = fileRef.current.files
+        const arr = fileRef.current.files
 
-        //     for(let file of arr){
-        //     // files : 컨트롤러에서 받을 때 이름.
-        //     formData.append("files", file) 
-        // }
-
-
-        //등록하는 api호출
+            for(let file of arr) {
+                // files : 컨트롤러에서 받을 때 이름.
+                formData.append("files", file) 
+        }
+        // 등록하는 api호출
+        
+        postBoard(formData).then(data => {
+            const rno = data.result
+            alert(`${rno}번이 등록되었습니다!!!!!`)
+            moveList()
+        }) 
 
     }
 
@@ -123,8 +129,8 @@ const QNARegistComponent = ({moveList}) => {
                 <button 
                 onClick={moveList}
                 className="w-20 p-2 m-2 rounded-md">
-                    List
-                </button>  
+                    LIST
+                </button>
             </div>
         </div>
      

@@ -60,7 +60,9 @@ const FarmerListReadComponent = ({bno}) => {
                 </div>
             </table>
         </div>
+
     );
+    
 }
  
 export default FarmerListReadComponent;

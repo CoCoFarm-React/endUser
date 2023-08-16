@@ -32,6 +32,7 @@ const ParmerListComponent = ({queryObj, movePage, moveRead2}) => {
     }, [queryObj])
 
     return ( 
+
         <div>
             <div className="m-auto text-center">
                 FARMERLIST COMPONENT
@@ -70,7 +71,9 @@ const ParmerListComponent = ({queryObj, movePage, moveRead2}) => {
             </div>
             <PageComponent movePage={movePage} {...listData}></PageComponent>
         </div>
+
     );
+    
 }
  
 export default ParmerListComponent;
