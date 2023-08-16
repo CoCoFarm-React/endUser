@@ -40,7 +40,7 @@ const FarmerSubListComponent = ({queryObj, movePage, moveRead}) => {
 
     <div className="justify-center items-center container mt-3">
      
-      <table className="w-[1200px] items-center justify-center container">
+      <table className="w-[60vw] items-center justify-center container">
 
         <thead>
           <tr className="border-b-2 border-gray-300 text-center h-12">

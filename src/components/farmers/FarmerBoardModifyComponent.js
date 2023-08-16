@@ -162,7 +162,15 @@ const handleClickDelImg = (files) => {
 
       <div className="m-2 p-2 border-2">
         <div className="text-orange-500 font-bold">상품사진</div>
-        <div className=" border-gray-500">         
+        <div className=" border-gray-500">
+                 
+          <input 
+          type='file' 
+          ref={fileRef} 
+          multiple 
+          name='images' 
+          onChange={handleChange}></input>
+
 
           <ul className="list-none flex mb-2 ">
           {files.map((filelist, idx) =>                     

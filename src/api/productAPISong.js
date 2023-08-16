@@ -59,7 +59,7 @@ export const putProduct = async (formData) => {
       }
   }
 
-  const res = await axios.post('http://localhost:8080/api/products/modify', formData, header)
+  const res = await axios.post(`${url}/api/products/`, formData, header)
 
   return res.data
 

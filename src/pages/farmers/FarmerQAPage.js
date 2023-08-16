@@ -53,11 +53,11 @@ const FarmerQAPage = () => {
       </div>
 
       <div>
-        <FarmerDiaryReadComponent
+        <FarmerQAComponent
         queryObj={queryObj}
         movePage={movePage}
         moveRead={moveRead}
-        ></FarmerDiaryReadComponent>
+        ></FarmerQAComponent>
       </div>
 
 

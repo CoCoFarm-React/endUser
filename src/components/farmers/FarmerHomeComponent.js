@@ -9,7 +9,8 @@ const initState = {
   email:'',
   intro:'',
   nickname:'',
-  roleName:''
+  roleName:'',
+  profile:''
 
 }
 
@@ -45,9 +46,9 @@ const FarmerHomeComponent = ({mno}) => {
         className="rounded-[50%] object-cover w-[180px] h-[180px] justify-center flex">
 
         </img> */}
-        <img alt="farmImage01" 
+        <img src={board.profile} alt="farmImage01" 
         className="rounded-[50%] object-cover w-[180px] h-[180px] justify-center flex">
-          {board.profile}
+          
         </img>
       </div>
 
@@ -67,15 +68,15 @@ const FarmerHomeComponent = ({mno}) => {
               <span className="ml-5 bg-blue-200">게시글 120개</span>
             </div>
             <div className="mt-3">
+              
               <div>
-                {/* 안녕하세요 마리오 농장입니다.<br/>
-                저희 농장 페이지를 방문해 주셔서 감사합니다.<br/>
-                구입문의 farmer1004@gamil.com */}
-                {board.intro}
-                
+                {board.intro}                
               </div>
+            
             </div>
+        
         </div>
+      
       </div>
 
     </div>  

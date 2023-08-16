@@ -10,7 +10,7 @@ const initState = {
   reg:'',
   modDate:'',
   fname:'',
-  images:[],  
+  images:[]  
   
 }
 
