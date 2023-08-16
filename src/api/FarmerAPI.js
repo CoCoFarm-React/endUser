@@ -19,9 +19,6 @@ export const getList = async (queryObj) => {
 
 export const getOne = async (bno) => {
 
-
-
-
   const res = await axios.get(`${url}/api/board/${bno}`)
 
   return res.data
@@ -84,6 +81,20 @@ export const getBoard = async (bno) => {
 
   return res.data
 }
+
+export const registBoard = async (FormData) =>{
+
+  const header = {
+      headers: {
+              "Content-Type": "multipart/form-data",
+      }
+  }
+
+  const res = await axios.post(`${url}/api/board/`, FormData, header)
+  
+  return res.data
+}
+
 
 export const deleteBoard = async (bno) => {
 

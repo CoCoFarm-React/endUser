@@ -31,10 +31,17 @@ import QNARegistPage from "../pages/consumer/consumertack/QNARegistPage";
 import LoginHandleComponent from "../components/member/LoginHandleComponent";
 import MemberModifyPage from "../pages/member/MemberModifyPage";
 
-//차은우 추가 컨슈머로 이동시켜야함
-import BoardPage from "../pages/consumer/consumertack/BoardPage";
+
+// const Loading = <LoadingPage></LoadingPage>
+
+// const Consumer_QNAPage = lazy(() => import("../pages/consumer/QNAPage"))
+// const Consumer_QNAReadPage = lazy(() => import("../components/consumer/QNAReadComponent"))
+// const Consumer_Mypage = lazy(() => import("../pages/consumer/MyPage"))
+// const Consumer_MainPage = lazy(() => import("../pages/consumer/MainPage"))
+
 
 import FarmerSignUpComponent from "../components/member/FarmerSignUpComponent";
+
 
 
 const router = createBrowserRouter([
@@ -69,13 +76,15 @@ const router = createBrowserRouter([
     {
         path:"consumer/mypage",
         element: <MyPage></MyPage>
-    }
-    ,
+    },
     {
         path:"consumer/mainpage",
         element: <MainPage></MainPage>
     },
-
+    {
+        path:"",
+        element: <BasicLayout></BasicLayout>
+      },
       {
         path:"/farmer/home",
         element: <FarmerHomePage></FarmerHomePage>
@@ -135,11 +144,11 @@ const router = createBrowserRouter([
         element: <BoardPage></BoardPage>
       }
       ,{
-        path:"/member/signup",
+        path:"/member/singup",
         element: <FarmerSignUpComponent></FarmerSignUpComponent>
       }
     
-    
+      
     
         
     
