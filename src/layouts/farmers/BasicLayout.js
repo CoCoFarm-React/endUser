@@ -54,7 +54,7 @@ const BasicLayout = () => {
     if(rolename === 'CONSUMER'){
       console.log(rolename)
       console.log(rolename)
-      navigate('/consumer/list')
+      navigate('/consumer/farmer/list')
   
     }else if(rolename === 'FARMER'){
       console.log(rolename)

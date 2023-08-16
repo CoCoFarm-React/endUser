@@ -33,11 +33,9 @@ const FarmerSiginComponent = () => {
       
   } 
 
-
   const handleSignUp = (e) => {
 
     nav("../member/signup")
-    
     
   }
   
@@ -53,8 +51,8 @@ const FarmerSiginComponent = () => {
           // FARMER
           // CONSUMER
 
-        // if(result.roleName === 'FARMER'){
-        // if(result.roleName === 'CONSUMER'){
+          // if(result.roleName === 'FARMER'){
+          // if(result.roleName === 'CONSUMER'){
 
           console.log('Login successful:', result.roleName);
 

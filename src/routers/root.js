@@ -34,11 +34,17 @@ import MemberModifyPage from "../pages/member/MemberModifyPage";
 //차은우 추가 컨슈머로 이동시켜야함
 import BoardPage from "../pages/consumer/consumertack/BoardPage";
 
-import FarmerListReadComponent from "../components/consumer/FarmerListReadComponent";
-import FarmerListReadPage from "../pages/consumer/consumertack/FarmerListReadPage";
-import AboutPage from "../pages/consumer/consumertack/AboutPage";
-import FarmerListPage from "../pages/consumer/consumertack/FarmerListPage";
-import ModifyPage from "../pages/consumer/consumertack/ModifyPage";
+// const Loading = <LoadingPage></LoadingPage>
+
+// const Consumer_QNAPage = lazy(() => import("../pages/consumer/QNAPage"))
+// const Consumer_QNAReadPage = lazy(() => import("../components/consumer/QNAReadComponent"))
+// const Consumer_Mypage = lazy(() => import("../pages/consumer/MyPage"))
+// const Consumer_MainPage = lazy(() => import("../pages/consumer/MainPage"))
+
+
+import FarmerSignUpComponent from "../components/member/FarmerSignUpComponent";
+
+
 
 const router = createBrowserRouter([
     {
@@ -142,8 +148,8 @@ const router = createBrowserRouter([
     
       //차은우 추가 컨슈머로 이동시켜야함
       ,{
-        path:"/consumer/list",
-        element: <BoardPage></BoardPage>
+        path:"/consumer/farmer/list",
+        element: <FarmerListPage></FarmerListPage>
       }
       ,{
         path:"/consumer/farmerlistpage",
@@ -159,8 +165,6 @@ const router = createBrowserRouter([
       }
 
       
-    
-    
     
         
     
