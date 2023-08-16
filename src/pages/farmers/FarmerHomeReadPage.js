@@ -22,9 +22,7 @@ const FarmerHomeReadPage = () => {
       
       <div className="mt-5">
         <FarmerBoardReadComponent pno={pno}></FarmerBoardReadComponent>
-        <button 
-            className="border-2 w-20 mt-4 p-2 rounded-md bg-gray-600 text-white "
-            onClick={() => moveBoardList()}>List</button>
+
       </div>
 
       

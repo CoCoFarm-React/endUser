@@ -34,11 +34,11 @@ import MemberModifyPage from "../pages/member/MemberModifyPage";
 //차은우 추가 컨슈머로 이동시켜야함
 import BoardPage from "../pages/consumer/consumertack/BoardPage";
 
-import FarmerListReadComponent from "../components/consumer/FarmerListReadComponent";
-import FarmerListReadPage from "../pages/consumer/consumertack/FarmerListReadPage";
-import AboutPage from "../pages/consumer/consumertack/AboutPage";
-import FarmerListPage from "../pages/consumer/consumertack/FarmerListPage";
-import ModifyPage from "../pages/consumer/consumertack/ModifyPage";
+import FarmerSignUpComponent from "../components/member/FarmerSignUpComponent";
+import FarmerHomeModifyPage from "../pages/farmers/FarmerHomeModifyPage";
+import FarmerHomeRegistPage from "../pages/farmers/FarmerHomeRegistPage";
+import FarmerDiaryRegistPage from "../pages/farmers/FarmerDiaryRegistPage";
+
 
 const router = createBrowserRouter([
     {
@@ -70,13 +70,8 @@ const router = createBrowserRouter([
     }
     ,
     {
-        path:"/mypage",
+        path:"consumer/mypage",
         element: <MyPage></MyPage>
-    }
-    ,
-    {
-        path:"/about",
-        element: <AboutPage></AboutPage>
     }
     ,
     {
@@ -95,6 +90,15 @@ const router = createBrowserRouter([
         path:"/farmer/home/read/:pno",
         element: <FarmerHomeReadPage></FarmerHomeReadPage>
       },
+      // Song 추가 및 수정 8.16
+      {
+        path:"/farmer/home/regist",
+        element: <FarmerHomeRegistPage></FarmerHomeRegistPage>
+      },
+      {
+        path:"/farmer/home/modify/:pno",
+        element: <FarmerHomeModifyPage></FarmerHomeModifyPage>
+      },      
       {
         path:"/farmer/diary",
         element: <FarmerDiaryPage></FarmerDiaryPage>
@@ -103,6 +107,12 @@ const router = createBrowserRouter([
         path:"/farmer/diary/read/:bno",
         element: <FarmerDiaryReadPage></FarmerDiaryReadPage>
       },
+      ,
+      {
+        path:"/farmer/diary/regist",
+        element: <FarmerDiaryRegistPage></FarmerDiaryRegistPage>
+      },
+      ///////////////
       {
         path:"/farmer/qa",
         element: <FarmerQAPage></FarmerQAPage>
@@ -144,26 +154,19 @@ const router = createBrowserRouter([
       ,{
         path:"/consumer/list",
         element: <BoardPage></BoardPage>
+      }      ,{
+        path:"/member/singup",
+        element: <FarmerSignUpComponent></FarmerSignUpComponent>
       }
-      ,{
-        path:"/consumer/farmerlistpage",
-        element: <FarmerListPage></FarmerListPage>
-      },
-      {
-        path:"/consumer/farmerlistpage/read/:mno",
-        element:<FarmerListReadPage></FarmerListReadPage>
-      },
-      {
-        path:"/consumer/modify",
-        element:<ModifyPage></ModifyPage>
-      }
-
-      
     
     
     
         
     
 ])
+
+
+
+
 
 export default router;

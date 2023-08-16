@@ -16,7 +16,10 @@ export const getCunsumerList = async (queryObj) => {
 
 export const getOne = async (bno) => {
 
-  const res = await axios.get(`http://localhost:8080/api/board/${bno}`)
+
+  console.log(":asdasdasdadasasd")
+
+  const res = await axios.get(`${url}/api/board/${bno}`)
 
   return res.data
 
@@ -52,7 +55,7 @@ export const getFarmerList = async (queryObj) =>{
 }
 export const getFarmerOne = async (mno) => {
 
-  const res = await axios.get(`${url}/api/admin/${mno}`)
+  const res = await axios.get(`${url}/api/admin/read/${mno}`)
 
   return res.data
 

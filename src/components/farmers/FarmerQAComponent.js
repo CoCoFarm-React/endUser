@@ -31,13 +31,6 @@ const FarmerQAComponent = ({queryObj, movePage, moveRead}) => {
     })
   },[queryObj])
 
-  // useEffect(() => {
-
-  //   getFarmerList(queryObj).then(data => {
-  //     console.log("FarmerListComponent: " + data)
-  //     setListData(data)
-  //   })
-  // },[queryObj])  
 
   return ( 
 

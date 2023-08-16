@@ -50,3 +50,17 @@ export const registerProduct = async (FormData) =>{
   return res.data
 
 }
+
+export const putProduct = async (formData) => {
+
+  const header = {
+      headers: {
+          "Content-Type": "multipart/form-data",
+      }
+  }
+
+  const res = await axios.post(`${url}/api/products/`, formData, header)
+
+  return res.data
+
+}

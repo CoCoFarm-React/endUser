@@ -16,7 +16,7 @@ const ConsumerListComponent = () => {
                     <td className="w-8/12">Title</td>
                     <td className="w-1/12">Writer</td>
                     <td className="w-1/12">Duedate</td>
-                    <td className="w-1/12">Count</td>          
+                    <td className="w-1/12">Count</td>
                 </tr>
                 <tr className="border-b-2 border-gray-300 text-center h-12">
                     <td className="w-1/12">1</td>
