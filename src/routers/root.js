@@ -41,6 +41,7 @@ import MemberModifyPage from "../pages/member/MemberModifyPage";
 
 
 import FarmerSignUpComponent from "../components/member/FarmerSignUpComponent";
+import FarmerDiaryModifyPage from "../pages/farmers/FarmerDiaryModifyPage";
 
 
 
@@ -101,6 +102,11 @@ const router = createBrowserRouter([
         path:"/farmer/diary/read/:bno",
         element: <FarmerDiaryReadPage></FarmerDiaryReadPage>
       },
+      ,
+      {
+        path:"/farmer/diary/modify/:bno",
+        element: <FarmerDiaryModifyPage></FarmerDiaryModifyPage>
+      }, 
       {
         path:"/farmer/qa",
         element: <FarmerQAPage></FarmerQAPage>

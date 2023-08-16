@@ -79,6 +79,16 @@ const useQueryObj = () => {
 
   }
 
+  const moveProductRead = (pno) => {
+    
+    console.log("moveRead: " + pno)
+
+    const queryString = createSearchParams(queryObj).toString()
+
+    navigate(`/farmer/home/read/${pno}?${queryString}`)
+
+  }
+
   const moveModify = (bno) => {
 
     console.log("moveModify: " + bno)
@@ -100,7 +110,7 @@ const useQueryObj = () => {
   }
 
   return {queryObj, setSearch, moveList, moveRead, moveDiaryList, 
-    moveBoardList, moveModify, moveHomeList, moveProductModify}
+    moveBoardList, moveModify, moveHomeList, moveProductModify, moveProductRead}
 }
 
 export default useQueryObj;

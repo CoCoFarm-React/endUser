@@ -12,17 +12,22 @@ const initState = {
   reg:'',
   modDate:'',
   fname:'',
-  images:[]  
+  images:[],
+  mno:0  
   
 }
 
-const FarmerBoardModifyComponent = ({pno}) => {
+const FarmerBoardModifyComponent = ({pno, mno}) => {
 
   const [board, setBoard] = useState(initState)
-  const fileRef = useRef()
+  
   const [files, setFiles] = useState([]);
 
-  const {queryObj, moveBoardList, moveProductModify, moveHomeList, moveRead} = useQueryObj()
+  const {queryObj, moveBoardList, moveProductRead, moveHomeList} = useQueryObj()
+
+  const fileRef = useRef()
+
+  
 
   useEffect(() => {
 
@@ -49,15 +54,16 @@ const FarmerBoardModifyComponent = ({pno}) => {
     
     moveHomeList()    
     })
-}
+  }
 
-const handleChange = (e) => {
+  const handleChange = (e) => {
     board[e.target.name] = e.target.value
 
     setBoard({...board})
-}
+  }
 
-const handleClickModify = () => {
+
+  const handleClickModify = () => {
 
     const formData = new FormData();
 
@@ -65,7 +71,8 @@ const handleClickModify = () => {
     formData.append("pname", board.pname)
     formData.append("pdesc", board.pdesc)
     formData.append("price", board.price)
-    formData.append("procateno", board.procateno)    
+    formData.append("procateno", board.procateno)
+    formData.append("mno", board.mno)    
 
     if(board.images){
         for (let pi of board.images) {
@@ -80,20 +87,24 @@ const handleClickModify = () => {
     }
 
     putProduct(formData).then(data => {
+        console.log("pno"+ pno)
+        console.log(board.mno)
+        console.log(board.pdesc)
+
         alert("수정되었습니다!")
-        moveRead(pno)
+        moveProductRead(pno)
     })
-}
+  }
 
 
-const handleClickDelImg = (files) => {
+  const handleClickDelImg = (files) => {
               
-  const newArr = board.images.filter(ele => ele !== files)
+    const newArr = board.images.filter(ele => ele !== files)
 
-  board.images = newArr
+    board.images = newArr
 
-  setBoard({...board})
-}
+    setBoard({...board})
+  }
 
   return ( 
 
@@ -192,7 +203,7 @@ const handleClickDelImg = (files) => {
 
         <button 
           className="bg-green-500 rounded-md w-20 p-2 m-2 text-white"
-          onClick={() => handleClickModify(board.pno)}
+          onClick={handleClickModify}
       
           >Save</button>
 

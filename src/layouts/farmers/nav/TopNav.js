@@ -12,7 +12,7 @@ const TopNav = ({hide}) => {
 
         <div className="w-[200px]  justify-center flex">
           <Link to={"/"}>
-            <img className="h-[69px] " alt="cocofarm" src={farmIcon1} />
+            <img className="h-[68px]" alt="cocofarm" src={farmIcon1} />
           </Link>
         </div>
 

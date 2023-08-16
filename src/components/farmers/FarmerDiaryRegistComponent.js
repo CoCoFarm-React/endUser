@@ -2,24 +2,30 @@ import { useState } from "react"
 import { useRef } from "react"
 import { registBoard } from "../../api/FarmerAPI"
 import { useNavigate } from "react-router-dom"
+import useQueryObj from "../../hooks/farmers/useQueryObj"
 
 
 const initState = {
-  title:'제목 TEST',
-  content:'내용 TEST',  
-  email:'Email TEST',
-  nickname:'NickName TEST',
-  cateno:2
+  title:'재배일지 등록Test',
+  content:'재배일지 test',  
+  email:'',
+  nickname:'',
+  mno:0,
+  cateno:0,
+  view:0
+  
 
 }
 
-const FarmerDiaryRegistComponent = ({moveList, moveDiaryList}) => {
+const FarmerDiaryRegistComponent = () => {
   
   const fileRef = useRef()
 
   const [board, setBoard] = useState({...initState})
 
   const nav = useNavigate()
+
+  const {moveDiaryList} = useQueryObj()
 
 
   const handleChange = (e) => {
@@ -35,9 +41,10 @@ const FarmerDiaryRegistComponent = ({moveList, moveDiaryList}) => {
 
       formData.append("title", board.title)
       formData.append("content", board.content)
-      // formData.append("email", board.email)
-      formData.append("nickname", board.nickname)
-      formData.append("cateno", board.cateno)
+      formData.append("mno", 3)
+      // formData.append("nickname", board.nickname)
+      formData.append("cateno", 2)
+      formData.append("view", board.view)
 
       console.dir(fileRef.current)
 

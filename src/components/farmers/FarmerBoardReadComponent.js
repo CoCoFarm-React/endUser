@@ -85,6 +85,9 @@ const FarmerBoardReadComponent = ({pno}) => {
                   className="mb-2"
               >
                 <img src={`http://192.168.0.74/${filelist}`} alt='ddd' className="w-[600px] h-[600px]"></img>
+                {/* <img src={board.images === '' ? "http://192.168.0.74/default.jpg" : `http://192.168.0.74/${filelist}`} alt='ddd' className="w-[600px] h-[600px]"></img> */}
+
+                
               </li>
             )}
           </ul>

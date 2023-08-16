@@ -26,7 +26,7 @@ const FarmerDiaryComponent = ({queryObj, movePage, moveRead}) => {
   // Test (j1 project)
   useEffect(() => {
 
-    queryObj.cateno = 3
+    queryObj.cateno = 2
 
     getList(queryObj).then(data => {
       console.log("Diary Component: " + data.dtoList[0])

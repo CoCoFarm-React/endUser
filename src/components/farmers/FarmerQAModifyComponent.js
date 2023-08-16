@@ -13,7 +13,7 @@ const initState = {
   
 }
 
-const FarmerQAModifyComponent = ({bno, moveList, moveRead}) => {  
+const FarmerQAModifyComponent = ({bno, moveList, moveRead, addUrl}) => {  
 
   const [board, setBoard] = useState(initState)
   // const fileRef = useRef()
@@ -155,7 +155,7 @@ const FarmerQAModifyComponent = ({bno, moveList, moveRead}) => {
           </button>
 
           <button 
-            onClick={moveList}
+            onClick={() => window.location.href = addUrl.url}
             className="bg-green-600 rounded-md w-20 p-2 m-2 ml-20 text-white"
             >List
           </button>
