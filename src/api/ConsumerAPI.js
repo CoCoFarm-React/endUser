@@ -40,7 +40,7 @@ export const putBoard = async (formData) => {
             "Content-Type": "multipart/form-data",
         }
     }
-  }
+ }
 
   
 
@@ -60,3 +60,5 @@ export const getFarmerOne = async (mno) => {
   return res.data
 
 }
+
+

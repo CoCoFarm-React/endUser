@@ -41,6 +41,7 @@ import MemberModifyPage from "../pages/member/MemberModifyPage";
 
 
 import FarmerSignUpComponent from "../components/member/FarmerSignUpComponent";
+import FarmerListPage from "../pages/consumer/consumertack/FarmerListPage";
 
 
 
@@ -140,8 +141,8 @@ const router = createBrowserRouter([
     
       //차은우 추가 컨슈머로 이동시켜야함
       ,{
-        path:"/consumer/list",
-        element: <BoardPage></BoardPage>
+        path:"/consumer/farmer/list",
+        element: <FarmerListPage></FarmerListPage>
       }
       ,{
         path:"/member/singup",
@@ -149,8 +150,6 @@ const router = createBrowserRouter([
       }
     
       
-    
-        
     
 ])
 
