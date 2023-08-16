@@ -1,6 +1,6 @@
 import axios from "axios"
 import { createSearchParams } from "react-router-dom"
-const url = 'http://192.168.0.74:8080'
+const url = 'http://192.168.0.48:8080'
 // const url = 'http://loaclhost:8080'
 
 //list
@@ -16,7 +16,10 @@ export const getCunsumerList = async (queryObj) => {
 
 export const getOne = async (bno) => {
 
-  const res = await axios.get(`http://localhost:8080/api/board/${bno}`)
+
+  console.log(":asdasdasdadasasd")
+
+  const res = await axios.get(`${url}/api/board/${bno}`)
 
   return res.data
 

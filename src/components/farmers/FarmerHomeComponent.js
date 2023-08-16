@@ -9,13 +9,17 @@ const initState = {
   email:'',
   intro:'',
   nickname:'',
-  roleName:''
+  roleName:'',
+  profile:''
 
 }
 
 const FarmerHomeComponent = ({mno}) => {
 
   const sess = getCookies("login")
+  
+  console.log(sess);
+
   
   const [board, setBoard] = useState(initState)
 
@@ -31,7 +35,7 @@ const FarmerHomeComponent = ({mno}) => {
 
     getFarmerOne(sess.mno).then(data => {
       setBoard(data)
-      console.log("Farmer ReadCom data:"+data)
+      console.log("Farmer ReadCom data:" + data)
     })
 
   },[sess.mno])
@@ -46,8 +50,8 @@ const FarmerHomeComponent = ({mno}) => {
 
         </img> */}
         <img alt="farmImage01" 
-        className="rounded-[50%] object-cover w-[180px] h-[180px] justify-center flex">
-          {board.profile}
+        className="rounded-[50%] object-cover w-[180px] h-[180px] justify-center flex"
+        src={board.profile === '' ? "http://192.168.0.48/default.jpg" : board.profile}>
         </img>
       </div>
 

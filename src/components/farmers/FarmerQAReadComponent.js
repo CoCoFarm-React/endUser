@@ -25,7 +25,17 @@ const FarmerQAReadComponent = () => {
   useEffect(() => {
 
     getOne(bno).then(data => {
+
+console.log("ReadCom data:"+data)
+console.log("ReadCom data:"+data)
+console.log("ReadCom data:"+data)
+console.log("ReadCom data:"+data)
       setBoard(data)
+console.log("ReadCom data:"+data)
+console.log("ReadCom data:"+data)
+console.log("ReadCom data:"+data)
+
+
 
       console.log("ReadCom data:"+data)
     })
