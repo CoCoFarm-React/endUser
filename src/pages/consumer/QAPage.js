@@ -1,4 +1,4 @@
-import ConsumerQAComponent from "../../components/consumer/ConsumerQAComponent"
+
 import SampleNav from "../../layout/consumernav/SampleNav"
 import useQueryObj from "../../hooks/farmers/useQueryObj";
 import BasicLayout from "../../layout/BasicLayout"
@@ -52,14 +52,6 @@ const QAPage = () => {
           queryObj={queryObj}
           chgSize={chgSize}
           ></ConsumerSearchComponent>
-        </div>
-  
-        <div>
-          <ConsumerQAComponent
-          queryObj={queryObj}
-          movePage={movePage}
-          moveRead={moveRead}
-          ></ConsumerQAComponent>
         </div>
   
   

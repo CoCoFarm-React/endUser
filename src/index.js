@@ -9,10 +9,11 @@ import store from './store/store';
 
 
 import router3 from './routers/rootConsumer';
+import router2 from './routers/rootFarmer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <RouterProvider router={router3}>
+  <RouterProvider router={router2}>
     <App />
   </RouterProvider>
 );
