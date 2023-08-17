@@ -1,9 +1,10 @@
-import FooterComponent from "../../components/consumer/FooterComponent";
-import QNAComponent from "../../components/consumer/QNAComponent";
-import useQueryObj from "../../hooks/consumers/useQueryObj";
-import SampleLayout from "../../layout/consumer/SampleLayout";
-import SampleNav from "../../layout/consumernav/SampleNav";
-//import PageComponent from "../../components/consumer/PageComponent";
+import FooterComponent from "../../../components/consumer/FooterComponent";
+import QNAComponent from "../../../components/consumer/QNAComponent";
+import SearchComponent from "../../../components/consumer/SearchComponent";
+import useQueryObj from "../../../hooks/consumers/useQueryObj";
+import SampleLayout from "../../../layout/consumer/SampleLayout";
+
+
 
 const QNAPage = () => {
 
@@ -35,6 +36,12 @@ const QNAPage = () => {
                 <h2>Q&A PAGE</h2>
             </SampleLayout>
             <div>
+            <div>
+                <SearchComponent
+                moveSearch={moveSearch}
+                queryObj={queryObj}>
+                </SearchComponent>
+            </div>
                 <QNAComponent
                 queryObj={queryObj}
                 movePage={movePage}

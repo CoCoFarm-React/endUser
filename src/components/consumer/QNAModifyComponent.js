@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { deleteCunsumer, putConsumer, postConsumer } from "../../api/ConsumerAPI";
-import { getCunsumerOne } from "../../api/ConsumerAPI";
+
 
 const initState = {
   bno:0,
@@ -23,20 +22,20 @@ const QNAModifyComponent = ({bno, moveList, moveRead}) => {
     setBoard({...board})
   }
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    getCunsumerOne(bno).then(data => {
-      setBoard(data)
-    })
+  //   getCunsumerOne(bno).then(data => {
+  //     setBoard(data)
+  //   })
 
-  }, [bno])
+  // }, [bno])
 
-  const handleClickDelete = () => {
-    deleteCunsumer(bno).then(data => {
-      alert("상품이 삭제 되었습니다.")
-      moveList()
-    })
-  }
+  // const handleClickDelete = () => {
+  //   deleteCunsumer(bno).then(data => {
+  //     alert("상품이 삭제 되었습니다.")
+  //     moveList()
+  //   })
+  // }
 
   const handleClickModify = () => {
     const formdata = new FormData();
@@ -57,12 +56,12 @@ const QNAModifyComponent = ({bno, moveList, moveRead}) => {
       formdata.append("files", file)
     }
 
-    putConsumer(formdata).then(data => {
-      alert("수정 되었습니다.")
-      moveRead(bno)
-    }).catch(e => {
-      alert("실패")
-    })
+    // putConsumer(formdata).then(data => {
+    //   alert("수정 되었습니다.")
+    //   moveRead(bno)
+    // }).catch(e => {
+    //   alert("실패")
+    // })
   }
 
   const handleClickDeleteImg = (fname) => {
@@ -139,7 +138,7 @@ const QNAModifyComponent = ({bno, moveList, moveRead}) => {
         </button>
         <button
           className="h-10 px-3 text-[#1e3932] border-2 border-[#1e3932] bg-white rounded mt-3 mr-3"
-          onClick={handleClickDelete}
+          //onClick={handleClickDelete}
         >
           Delete
         </button>

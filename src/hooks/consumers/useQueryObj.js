@@ -40,6 +40,12 @@ const useQueryObj = () => {
 
         navigate(`/consumer/qnapage?${queryString}`)
     }
+    //main 페이지 이동
+    const moveList2 = () => {
+        const queryString = createSearchParams (queryObj).toString()
+
+        navigate(`/consumer/farmerlistpage`)
+    }
 
     const moveRead = (bno) => {
         console.log("moveRead: " + bno)
@@ -47,8 +53,17 @@ const useQueryObj = () => {
         const queryString = createSearchParams (queryObj).toString()
 
         navigate(`/consumer/qnapage/read/${bno}?${queryString}`)
+        
     }
 
+    const moveRead2 = (bno) => {
+        console.log("moveRead2: " + bno)
+
+        const queryString = createSearchParams (queryObj).toString()
+
+        navigate(`/consumer/farmerlistpage/read/${bno}?${queryString}`)
+    }
+    
     const moveModify = (bno) => {
 
         console.log("moveModify: " + bno)
@@ -58,8 +73,30 @@ const useQueryObj = () => {
         navigate(`/consumer/qnapage/read/modify/${bno}?${queryString}`)
     
     }
+    //회원정보수정
+    const modifyMember = (mno) => {
 
-    return {queryObj, setSearch, moveList, moveRead, moveModify}
+        console.log("modifyMember: " + mno)
+    
+        const queryString = createSearchParams(queryObj).toString()
+    
+        navigate(`/mypage`)
+    
+    }
+
+    const moveRegist = () => {
+
+        console.log("moveRegist: ")
+    
+        const queryString = createSearchParams(queryObj).toString()
+    
+        navigate(`/consumer/qnapage/regist`)
+    
+    }
+
+
+    
+    return {queryObj, setSearch, moveList, moveList2, moveRead, moveRead2, moveModify ,moveRegist, modifyMember}
 
 }
  

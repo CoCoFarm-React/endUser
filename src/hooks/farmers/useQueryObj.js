@@ -22,7 +22,7 @@ const useQueryObj = () => {
   const [search, setSearch] = useSearchParams()
   const navigate = useNavigate()
 
-  console.log("search: " + search)
+  // console.log("search: " + search)
 
   //page, size 값이 없으면 초기값 설정
   const page = search.get("page") || 1
@@ -42,6 +42,15 @@ const useQueryObj = () => {
 
     console.log("queryString..." + queryString)
   }
+
+  const moveHomeList = () => {
+    const queryString = createSearchParams(queryObj).toString()
+
+    navigate(`/farmer/home?${queryString}`) 
+
+    console.log("home queryString..." + queryString)
+  }
+  
 
   const moveDiaryList = () => {
     const queryString = createSearchParams(queryObj).toString()
@@ -80,7 +89,18 @@ const useQueryObj = () => {
 
 }
 
-  return {queryObj, setSearch, moveList, moveRead, moveDiaryList, moveBoardList, moveModify}
+  const moveProductModify = (pno) => {
+
+    console.log("moveProductModify: " + pno)
+
+    const queryString = createSearchParams(queryObj).toString()
+
+    navigate(`../farmer/home/modify/${pno}?${queryString}`)
+
+  }
+
+  return {queryObj, setSearch, moveList, moveRead, moveDiaryList, 
+    moveBoardList, moveModify, moveHomeList, moveProductModify}
 }
 
 export default useQueryObj;

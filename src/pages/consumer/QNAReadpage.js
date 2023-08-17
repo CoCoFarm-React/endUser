@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom"
 
-import SampleLayout from "../../layout/consumer/SampleLayout"
+
 import QNAReadComponent from "../../components/consumer/QNAReadComponent"
 import FooterComponent from "../../components/consumer/FooterComponent"
-import useQueryObj from "../../hooks/consumer/useQueryObj"
+import useQueryObj from "../../hooks/consumers/useQueryObj"
 import SampleNav from "../../layout/consumernav/SampleNav"
 
 
@@ -24,10 +24,7 @@ const QNAReadPage = () => {
                 <SampleNav></SampleNav>
             </div>
             <div className="text-xl mt-5">
-                Q&A Read Page
-            </div>
-            <div className="text-xl mt-5">
-                Q&A Read Page
+                FARMER Read Page
             </div>
             
             <QNAReadComponent

@@ -5,45 +5,59 @@ const initState = {
     title: '제목',
     content: '내용',
     email: '이메일',
-    nickname: '닉네임'
+    nickname: '닉네임',
+    cateno:'1'
 }
 
 
 const QNARegistComponent = ({moveList}) => {
 
-    const fileRef = useRef
+    
 
     const [board, setBoard] = useState({...initState})
 
+    // const handleChange = (e) => {
+
+    //     board[e.target.name] = e.target.value
+
+    //     setBoard({...board})
+    // }
     const handleChange = (e) => {
-
-        board[e.target.name] = e.target.value
-
-        setBoard({...board})
+        const { name, value } = e.target;
+        setBoard(prevBoard => ({
+          ...prevBoard,
+          [name]: value
+        }));
     }
 
     const handleClickSave = (e) => {
+        e.preventDefault();
 
-      const formData = new FormData();
+        const formData = new FormData();
 
-          formData.append("TITLE", board.title)
-          formData.append("CONTENT", board.content)
-          formData.append("WRITER", board.writer)
-          formData.append("EMAIL", board.email)
-          formData.append("NICKNAME", board.nickname)
+        formData.append("TITLE", board.title)
+        formData.append("CONTENT", board.content)
+        formData.append("WRITER", board.writer)
+        formData.append("EMAIL", board.email)
+        formData.append("NICKNAME", board.nickname)
 
-          console.dir(fileRef.current)
+        // console.dir(fileRef.current)
 
-          const arr = fileRef.current.files
+        // const arr = fileRef.current.files
 
-          for(let file of arr){
-              formData.append("files", file) // files : 컨트롤러에서 받을 때 이름
-        }
+        //     for(let file of arr){
+        //     // files : 컨트롤러에서 받을 때 이름.
+        //     formData.append("files", file) 
+        // }
+        
+        alert("글이 등록되었습니다.");
+        // 등록 후 목록 화면으로 이동
+        moveList();
+
     }
 
-    const handleClickClear = (e) => {
-        
-        fileRef.current.value = ''
+    const handleClickDelete = () => {
+        setBoard(initState);
     }
 
     return ( 
@@ -93,7 +107,7 @@ const QNARegistComponent = ({moveList}) => {
                 </input>
             </div>
 
-            <div className="m-auto border-2 font-bold">
+            {/* <div className="m-auto border-2 font-bold">
                 <input 
                 className="m-auto items-center" 
                 type='file' 
@@ -102,7 +116,7 @@ const QNARegistComponent = ({moveList}) => {
                 name='images' 
                 onChange={handleChange}>
                 </input>
-            </div>
+            </div> */}
 
             <div className="mt-2">
                 <button 
@@ -112,7 +126,7 @@ const QNARegistComponent = ({moveList}) => {
                 </button>
                 <button 
                 className="rounded-md w-auto p-2 m-2" 
-                onClick={handleClickClear}>
+                onClick={handleClickDelete}>
                     CLEAR FILES
                 </button>
                 <button 

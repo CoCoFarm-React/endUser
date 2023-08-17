@@ -25,7 +25,17 @@ const FarmerQAReadComponent = () => {
   useEffect(() => {
 
     getOne(bno).then(data => {
+
+console.log("ReadCom data:"+data)
+console.log("ReadCom data:"+data)
+console.log("ReadCom data:"+data)
+console.log("ReadCom data:"+data)
       setBoard(data)
+console.log("ReadCom data:"+data)
+console.log("ReadCom data:"+data)
+console.log("ReadCom data:"+data)
+
+
 
       console.log("ReadCom data:"+data)
     })
@@ -35,7 +45,7 @@ const FarmerQAReadComponent = () => {
     <div className="items-center justify-center container flex">
 
       <div>
-      <table className="w-[1200px] items-center justify-center">
+      <table className="w-[60vw] items-center justify-center">
         <thead className="">
           <tr className="bg-gray-200">
               <td className="border-2 font-medium w-32 text-center ">No</td>

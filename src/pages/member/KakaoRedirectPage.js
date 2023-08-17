@@ -37,8 +37,6 @@ const KakaoRedirectPage = () => {
             }else{
                 navigate('/')
             }
-
-            
   
 
         })

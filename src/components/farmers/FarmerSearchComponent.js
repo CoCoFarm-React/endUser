@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 
-const FarmerSearchComponent = ( {moveSearch, queryObj, chgSize , hide}) => {
+const FarmerSearchComponent = ( {moveSearch, queryObj, chgSize , hide, addUrl}) => {
 
   const[searchObj, setSearchObj] = useState({type:'', keyword:''})
   const[changeSize, setChangeSize] = useState({size: 10})
@@ -38,8 +38,9 @@ const FarmerSearchComponent = ( {moveSearch, queryObj, chgSize , hide}) => {
 
       {/* <Link to="/farmer/qa/regist"> */}
       { hide ? <></> : 
-        <button className="border-2 m-2 p-2 w-16 rounded-md bg-lime-400 text-white"
-      
+        <button 
+        className="border-2 m-2 p-2 w-16 rounded-md bg-lime-400 text-white"
+        onClick={() => window.location.href = addUrl.url}
       > 
       ADD            
       </button>

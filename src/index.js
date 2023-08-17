@@ -8,17 +8,24 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 
 
-import router3 from './routers/rootConsumer';
 import router2 from './routers/rootFarmer';
+import router from './routers/root';
+//import router from './routers/roo;
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <RouterProvider router={router2}>
+  
+  <Provider store={store}>
+      <RouterProvider router={router}>
     <App />
   </RouterProvider>
+  </Provider>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
 reportWebVitals();

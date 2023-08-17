@@ -4,6 +4,7 @@ import TopNav from "../../layouts/farmers/nav/TopNav"
 import { useParams } from "react-router"
 import useQueryObj from "../../hooks/farmers/useQueryObj"
 import FarmerQAReadComponent from "../../components/farmers/FarmerQAReadComponent"
+import FarmerDiaryReadComponent from "../../components/farmers/FarmerDiaryReadComponent"
 
 
 const FarmerDiaryReadPage = () => {
@@ -25,10 +26,10 @@ const FarmerDiaryReadPage = () => {
       </div>
       
       <div className="mt-5">
-        <FarmerQAReadComponent bno={bno}></FarmerQAReadComponent>
-        <button 
+        <FarmerDiaryReadComponent bno={bno}></FarmerDiaryReadComponent>
+        {/* <button 
             className="border-2 w-20 mt-4 p-2 rounded-md bg-gray-600 text-white "
-            onClick={() => moveDiaryList()}>List</button>
+            onClick={() => moveDiaryList()}>List</button> */}
       </div>
 
       

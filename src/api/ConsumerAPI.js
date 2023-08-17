@@ -6,19 +6,23 @@ const url = 'http://192.168.0.74:8080'
 //list
 export const getCunsumerList = async (queryObj) => {
 
-  const queryString = createSearchParams(queryObj).toString()
+    const queryString = createSearchParams(queryObj).toString();
+  
+    const res = await axios.get(`${url}/api/board/list?${queryString}`)
+  
+    return res.data
 
-  const res = await axios.get(`${url}/api/board/list?${queryString}`)
+}
+
+export const getOne = async (bno) => {
+
+  console.log("asdasdasdasd")
+
+  const res = await axios.get(`${url}/api/board/${bno}`)
 
   return res.data
 
 }
-
-    // const res = await axios.get(`http://localhost:8080/api/board/${bno}`)
-  
-    // return res.data
-
-
 
 export const deleteBoard = async (bno) => {
 
@@ -26,7 +30,6 @@ export const deleteBoard = async (bno) => {
   
     return res.data
 }
-  
 
 export const putBoard = async (formData) => {
   
@@ -35,40 +38,26 @@ export const putBoard = async (formData) => {
             "Content-Type": "multipart/form-data",
         }
     }
-  }
+}
 
-  const res = await axios.post(`${url}/api/board/`, formData, header)
+export const getFarmerList = async (queryObj) =>{
 
-  return res.data
+    const queryString = createSearchParams(queryObj).toString();
+    
+    const res = await axios.get(`${url}/api/admin/farmer?${queryString}`)
+  
+    return res.data
+    
+}
 
+export const getFarmerOne = async (mno) => {
 
-//read
-export const getCunsumerOne = async (bno) => {
-
-  const res = await axios.get(`${url}/api/board/${bno}`)
+  const res = await axios.get(`${url}/api/admin/read/${mno}`)
 
   return res.data
 
 }
-//delete
-export const deleteCunsumer = async (bno) => {
 
-  const res = await axios.get(`${url}/api/board/list`)
 
-  return res.data
 
-}
-//modify
-export const putConsumer = async(formData) => {
-  const header = {
-    headers: {
-      "Content-Type": "multipart/form-data",
-    }
-  }
-
-  const res = await axios.put(`${url}/api/board`, formData, header)
-
-  return res.data
-
-}
 

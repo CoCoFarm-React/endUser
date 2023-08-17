@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { getCunsumerList} from "../../api/ConsumerAPI"
 import ListPageComponent from "../common/ListPageComponent"
+import { isContentEditable } from "@testing-library/user-event/dist/utils"
 
 
 const initState = {
@@ -37,25 +38,29 @@ const QNAComponent = ({queryObj, movePage, moveRead, moveRegist}) => {
                 <thead>
                     <tr className="border-b-2 text-center h-12 font-serif">
                         <td className="w-1/12">NO.</td>
-                        <td className="w-5/12">TITLE</td>
+                        <td className="w-2/12">TITLE</td>
+                        <td className="w-4/12">CONTENT</td>
                         <td className="w-1/12">NICKNAME</td>
                         <td className="w-1/12">REGDATE</td>
+                        <td className="w-1/12">댓글수</td>
                                  
                     </tr>
                 </thead>
 
                 <tbody>
-                    {listData.dtoList.map(({bno,title,nickname,replyCount,regDate,rcnt}) => 
+                    {listData.dtoList.map(({bno,title,nickname,replyCount,regDate,rcnt,content}) => 
                         <tr 
                         className="border-b-2 h-20 text-center"
                         key={bno}
                         onClick={() => moveRead(bno)}>
                             <td>{bno}</td>
                             <td className="text-left hover:underline hover:cursor-pointer">
-                                {title}&nbsp;&nbsp;[{replyCount}]
+                                {title}
                             </td>
+                            <td>{content}</td>
                             <td>{nickname}</td>
                             <td>{regDate}</td>
+                            <td>{rcnt}</td>
                             
                         </tr>
                     )}
@@ -63,9 +68,8 @@ const QNAComponent = ({queryObj, movePage, moveRead, moveRegist}) => {
             </table>
             <div>
                 <button 
-                    className="bg-white-400 border-2 m-2 p-2 text-black font-bold"
-                    onClick={moveRegist}
-                >
+                    className="border-2 m-2 p-2 font-bold"
+                    onClick={moveRegist}>
                     글쓰기
                 </button>
             </div>

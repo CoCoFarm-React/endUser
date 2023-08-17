@@ -15,19 +15,40 @@ export const postLogin = async(params) => {
 }
 
 
-export const insertMember = async(params) => {
+export const modifyMember = async(params) => {
+
+  const header = {
+    headers: {
+        "Content-Type": "multipart/form-data",
+    }
+  }
+  
+  console.log("===========================================")
+  console.log(params);
+  console.log("===========================================")
+
+  const res = await axios.put('http://192.168.0.74:8080/api/member/modify',params , header)
+
+  return res.data
+  
+}
+
+export const signupMember = async(params) => {
 
   let header = {
     headers: {
-      "Content-Type": "multipart/form-data",
+        "content-type": "multipart/form-data",
     }
   }
   console.log("===========================================")
   console.log(params);
   console.log("===========================================")
 
-  const res = await axios.post('http://192.168.0.48:8080/api/member/register',params,header)
+  const res = await axios.post('http://192.168.0.74:8080/api/member',params,header)
 
   return res.data
   
 }
+
+
+
