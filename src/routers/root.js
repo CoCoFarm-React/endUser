@@ -1,5 +1,5 @@
 import { createBrowserRouter } from"react-router-dom";
-//import BasicLayout from "../layouts/farmers/BasicLayout";
+
 import QNAPage from "../pages/consumer/consumertack/QNAPage";
 
 import ConsumerPage from "../pages/consumer/consumertack/ConsumerPage";
@@ -31,19 +31,12 @@ import QNARegistPage from "../pages/consumer/consumertack/QNARegistPage";
 import LoginHandleComponent from "../components/member/LoginHandleComponent";
 import MemberModifyPage from "../pages/member/MemberModifyPage";
 
-//차은우 추가 컨슈머로 이동시켜야함
-import BoardPage from "../pages/consumer/consumertack/BoardPage";
-
-// const Loading = <LoadingPage></LoadingPage>
-
-// const Consumer_QNAPage = lazy(() => import("../pages/consumer/QNAPage"))
-// const Consumer_QNAReadPage = lazy(() => import("../components/consumer/QNAReadComponent"))
-// const Consumer_Mypage = lazy(() => import("../pages/consumer/MyPage"))
-// const Consumer_MainPage = lazy(() => import("../pages/consumer/MainPage"))
+import FarmerListPage from "../pages/consumer/consumertack/FarmerListPage";
+import FarmerListReadPage from "../pages/consumer/consumertack/FarmerListReadPage";
 
 
-import FarmerSignUpComponent from "../components/member/FarmerSignUpComponent";
 
+// import FarmerListPage from "../pages/farmers/";
 
 
 const router = createBrowserRouter([
@@ -80,19 +73,16 @@ const router = createBrowserRouter([
         element: <MyPage></MyPage>
     }
     ,
-    {
-        path:"/about",
-        element: <AboutPage></AboutPage>
-    }
+    // {
+    //     path:"/about",
+    //     element: <AboutPage></AboutPage>
+    // }
     ,
     {
         path:"consumer/mainpage",
         element: <MainPage></MainPage>
     },
-    {
-        path:"",
-        element: <BasicLayout></BasicLayout>
-      },
+
       {
         path:"/farmer/home",
         element: <FarmerHomePage></FarmerHomePage>
@@ -151,18 +141,18 @@ const router = createBrowserRouter([
         path:"/consumer/farmer/list",
         element: <FarmerListPage></FarmerListPage>
       }
+      // ,{
+      //   path:"/consumer/farmerlistpage",
+      //   element: <FarmerListPage></FarmerListPage>
+      // },
       ,{
-        path:"/consumer/farmerlistpage",
-        element: <FarmerListPage></FarmerListPage>
-      },
-      {
         path:"/consumer/farmerlistpage/read/:mno",
         element:<FarmerListReadPage></FarmerListReadPage>
       },
-      {
-        path:"/consumer/modify",
-        element:<ModifyPage></ModifyPage>
-      }
+      // {
+      //   path:"/consumer/modify",
+      //   element:<ModifyPage></ModifyPage>
+      // }
 
       
     

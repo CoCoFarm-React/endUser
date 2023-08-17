@@ -51,9 +51,11 @@ const loginSlice = createSlice({
 
         },
 
-        requestLogout: (state , param) =>  {
+        requestLogout: (state) =>  {
 
-            removeCookis("login" , "/")
+            console.log("=================requestLogout=====================")
+
+            removeCookis("login")
        
             return initState
         }

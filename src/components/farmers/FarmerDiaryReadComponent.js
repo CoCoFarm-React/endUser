@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom"
 import { getOne } from "../../api/FarmerAPI";
 import useQueryObj from "../../hooks/farmers/useQueryObj";
 import { useParams } from "react-router";
+import { getCookies } from "../../util/cookieUtil";
+import { addBoardLike, deleteBoardLike, getBoardLikeCheck } from "../../api/likeAPI";
 
 const initState = {
   bno:0,
@@ -18,10 +20,17 @@ const initState = {
   
 }
 
-const FarmerDiaryReadComponent = () => {
+const FarmerDiaryReadComponent = ({refreshFn}) => {
 
   const {queryObj, moveList, moveModify} = useQueryObj()
   const {bno} = useParams()
+
+  const [likeYn , setLikeYn] = useState(0);
+
+  const [likes , setLikes] = useState(initState)
+
+  const cookie = getCookies("login");
+
   const nav = useNavigate()
 
   const [board, setBoard] = useState(initState)
@@ -37,25 +46,84 @@ const FarmerDiaryReadComponent = () => {
       const fileList = data.fname ? data.fname.split(',') : [];       
       setFiles(fileList);
 
+       // 좋아요누르는 사람의 pk
+      // board.mno = cookie.mno
+
+      // 구독자의 이메일
+      likes.email = cookie.email
+      setLikes(likes)
+
+      // 좋아요를 누른 게시판인지 체크
+      getBoardLikeCheck(bno,likes).then(data => {
+          
+          console.log("==========--getGudocCheck---==========")
+          console.log(data)
+          // alert(data)
+          setLikeYn(data)
+      
+      })
+    
+
     }).catch(e => {
 
-      alert("asd")
+      alert("파머 카테고리 실패")
     })
-  },[bno])
+
+  },[bno , refreshFn])
+
+  //좋아요버튼 누르면
+  const like = () => { 
+
+      //시용자의 이메일
+      likes.email = cookie.email
+      setLikes(likes)
+
+      console.log("==========--like111---==========")
+      addBoardLike(bno,likes).then(data => {
+          console.log("==========--like222---==========")
+          setBoard({...data})
+          refreshFn()
+      })
+  }
+
+  //좋아요 취소 버튼
+  const likeCancel = () => {
+
+      //구독자의 이메일
+      likes.email = cookie.email
+      setLikes(likes)
+
+      deleteBoardLike(bno,likes).then(data => {
+          console.log("==========--likeCancel---==========")
+          setBoard({...data})
+          refreshFn()
+      })
+  }
 
   return ( 
 
     <div className="m-2 p-2">
 
-      <div className="m-2 p-2 border-2">
-          <div className="text-orange-500 font-bold">Pno</div>
+      <div className="m-2 p-2 border-2 hidden">
+          <div className="text-orange-500 font-bold">bno</div>
           <div>{board.bno}</div>
       </div>
-          
-      <div className="m-2 p-2 border-2">
+
+      <div className="m-2 p-2 border-2 flex justify-between">
+        <div>
           <div className="text-orange-500 font-bold">상품이름</div>
-          <div>{board.nickname}</div>
+          <div>{board.title}</div>
+        </div>
+        <div>
+        <button className="text-orange-500 font-bold mr-11"
+          onClick={likeYn === 0 ? () => like() : () => likeCancel()}
+        >
+          {likeYn === 0 ? <span>좋아요</span> : <span className="bg-gray-100 text-gray-500">좋아요취소</span>}
+        </button>
+        </div>
       </div>
+
+      
 
       <div className="m-2 p-2 border-2">
           <div className="text-orange-500 font-bold">Reg</div>
@@ -90,7 +158,7 @@ const FarmerDiaryReadComponent = () => {
               <li key={idx}
                   className="mb-2"
               >
-                <img src={`http://192.168.0.74/${filelist}`} alt='ddd' className="w-[600px] h-[600px]"></img>
+                <img src={`http://192.168.0.48/${filelist}`} alt='ddd' className="w-[600px] h-[600px]"></img>
               </li>
             )}
           </ul>

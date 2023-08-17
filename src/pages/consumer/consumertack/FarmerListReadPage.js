@@ -3,10 +3,12 @@ import useQueryObj from "../../../hooks/consumers/useQueryObj"
 import FarmerListReadComponent from "../../../components/consumer/FarmerListReadComponent"
 import SampleNav from "../../../layout/consumernav/SampleNav"
 import FooterComponent from "../../../components/consumer/FooterComponent"
+import { useState } from "react"
 
 const FarmerListReadPage = () => {
 
     const {queryObj, moveList2} = useQueryObj()
+    const [refresh, setRefresh] = useState(false)
       
     const {mno} = useParams()
 
@@ -14,6 +16,14 @@ const FarmerListReadPage = () => {
     console.log(queryObj)
     console.log(useQueryObj)
     console.log("==========----------==========")
+
+
+    const refreshFn = () => {
+
+        let data = !refresh
+        setRefresh({...data})
+
+    }
 
     return ( 
 
@@ -29,7 +39,8 @@ const FarmerListReadPage = () => {
                 <FarmerListReadComponent 
                     mno={mno}
                     moveList2={moveList2}
-                    ></FarmerListReadComponent>
+                    refreshFn={refreshFn}
+                ></FarmerListReadComponent>
             </div>
 
             <FooterComponent></FooterComponent>

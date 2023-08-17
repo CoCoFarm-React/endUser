@@ -1,9 +1,19 @@
-//import styles from '../../styles.css';
-
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { requestLogout } from "../../reducers/loginSlice";
+import { useDispatch } from "react-redux";
 
 
 const HeaderComponent = () => {
+
+    const dispatch = useDispatch();
+    const nav = useNavigate()
+
+    const logout = () => {
+        alert("11")
+        dispatch(requestLogout())
+        alert("22")
+        nav("/")   
+    }
 
     return ( 
 
@@ -20,13 +30,14 @@ const HeaderComponent = () => {
                     <div className='m-5'><Link to="/consumer/farmerlistpage">FARMERLIST</Link></div>
                     <div className='m-5'><Link to="/consumer/qnapage">Q&A</Link></div>
                     <div className='m-5'><Link to="/consumer/mypage">MY PAGE</Link></div>
-
-                    <Link to="/">
-                        <button 
-                        className="m-5 rounded-md hover:bg-white text-center text-sm">
-                            LogOut
-                        </button>
-                    </Link>
+                    
+                    <button 
+                    className="m-5 rounded-md hover:bg-white text-center text-sm"
+                    onclick={logout}
+                    >
+                        LogOut
+                    </button>
+                    
                 </div>
 
                 

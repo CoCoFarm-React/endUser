@@ -1,9 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import farmIcon1 from "../../../public/cocofarm6.png"
 import LoginNav from "./LoginNav";
 import FarmerSiginComponent from "../../../components/farmers/FarmerSigninComponent";
+import { useDispatch } from "react-redux";
+import { requestLogout } from "../../../reducers/loginSlice";
 
 const TopNav = ({hide}) => {
+  const dispatch = useDispatch();
+  const nav = useNavigate()
+
+  const logout = () => {
+      alert("11")
+      dispatch(requestLogout())
+      alert("22")
+      nav("/")   
+  }
+
   return ( 
 
     <div className="flex container h-[70px] text-black font-bold border-b-2 mt-2 ">
@@ -38,13 +50,20 @@ const TopNav = ({hide}) => {
 
       </div>
       
-      <Link to="/">
+      {/* <Link to="/">
             <button 
             className="border-gray-400 m-3 mt-7 p-1 ml-32 border-2 rounded-md
             hover:bg-black hover:text-white text-center text-sm">
             LogOut
             </button>
-      </Link>
+      </Link> */}
+
+      <button 
+        className="m-5 rounded-md hover:bg-white text-center text-sm"
+        onclick={logout}
+        >
+          LogOut
+      </button>
 
     </div>
 
