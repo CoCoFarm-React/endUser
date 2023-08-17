@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useState } from "react"
 
+
 const SearchComponent = ({queryObj, moveSearch}) => {
 
     const [searchObj, setSearchObj] = useState({type:'', keyword:''})

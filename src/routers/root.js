@@ -1,14 +1,16 @@
 import { createBrowserRouter } from"react-router-dom";
 //import BasicLayout from "../layouts/farmers/BasicLayout";
-import QNAPage from "../pages/consumer/consumertack/QNAPage";
 
 import ConsumerPage from "../pages/consumer/consumertack/ConsumerPage";
+import QNAPage from "../pages/consumer/consumertack/QNAPage";
 import QNAReadPage from "../pages/consumer/consumertack/QNAReadpage";
+import QNAModifyPage from "../pages/consumer/consumertack/QNAModifyPage";
+import QNARegistPage from "../pages/consumer/consumertack/QNARegistPage";
 import MyPage from "../pages/consumer/consumertack/MyPage";
 
 import BasicLayout from "../layouts/farmers/BasicLayout";
 
-import MainPage from "../pages/consumer/consumertack/MyPage";
+// import MainPage from "../pages/consumer/consumertack/MyPage";
 
 import FarmerHomePage from "../pages/farmers/FarmerHomePage";
 import FarmerDiaryPage from "../pages/farmers/FarmerDiaryPage";
@@ -25,14 +27,15 @@ import FarmerSigninPage from "../pages/farmers/FarmerSigninPage";
 import FarmerQARegistPage from "../pages/farmers/FarmerQARegistPage";
 import FarmerHomeReadPage from "../pages/farmers/FarmerHomeReadPage";
 
-import QNAModifyPage from "../pages/consumer/consumertack/QNAModifyPage";
-import QNARegistPage from "../pages/consumer/consumertack/QNARegistPage";
-
 import LoginHandleComponent from "../components/member/LoginHandleComponent";
 import MemberModifyPage from "../pages/member/MemberModifyPage";
 
 //차은우 추가 컨슈머로 이동시켜야함
 import BoardPage from "../pages/consumer/BoardPage";
+
+import FarmerSignUpComponent from "../components/member/FarmerSignUpComponent";
+
+
 
 const router = createBrowserRouter([
     
@@ -71,11 +74,11 @@ const router = createBrowserRouter([
         element: <MyPage></MyPage>
     }
     ,
-    {
-        path:"consumer/mainpage",
-        element: <MainPage></MainPage>
-    }
-    ,
+    // {
+    //     path:"consumer/mainpage",
+    //     element: <MainPage></MainPage>
+    // }
+    // ,
     {
         path:"",
         element: <BasicLayout></BasicLayout>
@@ -119,7 +122,8 @@ const router = createBrowserRouter([
     {
         path:"/farmer/qa/modify/:bno",
         element: <FarmerQAModifyPage></FarmerQAModifyPage>
-    },      
+    }
+    ,      
     {
         path:"/farmer/subscriberlist",
         element: <FarmerSubListPage></FarmerSubListPage>
@@ -145,13 +149,21 @@ const router = createBrowserRouter([
         element: <MemberModifyPage></MemberModifyPage>
     }
     ,
-    
-      //차은우 추가 컨슈머로 이동시켜야함
+    // 차은우 추가 컨슈머로 이동시켜야함
     {
         path:"/consumer/list",
         element: <BoardPage></BoardPage>
     }
-    
+    ,
+    {
+        path:"/member/singup",
+        element: <FarmerSignUpComponent></FarmerSignUpComponent>
+    }
+      
 ])
+
+
+
+
 
 export default router;

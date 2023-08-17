@@ -1,6 +1,7 @@
 import FooterComponent from "../../../components/consumer/FooterComponent";
 import SampleLayout from "../../../layout/consumer/SampleLayout";
 
+
 const MyPage = () => {
 
     // const {user} = useUserState();

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCartThunk } from "../../../reducers/consumer/cartSlice";
 
+
 const CartNav = () => {
 
     console.log("CART!!!!!")
@@ -22,11 +23,11 @@ const CartNav = () => {
 
     }, [email])
 
-  return ( 
+    return ( 
     
-    <div className="text-2xl">
-        장바구니 {items.length}
-    </div>
+        <div className="text-2xl">
+            장바구니 {items.length}
+        </div>
 
    );
    

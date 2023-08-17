@@ -1,18 +1,21 @@
 import { useRef, useState } from "react";
-import { postBoard } from "../../api/ConsumerAPI";
+import { postBoard, registBoard } from "../../api/ConsumerAPI";
 
 
 const initState = {
     title: '제목',
     content: '내용',
     email: '이메일',
-    nickname: '닉네임'
+    nickname: '닉네임',
+    fname:'',
+    cateno:0,
+    mno:0
 }
 
 
 const QNARegistComponent = ({moveList}) => {
 
-    const fileRef = useRef
+    const fileRef = useRef()
 
     const [board, setBoard] = useState({...initState})
 
@@ -22,46 +25,53 @@ const QNARegistComponent = ({moveList}) => {
 
         setBoard
         ({...board})
+
     }
 
     const handleClickSave = (e) => {
 
         const formData = new FormData();
 
-        formData.append("TITLE", board.title)
-        formData.append("CONTENT", board.content)
-        formData.append("WRITER", board.writer)
-        formData.append("EMAIL", board.email)
-        formData.append("NICKNAME", board.nickname)
+        formData.append("title", board.title)
+        formData.append("content", board.content)
+        // formData.append("writer", board.writer)
+        // formData.append("EMAIL", board.email)
+        formData.append("nickname", board.nickname)
+        formData.append("cateno", 1)
+        formData.append("mno", 502)
 
-        console.dir(fileRef.current)
+        // console.dir(fileRef.current)
 
-        const arr = fileRef.current.files
+        // const arr = fileRef.current.files
 
-            for(let file of arr) {
-                // files : 컨트롤러에서 받을 때 이름.
-                formData.append("files", file) 
-        }
+        //     for(let file of arr) {
+        //         // files : 컨트롤러에서 받을 때 이름.
+        //         formData.append("files", file) 
+        // }
+        
         // 등록하는 api호출
         
-        postBoard(formData).then(data => {
-            const rno = data.result
-            alert(`${rno}번이 등록되었습니다!!!!!`)
+        // postBoard(formData).then(data => {
+        //     const rno = data.result
+        //     moveList()
+        // })
+
+        registBoard(formData).then(data => {
             moveList()
-        }) 
+        })
 
     }
 
     const handleClickClear = (e) => {
-        
         fileRef.current.value = ''
     }
 
     return ( 
 
-        <div className="m-2 p-2 board-2">
-            <div className="m-auto border-2 font-bold">
-                TITLE 
+        <div className="m-2 p-2">
+
+            <div className="m-2 p-2 border-2">
+                <div className="font-bold">TITLE</div>
                 <input 
                 type='text' 
                 name='title' 
@@ -71,8 +81,8 @@ const QNARegistComponent = ({moveList}) => {
                 </input>
             </div>
 
-            <div className="m-auto border-2 font-bold">
-                CONTENT 
+            <div className="m-2 p-2 border-2">
+                <div className="font-bold">CONTENT</div>
                 <input 
                 type='textarea' 
                 name='content' 
@@ -82,8 +92,8 @@ const QNARegistComponent = ({moveList}) => {
                 </input>
             </div>
 
-            <div className="m-auto border-2 font-bold">
-                NICKNAME 
+            <div className="m-2 p-2 border-2">
+                <div className="font-bold">NICKNAME</div>
                 <input 
                 type='text' 
                 name='nickname' 
@@ -93,7 +103,7 @@ const QNARegistComponent = ({moveList}) => {
                 </input>
             </div>
 
-            <div className="m-auto border-2 font-bold">
+            {/* <div className="m-auto border-2 font-bold">
                 EMAIL 
                 <input 
                 type='text' 
@@ -102,11 +112,11 @@ const QNARegistComponent = ({moveList}) => {
                 onChange={handleChange} 
                 className="border-2 mt-2 mb-2 h-10">
                 </input>
-            </div>
+            </div> */}
 
-            {/* <div className="m-auto border-2 font-bold">
+            {/* <div className="m-2 p-2 border-2 font-bold">
+                FILE
                 <input 
-                className="m-auto items-center" 
                 type='file' 
                 ref={fileRef} 
                 multiple 
@@ -117,24 +127,26 @@ const QNARegistComponent = ({moveList}) => {
 
             <div className="mt-2">
                 <button 
-                className="rounded-md w-20 p-2 m-2" 
+                className="w-20 p-2 m-2 rounded-md" 
                 onClick={handleClickSave}>
                     SAVE
                 </button>
                 <button 
-                className="rounded-md w-auto p-2 m-2" 
+                className="w-auto p-2 m-2 rounded-md" 
                 onClick={handleClickClear}>
                     CLEAR FILES
                 </button>
                 <button 
-                onClick={moveList}
-                className="w-20 p-2 m-2 rounded-md">
+                className="w-20 p-2 m-2 rounded-md" 
+                onClick={moveList}>
                     LIST
                 </button>
             </div>
+ 
         </div>
      
      );
+     
 }
  
 export default QNARegistComponent;

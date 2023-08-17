@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 
-const FarmerSearchComponent = ( {moveSearch, queryObj, chgSize , hide, addUrl}) => {
+const FarmerDiarySearchComponent = ( {moveSearch, queryObj, chgSize , hide, addUrl}) => {
 
   const[searchObj, setSearchObj] = useState({type:'', keyword:''})
   const[changeSize, setChangeSize] = useState({size: 10})
@@ -58,11 +58,10 @@ const FarmerSearchComponent = ( {moveSearch, queryObj, chgSize , hide, addUrl}) 
         >
 
           <option value={''}>---</option>
-          <option value={'t'}>제목</option>
-          <option value={'c'}>내용</option>
-          <option value={'w'}>작성자</option>
-          <option value={'tc'}>제목+내용</option>
-          <option value={'tcw'}>제목+내용+작성자</option>
+          <option value={'n'}>상품명</option>
+          <option value={'d'}>상품설명</option>
+          <option value={'e'}>이메일</option>
+          <option value={'m'}>닉네임</option>          
             
         </select>
         
@@ -101,4 +100,4 @@ const FarmerSearchComponent = ( {moveSearch, queryObj, chgSize , hide, addUrl}) 
    );
 }
  
-export default FarmerSearchComponent;
+export default FarmerDiarySearchComponent;

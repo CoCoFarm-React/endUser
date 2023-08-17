@@ -8,8 +8,10 @@ const MemberModifyPage = () => {
     return ( 
         <div>
             <div>
+                
                 Member Modify Page
                 <MemberModifyComponent></MemberModifyComponent>
+                    
             </div>
         </div>
     );

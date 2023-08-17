@@ -2,7 +2,7 @@ import FarmerListComponent from "../../../components/consumer/FarmerListComponen
 import FooterComponent from "../../../components/consumer/FooterComponent";
 import SearchComponent from "../../../components/consumer/SearchComponent";
 import useQueryObj from "../../../hooks/consumers/useQueryObj";
-import SampleLayout from "../../../layout/consumer/SampleLayout";
+import SampleNav from "../../../layout/consumernav/SampleNav";
 
 
 const FarmerListPage = () => {
@@ -30,20 +30,20 @@ const FarmerListPage = () => {
     return ( 
 
         <div className="container mx-[auto] w-[1280px] ">
-            <SampleLayout></SampleLayout>
-            <h2>FARMER LIST PAGE</h2>
-            <div>
-                <SearchComponent
-                moveSearch={moveSearch}
-                queryObj={queryObj}>
-                </SearchComponent>
-            </div>
+            <SampleNav></SampleNav>
+            <h2 className="font-size-16px font-serif text-center p-12">FARMER LIST</h2>
             <div>
                 <FarmerListComponent
                 queryObj={queryObj}
                 movePage={movePage}
                 moveRead2={moveRead2}>
                 </FarmerListComponent>
+            </div>
+            <div>
+                <SearchComponent
+                moveSearch={moveSearch}
+                queryObj={queryObj}>
+                </SearchComponent>
             </div>
 
             <FooterComponent></FooterComponent>

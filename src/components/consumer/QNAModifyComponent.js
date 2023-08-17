@@ -15,23 +15,29 @@ const initState = {
 
 
 const QNAModifyComponent = ({bno, moveList, moveRead}) => {
-
-    const fileRef = useRef()
+    
     
     const [board, setBoard] = useState(initState)
+
+    // console.log("modify com:" + bno)
+    // console.log("modify title:" + board.title)
+
+    const fileRef = useRef()
+
+    // useEffect(() => {
+
+    //     getOne(bno).then(data => {
+    //         setBoard("data: " + data)
+    //     })
+
+    // }, [bno])
 
     const handleChange = (e) => {
         board[e.target.name] = e.target.value
         setBoard({...board})
     }
 
-    useEffect(() => {
 
-        getOne(bno).then(data => {
-            setBoard("data: " + data)
-        })
-
-    }, [bno])
 
     const handleClickDelete = () => {
         deleteBoard(bno).then(data => {
@@ -41,6 +47,7 @@ const QNAModifyComponent = ({bno, moveList, moveRead}) => {
     }
 
     const handleClickModify = () => {
+
         const formData = new FormData();
 
         formData.append("bno", board.bno)
@@ -50,7 +57,7 @@ const QNAModifyComponent = ({bno, moveList, moveRead}) => {
         formData.append("regDate", board.regDate)
         formData.append("modDate", board.modDate)
       
-        if(board.images){
+        if(board.images) {
             for (let pi of board.images) {
                 formData.append("images", pi)
             }
@@ -68,18 +75,20 @@ const QNAModifyComponent = ({bno, moveList, moveRead}) => {
         }).catch(e => {
             alert("실패!!!!!")
         })
+
     }
 
-    const handleClickDeleteImg = (fname) => {
+    // const handleClickDeleteImg = (fname) => {
 
-        //파라미터로 받은 파일명과 다른것만 추출
-        //filter로 다른 이미지 명만 배열로 나옴
-        const newArr = board.images.filter(ele => ele !== fname)
+    //     //파라미터로 받은 파일명과 다른것만 추출
+    //     //filter로 다른 이미지 명만 배열로 나옴
+    //     const newArr = board.images.filter(ele => ele !== fname)
 
-        board.images = newArr
+    //     board.images = newArr
 
-        setBoard({...board})
-    }
+    //     setBoard({...board})
+
+    // }
 
     return (
 
@@ -87,24 +96,24 @@ const QNAModifyComponent = ({bno, moveList, moveRead}) => {
             <ul>
                 <li className="py-5 border-b">
                     <div className="my-5 text-2xl font-medium">
-                        Title
+                        TITLE
                     </div>
                     <input
                     className="w-full h-12 px-3 border"
                     type="text"
-                     name="title"
-                    value={board.title}
+                    name="title"
+                    value={board.title || ''}                    
                     onChange={handleChange}>
                     </input>
                 </li>
                 <li className="py-5 border-b">
                     <div className="my-5 text-2xl font-medium">
-                        Content
+                        CONTENT
                     </div>
                     <textarea
                     name="content"
                     cols={4}
-                    value={board.content}
+                    value={board.content || ''}
                     onChange={handleChange}
                     className="w-full p-3 border resize-none">
                         {board.content}
@@ -112,13 +121,13 @@ const QNAModifyComponent = ({bno, moveList, moveRead}) => {
                 </li>
                 <li className="py-5 border-b">
                     <div className="my-5 text-2xl font-medium">
-                        File
+                        FILE
                     </div>
                     <input type="file" ref={fileRef} name="images" multiple></input>
                 </li>
             </ul>
 
-            <div className="mt-5 p-5 border">
+            {/* <div className="mt-5 p-5 border">
                 <ul className="flex">
                     {board.images && board.images.map( (fname, idx) => 
                         <li
@@ -133,28 +142,28 @@ const QNAModifyComponent = ({bno, moveList, moveRead}) => {
                         </li>
                     )}
                 </ul>
-            </div>
+            </div> */}
 
             <div className="flex justify-end">
                 <button
-                className="h-10 px-3 text-white bg-[#063] rounded mt-3 mr-3"
+                className="h-10 px-3 rounded mt-3 mr-3"
                 onClick={handleClickModify}>
                     MODIFY
                 </button>
                 <button
-                className="h-10 px-3 text-[#1e3932] border-2 border-[#1e3932] bg-white rounded mt-3 mr-3"
+                className="h-10 px-3 rounded mt-3 mr-3"
                 onClick={handleClickDelete}>
                     DELETE
                 </button>
                 <button
-                className="h-10 px-3 text-white bg-[#777] rounded mt-3"
+                className="h-10 px-3 rounded mt-3"
                 onClick={moveList}>
                     LIST
                 </button>
             </div>
         </div>
 
-  );
+    );
   
 }
 

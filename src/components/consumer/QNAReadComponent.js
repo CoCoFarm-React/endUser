@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
-import { useNavigate, useParams } from "react-router"
-import useQueryObj from "../../hooks/consumers/useQueryObj"
-import { getOne } from "../../api/ConsumerAPI"
+import { deleteBoard, getOne } from "../../api/ConsumerAPI"
+import { useParams } from "react-router-dom"
 
 
 const initState = {
@@ -17,10 +15,9 @@ const initState = {
 
 const QNAReadComponent = ({moveDelete, moveModify, moveList}) => {
 
-    //const {bno} = useParams()
+    // const {queryObj, moveList, moveModify} = useQueryObj()
+    // const {bno} = useParams()
     const [board, setBoard] = useState(initState)
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
 
     const {bno} = useParams();
 
@@ -36,45 +33,58 @@ const QNAReadComponent = ({moveDelete, moveModify, moveList}) => {
         
     }, [bno])
 
+    const handleClickDelete = () => {
+        deleteBoard(bno).then(data => {
+            alert("삭제되었습니다!!!!!")
+            moveList()
+        })
+    }
+
     return ( 
 
         <div className="w-[1200px] items-center justify-center m-auto">
             <table className="w-full">
-                <thead>
-                    <tr className="h-12 font-medium text-center">
-                        <td className="border-2  w-32">NO.</td>
-                        <td className="border-2 ">TITLE</td>
-                        <td className="border-2 ">CONTENT</td>
-                        <td className="border-2 ">NICKNAME</td>
-                        <td className="border-2 ">REGDATE</td>
-                        <td className="border-2 ">MODDATE</td>
-                    </tr>
-                </thead>
-                
-                <tbody>
-                    <tr className="font-medium text-center">
+                <thead className="">
+                    <tr>
+                        <td className="border-2 font-medium w-32 text-center ">NO.</td>
                         <td className="border-2">{board.bno}</td>
+                    </tr>
+                    <tr >
+                        <td className="border-2 font-medium h-10 text-center">TITLE</td>
                         <td className="border-2">{board.title}</td>
-                        <td className="border-2">{board.content}</td>
+                    </tr>
+                    <tr >
+                        <td className="border-2 font-medium h-80 text-center">CONTENT</td>
+                        <td className="border-2">{board.content}</td>             
+                    </tr>
+                    <tr >
+                        <td className="border-2 font-medium text-center">NICKNAME</td>
                         <td className="border-2">{board.nickname}</td>
+                    </tr>
+                    <tr >
+                        <td className="border-2 font-medium text-center">REGDATE</td>
                         <td className="border-2">{board.regDate}</td>
+                    </tr>
+                    <tr >
+                        <td className="border-2 font-medium text-center">MODDATE</td>
                         <td className="border-2">{board.modDate}</td>
                     </tr>
-                </tbody>
+                </thead>
             </table>
-            <div>
+
+            <div className="flex">
                 <button 
-                    className="bg-orange-400 border-2 m-2 p-2 font-bold"
+                    className="w-20 p-2 m-2 rounded-md font-bold"
                     onClick={() => moveModify(board.bno)}>
                     MODIFY
                 </button>
                 <button 
-                    className="bg-blue-500 border-2 m-2 p-2 font-bold"
-                    onClick={moveList}>
+                    className="w-20 p-2 m-2 rounded-md font-bold"
+                    onClick={handleClickDelete}>
                     LIST
                 </button>
                 <button 
-                    className="bg-blue-500 border-2 m-2 p-2 font-bold"
+                    className="w-20 p-2 m-2 rounded-md font-bold"
                     onClick={moveDelete}>
                     DELETE
                 </button>

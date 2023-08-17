@@ -37,15 +37,15 @@ const useQueryObj = () => {
 
     const moveList = () => {
 
-        const queryString = createSearchParams (queryObj).toString()
+        const queryString = createSearchParams(queryObj).toString()
 
         navigate(`/consumer/qnapage?${queryString}`)
-
+        
     }
 
     const moveList2 = () => {
 
-        const queryString = createSearchParams (queryObj).toString()
+        const queryString = createSearchParams(queryObj).toString()
 
         navigate(`/consumer/farmerlist?${queryString}`)
 
@@ -55,7 +55,7 @@ const useQueryObj = () => {
 
         console.log("moveRead: " + bno)
 
-        const queryString = createSearchParams (queryObj).toString()
+        const queryString = createSearchParams(queryObj).toString()
 
         navigate(`/consumer/qnapage/read/${bno}?${queryString}`)
 
@@ -65,7 +65,7 @@ const useQueryObj = () => {
 
         console.log("moveRead2: " + bno)
 
-        const queryString = createSearchParams (queryObj).toString()
+        const queryString = createSearchParams(queryObj).toString()
 
         navigate(`/consumer/farmerlistpage/read/${bno}?${queryString}`)
 
@@ -91,6 +91,7 @@ const useQueryObj = () => {
     
     }
 
+    
     return {queryObj, setSearch, moveList, moveList2, moveRead, moveRead2, moveModify ,moveRegist}
 
 }

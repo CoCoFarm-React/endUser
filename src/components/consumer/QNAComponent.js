@@ -23,6 +23,7 @@ const QNAComponent = ({queryObj, movePage, moveRead, moveRegist}) => {
 
     const [listData, setListData] = useState(initState)
 
+    queryObj.cateno = 1
 
     useEffect(() => {
         getCunsumerList(queryObj).then(data => {
