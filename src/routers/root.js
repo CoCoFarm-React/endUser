@@ -10,7 +10,7 @@ import MyPage from "../pages/consumer/consumertack/MyPage";
 
 import BasicLayout from "../layouts/farmers/BasicLayout";
 
-// import MainPage from "../pages/consumer/consumertack/MyPage";
+import MainPage from "../pages/consumer/consumertack/MyPage";
 
 import FarmerHomePage from "../pages/farmers/FarmerHomePage";
 import FarmerDiaryPage from "../pages/farmers/FarmerDiaryPage";
@@ -30,10 +30,21 @@ import FarmerHomeReadPage from "../pages/farmers/FarmerHomeReadPage";
 import LoginHandleComponent from "../components/member/LoginHandleComponent";
 import MemberModifyPage from "../pages/member/MemberModifyPage";
 
-//차은우 추가 컨슈머로 이동시켜야함
-import BoardPage from "../pages/consumer/BoardPage";
+
+
+// const Loading = <LoadingPage></LoadingPage>
+
+// const Consumer_QNAPage = lazy(() => import("../pages/consumer/QNAPage"))
+// const Consumer_QNAReadPage = lazy(() => import("../components/consumer/QNAReadComponent"))
+// const Consumer_Mypage = lazy(() => import("../pages/consumer/MyPage"))
+// const Consumer_MainPage = lazy(() => import("../pages/consumer/MainPage"))
+
 
 import FarmerSignUpComponent from "../components/member/FarmerSignUpComponent";
+import FarmerListPage from "../pages/consumer/consumertack/FarmerListPage";
+import FarmerListReadPage from "../pages/consumer/consumertack/FarmerListReadPage";
+import ModifyPage from "../pages/consumer/consumertack/ModifyPage";
+import AboutPage from "../pages/consumer/consumertack/AboutPage";
 
 
 
@@ -70,15 +81,19 @@ const router = createBrowserRouter([
     }
     ,
     {
-        path:"consumer/mypage",
+        path:"/mypage",
         element: <MyPage></MyPage>
     }
     ,
-    // {
-    //     path:"consumer/mainpage",
-    //     element: <MainPage></MainPage>
-    // }
-    // ,
+    {
+        path:"/about",
+        element: <AboutPage></AboutPage>
+    }
+    ,
+    {
+        path:"consumer/mainpage",
+        element: <MainPage></MainPage>
+    },
     {
         path:"",
         element: <BasicLayout></BasicLayout>
@@ -147,23 +162,27 @@ const router = createBrowserRouter([
     {
         path:"/member/modify",
         element: <MemberModifyPage></MemberModifyPage>
-    }
-    ,
-    // 차은우 추가 컨슈머로 이동시켜야함
-    {
-        path:"/consumer/list",
-        element: <BoardPage></BoardPage>
-    }
-    ,
-    {
-        path:"/member/singup",
-        element: <FarmerSignUpComponent></FarmerSignUpComponent>
-    }
+      } 
+    
+      //차은우 추가 컨슈머로 이동시켜야함
+    //   ,{
+    //     path:"/consumer/farmer/list",
+    //     element: <FarmerListPage></FarmerListPage>
+    //   }
+      ,{
+        path:"/consumer/farmerlistpage",
+        element: <FarmerListPage></FarmerListPage>
+      },
+      {
+        path:"/consumer/farmerlistpage/read/:mno",
+        element:<FarmerListReadPage></FarmerListReadPage>
+      },
+      {
+        path:"/consumer/modify",
+        element:<ModifyPage></ModifyPage>
+      }
+
       
 ])
-
-
-
-
 
 export default router;

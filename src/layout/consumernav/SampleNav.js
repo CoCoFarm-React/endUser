@@ -9,11 +9,8 @@ const SampleNav = () => {
                 <div  className='font-size-16px font-serif mr-5'>
                     <Link to="/about">ABOUT</Link>
                 </div>
-                <div  className='font-size-16px font-serif mr-5'>
-                    <Link to="/farmer/home">FARMER</Link>
-                </div>
                 <div  className='font-size-16px font-serif'>
-                    <Link to="/consumer/qapage">QnA</Link>
+                    <Link to="/consumer/qnapage">QnA</Link>
                 </div>
             </div>
             <div className='font-size-16px font-serif text-center' >

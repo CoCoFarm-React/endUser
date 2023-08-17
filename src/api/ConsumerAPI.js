@@ -17,7 +17,6 @@ export const getCunsumerList = async (queryObj) => {
 
 }
 
-
 export const getOne = async (bno) => {
 
     const res = await axios.get(`${url}/api/board/${bno}`)
@@ -35,7 +34,6 @@ export const deleteBoard = async (bno) => {
     return res.data
 
 }
-  
 
 export const putBoard = async (formData) => {
   
@@ -87,10 +85,15 @@ export const getFarmerList = async (queryObj) =>{
     return res.data
     
 }
+
 export const getFarmerOne = async (mno) => {
 
-  const res = await axios.get(`${url}/api/admin/${mno}`)
+  const res = await axios.get(`${url}/api/admin/read/${mno}`)
 
   return res.data
 
 }
+
+
+
+

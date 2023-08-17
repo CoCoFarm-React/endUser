@@ -3,10 +3,6 @@
 
 const FooterComponent = () => {
 
-    const customStyle = {
-        fontFamily: 'font-serif',
-        fontsize : 10
-    };
 
     return ( 
 
@@ -15,7 +11,8 @@ const FooterComponent = () => {
                 <div className="container items-center ">
                     <div 
                     className="text-center font-serif  m-auto items-center "
-                    style={customStyle}>
+                    // style={customStyle}
+                    >
                     <span className="p-1">상호명 : Astro</span>
                     <span className="p-1">대표자 : 코코팜</span>
                     <span className="p-1">고객센터 : 010-1111-1111</span><br/>

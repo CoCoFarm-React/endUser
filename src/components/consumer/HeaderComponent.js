@@ -1,6 +1,7 @@
 // import styles from '../../styles.css';
 
 import { Link } from "react-router-dom";
+import farmIcon1 from "../../public/cocofarm6.png"
 
 
 const HeaderComponent = () => {
@@ -12,7 +13,9 @@ const HeaderComponent = () => {
                 {/* <h2 className="font-semibold text-2xl">HEADER</h2> */}
                 
                 <div className='m-10'>
-                    <Link to="/consumer">로고이미지</Link>
+                    <Link to="/consumer">
+                        <img className="h-[69px] " alt="cocofarm" src={farmIcon1} />
+                    </Link>
                 </div>
 
                 <div className='flex list-none'>

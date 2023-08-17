@@ -16,7 +16,7 @@ const initState = {
     size:0,
     requestDTO:null
 }
-
+let idx = 1;
 
 const FarmerListComponent = ({queryObj, movePage, moveRead2}) => {
 
@@ -36,7 +36,7 @@ const FarmerListComponent = ({queryObj, movePage, moveRead2}) => {
 
         <div>
             <ul className="flex flex-wrap mt-5 border border-[#ddd] ">
-          {listData.dtoList.map( ({mno, email, nickname, rolename, fname}) => 
+          {listData.dtoList.map( ({mno, email, nickname, intro, fname}) => 
             <li
               className="w-1/2 p-10 font-semibold border-b odd:border-r font-size-10px font-serif text-center"
               key={mno}
@@ -45,7 +45,7 @@ const FarmerListComponent = ({queryObj, movePage, moveRead2}) => {
             <div className="text-center">
                 <div className="font-size-9px">{mno}</div>
                 <div className="text-center">
-                  <img className="inline-block" src={`http://localhost/s_${fname}`}/>
+                  <img className="inline-block" src={`http://192.168.0.74/s_files_f${idx++}.jpg`}/>
                 </div>
             </div>
             <div className="text-center">
@@ -53,7 +53,7 @@ const FarmerListComponent = ({queryObj, movePage, moveRead2}) => {
                   {nickname}
                 </div>
                 <div className="text-center text-2xl">
-                  설명: {rolename}
+                  설명: {intro}
                   <div className="text-xl font-normal">
                     {/* <span className="mr-5">ReviewAvg: ({reviewAvg})</span>
                     <span>ReviewCnt: ({reviewCnt})</span> */}

@@ -19,6 +19,12 @@ const QNARegistComponent = ({moveList}) => {
 
     const [board, setBoard] = useState({...initState})
 
+    // const handleChange = (e) => {
+
+    //     board[e.target.name] = e.target.value
+
+    //     setBoard({...board})
+    // }
     const handleChange = (e) => {
 
         board[e.target.name] = e.target.value
@@ -29,6 +35,7 @@ const QNARegistComponent = ({moveList}) => {
     }
 
     const handleClickSave = (e) => {
+        e.preventDefault();
 
         const formData = new FormData();
 

@@ -9,7 +9,7 @@ const initState = {
     email:'',
     nickname:'',
     rolename:'',
-    fname:'',
+    profile:'',
     regDate:'',
     modDate:'',
 }
@@ -54,12 +54,17 @@ const FarmerListReadComponent = ({moveList2}) => {
                         <td className="border-2">{board.email}</td>
                         <td className="border-2">{board.nickname}</td>
                         <td className="border-2">{board.rolename}</td>
-                        <td className="border-2">{board.fname}</td>
+                        <td className="border-2">{board.profile}</td>
                     </tr>
                 </tbody>
 
             </table>
-            <div className="font-size-16px font-serif text-center mt-5 mb-9">
+            <div className="flex justify-around font-size-16px font-serif text-center mt-5 mb-9">
+                    <button 
+                    onClick={moveList2}
+                    className="w-40 border-2">
+                        SUBSCRIBE
+                    </button>
                     <button 
                     onClick={moveList2}
                     className="w-20 border-2">

@@ -80,12 +80,12 @@ const QNAReadComponent = ({moveDelete, moveModify, moveList}) => {
                 </button>
                 <button 
                     className="w-20 p-2 m-2 rounded-md font-bold"
-                    onClick={handleClickDelete}>
+                    onClick={moveList}>
                     LIST
                 </button>
                 <button 
                     className="w-20 p-2 m-2 rounded-md font-bold"
-                    onClick={moveDelete}>
+                    onClick={handleClickDelete}>
                     DELETE
                 </button>
             </div>
