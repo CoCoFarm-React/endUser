@@ -138,7 +138,7 @@ const QNAModifyComponent = ({bno, moveList, moveRead}) => {
         </button>
         <button
           className="h-10 px-3 text-[#1e3932] border-2 border-[#1e3932] bg-white rounded mt-3 mr-3"
-          // onClick={handleClickDelete}
+          //onClick={handleClickDelete}
         >
           Delete
         </button>

@@ -1,6 +1,6 @@
 import axios from "axios"
 import { createSearchParams } from "react-router-dom"
-const url = 'http://192.168.0.48:8080'
+const url = 'http://192.168.0.74:8080'
 // const url = 'http://loaclhost:8080'
 
 //list
@@ -57,5 +57,7 @@ export const getFarmerOne = async (mno) => {
   return res.data
 
 }
+
+
 
 
