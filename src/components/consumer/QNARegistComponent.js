@@ -5,24 +5,33 @@ const initState = {
     title: '제목',
     content: '내용',
     email: '이메일',
-    nickname: '닉네임'
+    nickname: '닉네임',
+    cateno:'1'
 }
 
 
 const QNARegistComponent = ({moveList}) => {
 
-    const fileRef = useRef
+    
 
     const [board, setBoard] = useState({...initState})
 
+    // const handleChange = (e) => {
+
+    //     board[e.target.name] = e.target.value
+
+    //     setBoard({...board})
+    // }
     const handleChange = (e) => {
-
-        board[e.target.name] = e.target.value
-
-        setBoard({...board})
+        const { name, value } = e.target;
+        setBoard(prevBoard => ({
+          ...prevBoard,
+          [name]: value
+        }));
     }
 
     const handleClickSave = (e) => {
+        e.preventDefault();
 
         const formData = new FormData();
 
@@ -40,15 +49,15 @@ const QNARegistComponent = ({moveList}) => {
         //     // files : 컨트롤러에서 받을 때 이름.
         //     formData.append("files", file) 
         // }
-
-
-        //등록하는 api호출
+        
+        alert("글이 등록되었습니다.");
+        // 등록 후 목록 화면으로 이동
+        moveList();
 
     }
 
-    const handleClickClear = (e) => {
-        
-        fileRef.current.value = ''
+    const handleClickDelete = () => {
+        setBoard(initState);
     }
 
     return ( 
@@ -117,7 +126,7 @@ const QNARegistComponent = ({moveList}) => {
                 </button>
                 <button 
                 className="rounded-md w-auto p-2 m-2" 
-                onClick={handleClickClear}>
+                onClick={handleClickDelete}>
                     CLEAR FILES
                 </button>
                 <button 

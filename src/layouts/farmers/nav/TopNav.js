@@ -10,9 +10,8 @@ const TopNav = ({hide}) => {
   const nav = useNavigate()
 
   const logout = () => {
-      alert("11")
+      console.log(11111111)
       dispatch(requestLogout())
-      alert("22")
       nav("/")   
   }
 
@@ -24,7 +23,7 @@ const TopNav = ({hide}) => {
 
         <div className="w-[200px]  justify-center flex">
           <Link to={"/"}>
-            <img className="h-[69px] " alt="cocofarm" src={farmIcon1} />
+            <img className="h-[68px]" alt="cocofarm" src={farmIcon1} />
           </Link>
         </div>
 
@@ -60,7 +59,7 @@ const TopNav = ({hide}) => {
 
       <button 
         className="m-5 rounded-md hover:bg-white text-center text-sm"
-        onclick={logout}
+        onClick={() => logout()}
         >
           LogOut
       </button>

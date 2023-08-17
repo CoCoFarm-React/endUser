@@ -171,6 +171,7 @@ const FarmerBoardReadComponent = ({pno,refreshFn}) => {
           >List</button>
     
       </div>
+      
 
     </div>
   );

@@ -35,8 +35,14 @@ import FarmerListPage from "../pages/consumer/consumertack/FarmerListPage";
 import FarmerListReadPage from "../pages/consumer/consumertack/FarmerListReadPage";
 
 
+import FarmerSignUpComponent from "../components/member/FarmerSignUpComponent";
+import FarmerDiaryModifyPage from "../pages/farmers/FarmerDiaryModifyPage";
+import AboutPage from "../pages/consumer/consumertack/AboutPage";
+import ModifyPage from "../pages/consumer/consumertack/ModifyPage";
+import FarmerHomeRegistPage from "../pages/farmers/FarmerHomeRegistPage";
+import FarmerHomeModifyPage from "../pages/farmers/FarmerHomeModifyPage";
+import FarmerDiaryRegistPage from "../pages/farmers/FarmerDiaryRegistPage";
 
-// import FarmerListPage from "../pages/farmers/";
 
 
 const router = createBrowserRouter([
@@ -73,10 +79,10 @@ const router = createBrowserRouter([
         element: <MyPage></MyPage>
     }
     ,
-    // {
-    //     path:"/about",
-    //     element: <AboutPage></AboutPage>
-    // }
+    {
+        path:"/about",
+        element: <AboutPage></AboutPage>
+    }
     ,
     {
         path:"consumer/mainpage",
@@ -99,6 +105,11 @@ const router = createBrowserRouter([
         path:"/farmer/diary/read/:bno",
         element: <FarmerDiaryReadPage></FarmerDiaryReadPage>
       },
+      ,
+      {
+        path:"/farmer/diary/modify/:bno",
+        element: <FarmerDiaryModifyPage></FarmerDiaryModifyPage>
+      }, 
       {
         path:"/farmer/qa",
         element: <FarmerQAPage></FarmerQAPage>
@@ -153,6 +164,29 @@ const router = createBrowserRouter([
       //   path:"/consumer/modify",
       //   element:<ModifyPage></ModifyPage>
       // }
+
+            // Song 추가 및 수정 8.16
+            {
+              path:"/farmer/home/regist",
+              element: <FarmerHomeRegistPage></FarmerHomeRegistPage>
+            },
+            {
+              path:"/farmer/home/modify/:pno",
+              element: <FarmerHomeModifyPage></FarmerHomeModifyPage>
+            },      
+            {
+              path:"/farmer/diary",
+              element: <FarmerDiaryPage></FarmerDiaryPage>
+            },
+            {
+              path:"/farmer/diary/read/:bno",
+              element: <FarmerDiaryReadPage></FarmerDiaryReadPage>
+            },
+            ,
+            {
+              path:"/farmer/diary/regist",
+              element: <FarmerDiaryRegistPage></FarmerDiaryRegistPage>
+            },
 
       
     

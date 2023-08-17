@@ -5,6 +5,7 @@ import { useParams } from "react-router"
 import useQueryObj from "../../hooks/farmers/useQueryObj"
 import FarmerQAReadComponent from "../../components/farmers/FarmerQAReadComponent"
 import FarmerDiaryReadComponent from "../../components/farmers/FarmerDiaryReadComponent"
+import ReplyWrapper from "../../components/farmers/reply/ReplyWrapper"
 
 
 const FarmerDiaryReadPage = () => {
@@ -39,6 +40,10 @@ const FarmerDiaryReadPage = () => {
         {/* <button 
             className="border-2 w-20 mt-4 p-2 rounded-md bg-gray-600 text-white "
             onClick={() => moveDiaryList()}>List</button> */}
+      </div>
+
+      <div className="-mt-16 ml-6">
+        <ReplyWrapper bno={bno}></ReplyWrapper>
       </div>
 
       

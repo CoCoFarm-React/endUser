@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import FarmerPageComponent from "./FarmerPageComponent";
-import { getConsumerList, getFarmerList, getList } from "../../api/FarmerAPI";
+import { getConsumerList } from "../../api/FarmerAPI";
 
 
 const initState = {
@@ -22,7 +22,7 @@ const FarmerSubListComponent = ({queryObj, movePage, moveRead}) => {
 
   useEffect(() => {
 
-    getList(queryObj).then(data => {
+    getConsumerList(queryObj).then(data => {
       console.log("FarmerListComponent22: " + data)
       setListData(data)
     })
@@ -40,7 +40,7 @@ const FarmerSubListComponent = ({queryObj, movePage, moveRead}) => {
 
     <div className="justify-center items-center container mt-3">
      
-      <table className="w-[60vw] items-center justify-center container">
+      <table className="w-[100vw] items-center justify-center container">
 
         <thead>
           <tr className="border-b-2 border-gray-300 text-center h-12">

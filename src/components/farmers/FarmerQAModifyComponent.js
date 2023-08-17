@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { deleteBoard, getOne, putBoard } from "../../api/FarmerAPI"
+import { useRef } from "react"
 
 const initState = {
   bno:0,
@@ -9,14 +10,18 @@ const initState = {
   reg:'',
   modDate:'',
   nickname:'',
-  email:''
+  email:'',
+  images:[],
+  mno:0,
+  cateno:0
   
 }
 
-const FarmerQAModifyComponent = ({bno, moveList, moveRead}) => {  
+const FarmerQAModifyComponent = ({bno, moveList, moveRead, addUrl}) => {  
 
   const [board, setBoard] = useState(initState)
-  // const fileRef = useRef()
+  const [files, setFiles] = useState([]);
+  const fileRef = useRef()
 
   useEffect(() => {
 
@@ -52,18 +57,20 @@ const FarmerQAModifyComponent = ({bno, moveList, moveRead}) => {
         formData.append("title", board.reg)
         formData.append("modDate", board.modDate)
         formData.append("content", board.content)
+        formData.append("mno", 3)
+        formData.append("cateno", 2)
 
-        // if(product.images){
-        //     for (let pi of product.images) {
-        //         formData.append("images", pi)
-        //     }
-        // }
-
-        // const arr = fileRef.current.files
-
-        // for(let file of arr){
-        //     formData.append("files", file) // files : 컨트롤러에서 받을 때 이름
-        // }
+      if(board.images){
+        for (let pi of board.images) {
+            formData.append("images", pi)
+        }
+      }
+  
+      const arr = fileRef.current.files
+  
+      for(let file of arr){
+          formData.append("files", file) // files : 컨트롤러에서 받을 때 이름
+      }
 
         putBoard(formData).then(data => {
             alert("수정되었습니다!")
@@ -83,63 +90,72 @@ const FarmerQAModifyComponent = ({bno, moveList, moveRead}) => {
 
   return ( 
 
-    <div className="items-center justify-center container flex">
+  
+    <div className="m-2 p-2">
 
-      <table className="w-[1200px] items-center justify-center mt-5">
-        <thead className="">
-          <tr className="bg-gray-200">
-              <td className="border-2 font-medium w-32 text-center ">No</td>
-              <td className="border-2">{board.bno}</td>
-          </tr>
+      <div className="m-2 p-2 border-2">
+          <div className="text-orange-500 font-bold">Bno</div>
+          <div>{board.bno}</div>
+      </div>
 
-          <tr >
-              <td className="border-2 font-medium text-center">NickName</td>
-              <td className="border-2">{board.nickname}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium text-center">Email</td>
-              <td className="border-2">{board.email}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium text-center">RegDate</td>
-              <td className="border-2">{board.reg}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium text-center">ModDate</td>
-              <td className="border-2">{board.modDate}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium h-10 text-center">Title</td>
-              <td className="border-2">
-                <input
-                    className="border-2"
-                    type="text" 
-                    name="pdesc" 
-                    value={board.title}
-                    onChange={handleChange}
-                ></input>
-              </td>
-          </tr>
+      <div className="m-2 p-2 border-2">
+          <div className="text-orange-500 font-bold">Nickname</div>
+          <div>{board.nickname}</div>
+      </div>
           
-          <tr >
-              <td className="border-2 font-medium h-80 text-center">Content</td>
-              <td className="border-2">
-                <input
-                    className="border-2"
-                    type="text" 
-                    name="pdesc" 
-                    value={board.content}
-                    onChange={handleChange}
-                ></input>
-              </td>             
-          </tr>
+      <div className="m-2 p-2 border-2">
+        <div className="text-orange-500 font-bold">Title</div>
+        <input 
+              type='text'
+              name='title' 
+              value={board.title}
+              onChange={handleChange}
+              className="border-2 border-gray-500 mt-2 mb-2 h-10 w-full bg-gray-200"
+              >
+        </input>
+      </div>
 
-            
-        </thead>
+
+
+      <div className="m-2 p-2 border-2">
+          <div className="text-orange-500 font-bold">Content</div>
+          <input 
+                type='textarea'
+                name='content' 
+                value={board.content}
+                onChange={handleChange}
+                className="border-2 border-gray-500 mt-2 mb-2 h-[30vh] w-full bg-gray-200"
+                >
+          </input>
+      </div>
+
+      <div className="m-2 p-2 border-2">
+        <div className="text-orange-500 font-bold">Image</div>
+        <div className=" border-gray-500">
+                 
+          <input 
+          type='file' 
+          ref={fileRef} 
+          multiple 
+          name='images' 
+          onChange={handleChange}></input>
+
+
+          {/* <ul className="list-none flex mb-2 ">
+          {files.map((filelist, idx) =>                     
+            <li key={idx} className="ml-2 mt-2 border-2 border-gray-500">
+              <button 
+                className="bg-gray-300 w-6 h-6 text-center font-light mb-1 mt-2 ml-1"
+                onClick={() => handleClickDelImg(filelist)}>
+                X
+              </button>
+              <img src={`http://192.168.0.74/${filelist}`} alt='ddd' className="w-[200px] h-[200px]"></img>
+            </li>
+            )}
+          </ul> */}
+                  
+        </div>   
+      </div>    
 
         <div className="flex justify-start">
           <button 
@@ -155,20 +171,16 @@ const FarmerQAModifyComponent = ({bno, moveList, moveRead}) => {
           </button>
 
           <button 
-            onClick={moveList}
+            onClick={() => window.location.href = addUrl.url}
             className="bg-green-600 rounded-md w-20 p-2 m-2 ml-20 text-white"
             >List
           </button>
 
-
         </div>
     
-      </table>
+      {/* // </table> */}
       
-      
-
-      
-    </div>
+     </div>
    );
 }
  

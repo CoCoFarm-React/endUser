@@ -60,7 +60,7 @@ const FarmerListReadComponent = ({moveList2,refreshFn}) => {
         })
 
     }, [mno,subscriptionYn,refreshFn])
-    
+
     //구독버튼 누르면
     const subscription = () => { 
 
@@ -119,7 +119,7 @@ const FarmerListReadComponent = ({moveList2,refreshFn}) => {
                 </tbody>
 
             </table>
-            <div className="font-size-16px font-serif text-center mt-5 mb-9">
+            <div className="flex justify-around font-size-16px font-serif text-center mt-5 mb-9">
                     <button 
                     onClick={subscriptionYn === 0 ? () => subscription() : () => subscriptiondCancel()}
                     className="w-20 border-2">

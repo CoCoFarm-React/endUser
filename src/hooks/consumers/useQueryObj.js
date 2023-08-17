@@ -63,7 +63,7 @@ const useQueryObj = () => {
 
         navigate(`/consumer/farmerlistpage/read/${bno}?${queryString}`)
     }
-
+    
     const moveModify = (bno) => {
 
         console.log("moveModify: " + bno)
@@ -71,6 +71,16 @@ const useQueryObj = () => {
         const queryString = createSearchParams(queryObj).toString()
     
         navigate(`/consumer/qnapage/read/modify/${bno}?${queryString}`)
+    
+    }
+    //회원정보수정
+    const modifyMember = (mno) => {
+
+        console.log("modifyMember: " + mno)
+    
+        const queryString = createSearchParams(queryObj).toString()
+    
+        navigate(`/mypage`)
     
     }
 
@@ -86,7 +96,7 @@ const useQueryObj = () => {
 
 
     
-    return {queryObj, setSearch, moveList, moveList2, moveRead, moveRead2, moveModify ,moveRegist}
+    return {queryObj, setSearch, moveList, moveList2, moveRead, moveRead2, moveModify ,moveRegist, modifyMember}
 
 }
  

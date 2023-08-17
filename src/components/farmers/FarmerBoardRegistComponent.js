@@ -22,15 +22,36 @@ const FarmerBoardRegistComponent = ({moveList}) => {
   const [board, setBoard] = useState({...initState})
   const nav = useNavigate()
   
-  const cookie = getCookies()
+  const cookie = getCookies("login")
   const {moveHomeList} = useQueryObj()
   
 
-  const handleChange = (e) => {
+  // const handleChange = (e) => {
 
-    board[e.target.name] = e.target.value
+  //   board[e.target.name] = e.target.value
+  //     setBoard({ ...board })
+	// }
+
+  const handleChange = (e) => {
+    if(e.target.type === 'file') {
+      const files = Array.from(e.target.files);
+  
+      // 이미지 파일인 경우 미리보기 이미지 생성
+      const imageFiles = files.filter(file => file.type.includes("image/"))
+      const imagePreviewURLs = imageFiles.map(file => URL.createObjectURL(file))
+
+      setBoard({
+        ...board,
+        [e.target.name]: files,
+        imagePreviewURLs: imagePreviewURLs
+      })
+
+    } else {
+      board[e.target.name] = e.target.value
       setBoard({ ...board })
-	}
+
+    }
+  }
 
   const handleClickSave = (e) => {
 
@@ -40,7 +61,7 @@ const FarmerBoardRegistComponent = ({moveList}) => {
       formData.append("pdesc", board.pdesc)
       formData.append("price", board.price)
       formData.append("procateno", board.procateno)
-      formData.append("mno", 502)
+      formData.append("mno", cookie.mno)
       formData.append("view", board.view)
 
       console.log(fileRef.current)
@@ -61,9 +82,20 @@ const FarmerBoardRegistComponent = ({moveList}) => {
         
   }
 
-  const handleClickClear = (e) => {
+  // const handleClickClear = (e) => {
       
-    fileRef.current.value = ''
+  //   fileRef.current.value = ''
+    
+  // }
+
+  const handleClickClear = () => {
+
+    setBoard({
+      ...board,
+      imagePreviewURLs: [] // 이미지 URL 배열 초기화
+    })
+
+    fileRef.current.value = null // 파일 선택 input 초기화
   }
 
   return ( 
@@ -124,7 +156,7 @@ const FarmerBoardRegistComponent = ({moveList}) => {
           </select>
       </div>
 
-      <div className="m-2 p-2 border-2">
+      {/* <div className="m-2 p-2 border-2">
         <div className="text-orange-500 font-bold">상품사진</div>                 
           <input 
           type='file' 
@@ -132,6 +164,25 @@ const FarmerBoardRegistComponent = ({moveList}) => {
           multiple 
           name='images' 
           onChange={handleChange}></input>
+      </div> */}
+
+      <div className="m-2 p-2 border-2">
+        <div className="text-orange-500 font-bold">상품사진</div>   
+        {board.imagePreviewURLs && board.imagePreviewURLs.length > 0 && (
+          <div className="flex flex-col items-start mt-2 mb-2">
+            {board.imagePreviewURLs.map((url, index) => (
+              <img className="w-36 h-32"
+                  key={index} src={url} alt={`상품 이미지 ${index + 1}`} />
+            ))}
+          </div>
+        )}
+        <input 
+          type='file' 
+          ref={fileRef} 
+          multiple 
+          name='images' 
+          onChange={handleChange}
+        ></input>
       </div>
 
       <div className="mt-2">
