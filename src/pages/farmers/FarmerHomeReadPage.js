@@ -2,14 +2,16 @@ import { useParams } from "react-router-dom"
 import FarmerBoardReadComponent from "../../components/farmers/FarmerBoardReadComponent"
 import useQueryObj from "../../hooks/farmers/useQueryObj"
 import TopNav from "../../layouts/farmers/nav/TopNav"
+import ReplyWrapper from "../../components/farmers/reply/ReplyWrapper"
 
 
 const FarmerHomeReadPage = () => {  
 
   const {queryObj, moveBoardList} = useQueryObj()
-  const {pno} = useParams()
+  const {pno, bno} = useParams()
 
   console.log(pno)
+  console.log("Read Reply: "+ bno)
   console.log(queryObj)
 
   return (
@@ -24,6 +26,10 @@ const FarmerHomeReadPage = () => {
         <FarmerBoardReadComponent pno={pno}></FarmerBoardReadComponent>
 
       </div>
+
+      {/* <div>
+        <ReplyWrapper bno={bno}></ReplyWrapper>
+      </div> */}
 
       
     </div>

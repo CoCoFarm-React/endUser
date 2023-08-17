@@ -44,6 +44,10 @@ import BoardPage from "../pages/consumer/consumertack/BoardPage";
 
 import FarmerSignUpComponent from "../components/member/FarmerSignUpComponent";
 import FarmerDiaryModifyPage from "../pages/farmers/FarmerDiaryModifyPage";
+import AboutPage from "../pages/consumer/consumertack/AboutPage";
+import FarmerListPage from "../pages/consumer/consumertack/FarmerListPage";
+import FarmerListReadPage from "../pages/consumer/consumertack/FarmerListReadPage";
+import ModifyPage from "../pages/consumer/consumertack/ModifyPage";
 
 
 

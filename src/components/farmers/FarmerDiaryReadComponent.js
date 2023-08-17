@@ -48,49 +48,49 @@ const FarmerDiaryReadComponent = () => {
     <div className="m-2 p-2">
 
       <div className="m-2 p-2 border-2">
-          <div className="text-orange-500 font-bold">Pno</div>
+          <div className="text-orange-500 font-bold">Bno</div>
           <div>{board.bno}</div>
       </div>
           
       <div className="m-2 p-2 border-2">
-          <div className="text-orange-500 font-bold">상품이름</div>
+          <div className="text-orange-500 font-bold">Nickname</div>
           <div>{board.nickname}</div>
       </div>
 
       <div className="m-2 p-2 border-2">
-          <div className="text-orange-500 font-bold">Reg</div>
+          <div className="text-orange-500 font-bold">Email</div>
           <div>{board.email}</div>
       </div>
 
       <div className="m-2 p-2 border-2">
-          <div className="text-orange-500 font-bold">ModDate</div>
+          <div className="text-orange-500 font-bold">RegDate</div>
           <div>{board.reg}</div>
       </div>
 
       <div className="m-2 p-2 border-2">
-          <div className="text-orange-500 font-bold">상품설명</div>
+          <div className="text-orange-500 font-bold">ModDate</div>
           <div>{board.modDate}</div>
       </div>
 
       <div className="m-2 p-2 border-2">
-          <div className="text-orange-500 font-bold">상품가격</div>
+          <div className="text-orange-500 font-bold">Title</div>
           <div>{board.title}</div>
       </div>
 
       <div className="m-2 p-2 border-2">
-          <div className="text-orange-500 font-bold">상품가격</div>
+          <div className="text-orange-500 font-bold">Content</div>
           <div>{board.content}</div>
       </div>
 
       <div className="m-2 p-2 border-2">
-        <div className="text-orange-500 font-bold">상품사진</div>                 
+        <div className="text-orange-500 font-bold">Image</div>                 
         <div>
           <ul className="list-none">
             {files.map((filelist, idx) =>                     
               <li key={idx}
                   className="mb-2"
               >
-                <img src={`http://192.168.0.74/${filelist}`} alt='ddd' className="w-[600px] h-[600px]"></img>
+                <img src={`http://192.168.0.74/s_files_f2.jpg`} alt='ddd' className="w-[600px] h-[600px]"></img>
               </li>
             )}
           </ul>

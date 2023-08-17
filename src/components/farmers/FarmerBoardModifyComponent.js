@@ -3,6 +3,7 @@ import useQueryObj from "../../hooks/farmers/useQueryObj"
 import { useEffect } from "react"
 import { deleteProduct, putProduct, readOne } from "../../api/productAPISong"
 import { useRef } from "react"
+import { getCookies } from "../../util/cookieUtil"
 
 const initState = {
   pno:0,
@@ -22,6 +23,8 @@ const FarmerBoardModifyComponent = ({pno, mno}) => {
   const [board, setBoard] = useState(initState)
   
   const [files, setFiles] = useState([]);
+
+  const cookie = getCookies("login")
 
   const {queryObj, moveBoardList, moveProductRead, moveHomeList} = useQueryObj()
 
@@ -72,7 +75,7 @@ const FarmerBoardModifyComponent = ({pno, mno}) => {
     formData.append("pdesc", board.pdesc)
     formData.append("price", board.price)
     formData.append("procateno", board.procateno)
-    formData.append("mno", board.mno)    
+    formData.append("mno", cookie.mno)    
 
     if(board.images){
         for (let pi of board.images) {

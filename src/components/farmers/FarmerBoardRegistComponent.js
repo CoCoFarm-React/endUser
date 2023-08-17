@@ -22,7 +22,7 @@ const FarmerBoardRegistComponent = ({moveList}) => {
   const [board, setBoard] = useState({...initState})
   const nav = useNavigate()
   
-  const cookie = getCookies()
+  const cookie = getCookies("login")
   const {moveHomeList} = useQueryObj()
   
 
@@ -61,7 +61,7 @@ const FarmerBoardRegistComponent = ({moveList}) => {
       formData.append("pdesc", board.pdesc)
       formData.append("price", board.price)
       formData.append("procateno", board.procateno)
-      formData.append("mno", 502)
+      formData.append("mno", cookie.mno)
       formData.append("view", board.view)
 
       console.log(fileRef.current)

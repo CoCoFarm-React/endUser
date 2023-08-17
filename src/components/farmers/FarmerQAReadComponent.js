@@ -3,88 +3,90 @@ import { getOne } from "../../api/FarmerAPI";
 import useQueryObj from "../../hooks/farmers/useQueryObj";
 import { useParams } from "react-router";
 
-const initState = {
-  bno:0,
-  title:'',
-  content:'',
-  writer:'',
-  reg:'',
-  modDate:'',
-  nickname:'',
-  email:''
-  
-}
+  const initState = {
+    bno:0,
+    title:'',
+    content:'',
+    writer:'',
+    reg:'',
+    modDate:'',
+    nickname:'',
+    email:''
+    
+  }
 
-const FarmerQAReadComponent = () => {
+  const FarmerQAReadComponent = () => {
 
-  const {queryObj, moveList, moveModify} = useQueryObj()
-  const {bno} = useParams()
+    const {bno} = useParams()
+    const {queryObj, moveList, moveModify} = useQueryObj()
+    
 
-  const [board, setBoard] = useState(initState)
+    const [board, setBoard] = useState(initState)
+    const [files, setFiles] = useState([]);
 
-  useEffect(() => {
+    useEffect(() => {
 
-    getOne(bno).then(data => {
+      getOne(bno).then(data => {
+        setBoard(data)
 
-console.log("ReadCom data:"+data)
-console.log("ReadCom data:"+data)
-console.log("ReadCom data:"+data)
-console.log("ReadCom data:"+data)
-      setBoard(data)
-console.log("ReadCom data:"+data)
-console.log("ReadCom data:"+data)
-console.log("ReadCom data:"+data)
+        const fileList = data.fname ? data.fname.split(',') : [];       
+        setFiles(fileList);
 
-
-
-      console.log("ReadCom data:"+data)
-    })
-  },[bno])
+      })
+    },[bno])
 
   return ( 
-    <div className="items-center justify-center container flex">
+    <div className="m-2 p-2">
 
+    <div className="m-2 p-2 border-2">
+        <div className="text-orange-500 font-bold">Bno</div>
+        <div>{board.bno}</div>
+    </div>
+        
+    <div className="m-2 p-2 border-2">
+        <div className="text-orange-500 font-bold">Nickname</div>
+        <div>{board.nickname}</div>
+    </div>
+
+    <div className="m-2 p-2 border-2">
+        <div className="text-orange-500 font-bold">Email</div>
+        <div>{board.email}</div>
+    </div>
+
+    <div className="m-2 p-2 border-2">
+        <div className="text-orange-500 font-bold">RegDate</div>
+        <div>{board.reg}</div>
+    </div>
+
+    <div className="m-2 p-2 border-2">
+        <div className="text-orange-500 font-bold">ModDate</div>
+        <div>{board.modDate}</div>
+    </div>
+
+    <div className="m-2 p-2 border-2">
+        <div className="text-orange-500 font-bold">Title</div>
+        <div>{board.title}</div>
+    </div>
+
+    <div className="m-2 p-2 border-2">
+        <div className="text-orange-500 font-bold">Content</div>
+        <div>{board.content}</div>
+    </div>
+
+    <div className="m-2 p-2 border-2">
+      <div className="text-orange-500 font-bold">상품사진</div>                 
       <div>
-      <table className="w-[80vw] items-center justify-center">
-        <thead className="">
-          <tr className="bg-gray-200">
-              <td className="border-2 font-medium w-32 text-center ">No</td>
-              <td className="border-2">{board.bno}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium text-center">NickName</td>
-              <td className="border-2">{board.nickname}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium text-center">Email</td>
-              <td className="border-2">{board.email}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium text-center">RegDate</td>
-              <td className="border-2">{board.reg}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium text-center">ModDate</td>
-              <td className="border-2">{board.modDate}</td>
-          </tr>
-
-          <tr >
-              <td className="border-2 font-medium h-10 text-center">Title</td>
-              <td className="border-2">{board.title}</td>
-          </tr>
-          
-          <tr >
-              <td className="border-2 font-medium h-80 text-center">Content</td>
-              <td className="border-2">{board.content}</td>             
-          </tr>
-
-
-            
-        </thead>
+        <ul className="list-none">
+          {files.map((filelist, idx) =>                     
+            <li key={idx}
+                className="mb-2"
+            >
+              <img src={`http://192.168.0.74/${filelist}`} alt='ddd' className="w-[300px] h-[300px]"></img>
+            </li>
+          )}
+        </ul>
+      </div>
+    </div>
 
         <div className="flex">
         <button         
@@ -95,17 +97,17 @@ console.log("ReadCom data:"+data)
 
        <button 
         onClick={moveList}
-        className="bg-green-600 rounded-md w-20 p-2 m-2 ml-20 text-white"
+        className="bg-green-600 rounded-md w-20 p-2 m-2 ml-5 text-white"
         >List
         </button>
       </div>
          
-      </table>
-
-      </div>
       
 
-    </div>
+  </div>
+      
+
+    
    );
 }
  

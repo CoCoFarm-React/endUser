@@ -110,6 +110,7 @@ const FarmerBoardReadComponent = ({pno}) => {
           >List</button>
     
       </div>
+      
 
     </div>
   );
