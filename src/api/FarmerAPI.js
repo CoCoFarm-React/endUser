@@ -39,14 +39,14 @@ export const getOne = async (bno) => {
 
 
 // // 서버연동
-// export const getConsumerList = async (queryObj) =>{
+export const getConsumerList = async (queryObj) =>{
 
-  
-//   const res = await axios.get(`http://localhost:8080/api/admin/consumer?${queryString}`)
+  const queryString = createSearchParams(queryObj).toString();
+  const res = await axios.get(`${url}/api/admin/consumer?${queryString}`)
 
-//   return res.data
+  return res.data
   
-// }
+}
 
 // // 로컬 테스트용
 // export const getConsumerList = async (queryObj) =>{
@@ -57,6 +57,8 @@ export const getOne = async (bno) => {
 //   return res.data
   
 // }
+
+
 
 export const getFarmerOne = async (mno) => {
 
@@ -114,7 +116,7 @@ export const putBoard = async (formData) => {
   }
 
   // const res = await jwtAxios.post('http://localhost:8080/api/products/modify', formData, header)
-  const res = await axios.post(`${url}`+'/api/board', formData, header)
+  const res = await axios.put(`${url}/api/board`, formData, header)
 
   return res.data
 

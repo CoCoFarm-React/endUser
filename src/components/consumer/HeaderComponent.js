@@ -1,10 +1,19 @@
-// import styles from '../../styles.css';
+//import styles from '../../styles.css';
 
 import { Link } from "react-router-dom";
-import farmIcon1 from "../../public/cocofarm6.png"
 
 
 const HeaderComponent = () => {
+
+    const dispatch = useDispatch();
+    const nav = useNavigate()
+
+    const logout = () => {
+        alert("11")
+        dispatch(requestLogout())
+        alert("22")
+        nav("/")   
+    }
 
     return ( 
 
@@ -27,7 +36,7 @@ const HeaderComponent = () => {
                     <Link to="/">
                         <button 
                         className="m-5 rounded-md hover:bg-white text-center text-sm">
-                            LOGOUT
+                            LogOut
                         </button>
                     </Link>
                 </div>

@@ -44,8 +44,8 @@ const LoginComponent = () => {
                 <label className="font-bold">PASSWORD</label>
                 <div>
                     <input 
-                    type="password" 
-                    name="pw" 
+                    type="password"
+                    name="pw"
                     value={loginInfo.pw} 
                     onChange={()=>{}} 
                     className="border-2 m-2 p-3 rounded-md w-[560px]">            

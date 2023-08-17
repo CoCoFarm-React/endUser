@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import useQueryObj from "../../hooks/farmers/useQueryObj";
 import TopNav from "../../layouts/farmers/nav/TopNav";
 import FarmerSubReadComponent from "../../components/farmers/FarmerSubReadComponent";
@@ -8,6 +8,7 @@ const FarmerSubReadPage = () => {
 
   const {queryObj, moveList} = useQueryObj()
   const {mno} = useParams()
+  const nav = useNavigate()
 
   console.log(mno)
   console.log(queryObj)
@@ -28,7 +29,7 @@ const FarmerSubReadPage = () => {
         <FarmerSubReadComponent mno={mno}></FarmerSubReadComponent>
         <button 
             className="border-2 w-20 mt-4 p-2 rounded-md bg-gray-600 text-white "
-            onClick={() => moveList()}>List</button>
+            onClick={() => nav("/farmer/subscriberlist")}>List</button>
       </div>
 
       

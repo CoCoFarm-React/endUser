@@ -1,5 +1,6 @@
 import { createBrowserRouter } from"react-router-dom";
-//import BasicLayout from "../layouts/farmers/BasicLayout";
+
+import QNAPage from "../pages/consumer/consumertack/QNAPage";
 
 import ConsumerPage from "../pages/consumer/consumertack/ConsumerPage";
 import QNAPage from "../pages/consumer/consumertack/QNAPage";
@@ -30,21 +31,17 @@ import FarmerHomeReadPage from "../pages/farmers/FarmerHomeReadPage";
 import LoginHandleComponent from "../components/member/LoginHandleComponent";
 import MemberModifyPage from "../pages/member/MemberModifyPage";
 
-
-
-// const Loading = <LoadingPage></LoadingPage>
-
-// const Consumer_QNAPage = lazy(() => import("../pages/consumer/QNAPage"))
-// const Consumer_QNAReadPage = lazy(() => import("../components/consumer/QNAReadComponent"))
-// const Consumer_Mypage = lazy(() => import("../pages/consumer/MyPage"))
-// const Consumer_MainPage = lazy(() => import("../pages/consumer/MainPage"))
+import FarmerListPage from "../pages/consumer/consumertack/FarmerListPage";
+import FarmerListReadPage from "../pages/consumer/consumertack/FarmerListReadPage";
 
 
 import FarmerSignUpComponent from "../components/member/FarmerSignUpComponent";
-import FarmerListPage from "../pages/consumer/consumertack/FarmerListPage";
-import FarmerListReadPage from "../pages/consumer/consumertack/FarmerListReadPage";
-import ModifyPage from "../pages/consumer/consumertack/ModifyPage";
+import FarmerDiaryModifyPage from "../pages/farmers/FarmerDiaryModifyPage";
 import AboutPage from "../pages/consumer/consumertack/AboutPage";
+import ModifyPage from "../pages/consumer/consumertack/ModifyPage";
+import FarmerHomeRegistPage from "../pages/farmers/FarmerHomeRegistPage";
+import FarmerHomeModifyPage from "../pages/farmers/FarmerHomeModifyPage";
+import FarmerDiaryRegistPage from "../pages/farmers/FarmerDiaryRegistPage";
 
 
 
@@ -117,9 +114,13 @@ const router = createBrowserRouter([
     {
         path:"/farmer/diary/read/:bno",
         element: <FarmerDiaryReadPage></FarmerDiaryReadPage>
-    }
-    ,
-    {
+      },
+      ,
+      {
+        path:"/farmer/diary/modify/:bno",
+        element: <FarmerDiaryModifyPage></FarmerDiaryModifyPage>
+      }, 
+      {
         path:"/farmer/qa",
         element: <FarmerQAPage></FarmerQAPage>
     }
@@ -165,22 +166,45 @@ const router = createBrowserRouter([
       } 
     
       //차은우 추가 컨슈머로 이동시켜야함
-    //   ,{
-    //     path:"/consumer/farmer/list",
-    //     element: <FarmerListPage></FarmerListPage>
-    //   }
       ,{
-        path:"/consumer/farmerlistpage",
+        path:"/consumer/farmer/list",
         element: <FarmerListPage></FarmerListPage>
-      },
-      {
+      }
+      // ,{
+      //   path:"/consumer/farmerlistpage",
+      //   element: <FarmerListPage></FarmerListPage>
+      // },
+      ,{
         path:"/consumer/farmerlistpage/read/:mno",
         element:<FarmerListReadPage></FarmerListReadPage>
       },
-      {
-        path:"/consumer/modify",
-        element:<ModifyPage></ModifyPage>
-      }
+      // {
+      //   path:"/consumer/modify",
+      //   element:<ModifyPage></ModifyPage>
+      // }
+
+            // Song 추가 및 수정 8.16
+            {
+              path:"/farmer/home/regist",
+              element: <FarmerHomeRegistPage></FarmerHomeRegistPage>
+            },
+            {
+              path:"/farmer/home/modify/:pno",
+              element: <FarmerHomeModifyPage></FarmerHomeModifyPage>
+            },      
+            {
+              path:"/farmer/diary",
+              element: <FarmerDiaryPage></FarmerDiaryPage>
+            },
+            {
+              path:"/farmer/diary/read/:bno",
+              element: <FarmerDiaryReadPage></FarmerDiaryReadPage>
+            },
+            ,
+            {
+              path:"/farmer/diary/regist",
+              element: <FarmerDiaryRegistPage></FarmerDiaryRegistPage>
+            },
 
       
 ])

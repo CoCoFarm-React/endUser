@@ -2,24 +2,33 @@ import { useState } from "react"
 import { useRef } from "react"
 import { registBoard } from "../../api/FarmerAPI"
 import { useNavigate } from "react-router-dom"
+import useQueryObj from "../../hooks/farmers/useQueryObj"
+import { getCookies } from "../../util/cookieUtil"
 
 
 const initState = {
-  title:'제목 TEST',
-  content:'내용 TEST',  
-  email:'Email TEST',
-  nickname:'NickName TEST',
-  cateno:2
+  title:'재배일지',
+  content:'재배일지 내용',  
+  email:'',
+  nickname:'',
+  mno:0,
+  cateno:0,
+  view:0
+  
 
 }
 
-const FarmerDiaryRegistComponent = ({moveList, moveDiaryList}) => {
+const FarmerDiaryRegistComponent = () => {
   
   const fileRef = useRef()
 
   const [board, setBoard] = useState({...initState})
 
+  const cookie = getCookies("login")
+
   const nav = useNavigate()
+
+  const {moveDiaryList} = useQueryObj()
 
 
   const handleChange = (e) => {
@@ -35,9 +44,10 @@ const FarmerDiaryRegistComponent = ({moveList, moveDiaryList}) => {
 
       formData.append("title", board.title)
       formData.append("content", board.content)
-      // formData.append("email", board.email)
-      formData.append("nickname", board.nickname)
-      formData.append("cateno", board.cateno)
+      formData.append("mno", cookie.mno)
+      // formData.append("nickname", board.nickname)
+      formData.append("cateno", 2)
+      formData.append("view", board.view)
 
       console.dir(fileRef.current)
 
@@ -53,9 +63,14 @@ const FarmerDiaryRegistComponent = ({moveList, moveDiaryList}) => {
       
   }
 
-  const handleClickClear = (e) => {
-      
-      fileRef.current.value = ''
+  const handleClickClear = () => {
+
+    setBoard({
+      ...board,
+      imagePreviewURLs: [] // 이미지 URL 배열 초기화
+    })
+
+    fileRef.current.value = null // 파일 선택 input 초기화
   }
 
   return ( 
@@ -88,11 +103,11 @@ const FarmerDiaryRegistComponent = ({moveList, moveDiaryList}) => {
         </input>
       </div>
 
-      <div className="m-2 p-2 border-2">
+      {/* <div className="m-2 p-2 border-2">
         <div className="text-orange-500 font-bold">NickName</div>
         <div name='nickname'>{board.nickname}</div>
 
-      </div>
+      </div> */}
 
       <div className="m-2 p-2 border-2">
         <div className="text-orange-500 font-bold">상품사진</div>                 

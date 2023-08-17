@@ -19,7 +19,8 @@ export const getCookies = (cookieName) => {
 }
 
 export const removeCookis = (cookieName , path="/") => {
-    cookies.remove(cookieName , {path:path})
+    cookies.remove(cookieName , {path: path})
+    
 }
 
 const initState = {
