@@ -60,3 +60,7 @@ export const getFarmerOne = async (mno) => {
   return res.data
 
 }
+
+
+
+
