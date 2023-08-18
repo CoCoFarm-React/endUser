@@ -44,16 +44,16 @@ const FarmerListComponent = ({queryObj, movePage, moveRead2}) => {
             >
             <div className="text-center">
                 <div className="font-size-9px">{mno}</div>
-                <div className="text-center">
-                  <img className="inline-block" src={`http://192.168.0.74/s_files_f${idx++}.jpg`}/>
+                <div className="text-center w-[430px] h-[230px] mx-auto">
+                  <img className="inline-block w-full h-full" src={`http://192.168.0.74/s_files_f${idx++}.jpg`}/>
                 </div>
             </div>
             <div className="text-center">
-                <div className="font-size-9px">
+                <div className="text-xl mt-4">
                   {nickname}
                 </div>
-                <div className="text-center text-2xl">
-                  설명: {intro}
+                <div className="text-center text-2xl mt-4 text-green-600">
+                  {intro}
                   <div className="text-xl font-normal">
                     {/* <span className="mr-5">ReviewAvg: ({reviewAvg})</span>
                     <span>ReviewCnt: ({reviewCnt})</span> */}

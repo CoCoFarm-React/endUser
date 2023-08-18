@@ -74,17 +74,17 @@ const QNAReadComponent = ({moveDelete, moveModify, moveList}) => {
 
             <div className="flex">
                 <button 
-                    className="w-20 p-2 m-2 rounded-md font-bold"
+                    className="w-auto p-2 m-2 border-2 rounded-md font-bold"
                     onClick={() => moveModify(board.bno)}>
                     MODIFY
                 </button>
                 <button 
-                    className="w-20 p-2 m-2 rounded-md font-bold"
+                    className="w-auto p-2 m-2 border-2 rounded-md font-bold"
                     onClick={moveList}>
                     LIST
                 </button>
                 <button 
-                    className="w-20 p-2 m-2 rounded-md font-bold"
+                    className="w-auto p-2 m-2 border-2 rounded-md font-bold"
                     onClick={handleClickDelete}>
                     DELETE
                 </button>

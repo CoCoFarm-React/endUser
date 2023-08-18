@@ -5,7 +5,7 @@ import FarmerSiginComponent from "../../../components/farmers/FarmerSigninCompon
 import { useDispatch } from "react-redux";
 import { requestLogout } from "../../../reducers/loginSlice";
 
-const TopNav = ({hide}) => {
+const ConsumerTopNav = ({hide}) => {
   const dispatch = useDispatch();
   const nav = useNavigate()
 
@@ -22,28 +22,32 @@ const TopNav = ({hide}) => {
       <div className="flex justify-between">
 
         <div className="w-[200px]  justify-center flex">
-          <Link to={"/"}>
+          <Link to={"/about"}>
             <img className="h-[68px]" alt="cocofarm" src={farmIcon1} />
           </Link>
         </div>
 
-        <div className="w-[800px]  flex justify-center">
+        <div className="w-[900px]  flex justify-center">
 
           <div className="m-5 mb-3 mt-auto text-xl hover:underline hover:scale-125">
-            <Link to={"/farmer/home"}>Home</Link>
+            <Link to={"/about"}>MAIN</Link>
           </div>
 
           <div className="m-5 ml-20 mb-3 mt-auto text-xl hover:underline hover:scale-125">
-            <Link to={"/farmer/diary"}>Diary</Link>
+            <Link to={"/consumer/farmer/list"}>FARMER LIST</Link>
           </div>
 
           <div className="m-5 ml-20 mb-3 mt-auto text-xl hover:underline hover:scale-125">
-            <Link to={"/farmer/qa"}>Q&A</Link>
+            <Link to={"/consumer/qnapage"}>Q&A</Link>
           </div>
           {/* onClick={() => hide} */}
           <div  className="m-5 ml-20 mb-3 mt-auto text-xl hover:underline hover:scale-125">
-            <Link to={"/farmer/subscriberlist"}>Subscriber</Link>
+            <Link to={"/mypage"}>MY PAGE</Link>
           </div>
+
+          {/* <div  className="m-5 ml-20 mb-3 mt-auto text-xl hover:underline hover:scale-125">
+            <Link to={"/about"}>ABOUT</Link>
+          </div> */}
 
         </div>
 
@@ -69,4 +73,4 @@ const TopNav = ({hide}) => {
    );
 }
  
-export default TopNav;
+export default ConsumerTopNav;

@@ -1,7 +1,8 @@
 //import styles from '../../styles.css';
-
+import { farmIcon1 } from "../../../src/public/cocofarm6.png"
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { requestLogout } from "../../reducers/loginSlice";
 
 
 const HeaderComponent = () => {
@@ -24,7 +25,7 @@ const HeaderComponent = () => {
                 
                 <div className='m-10'>
                     <Link to="/consumer">
-                        <img className="h-[69px] " alt="cocofarm" src={farmIcon1} />
+                        {/* <img className="h-[69px] " alt="cocofarm" src={farmIcon1} /> */}
                     </Link>
                 </div>
 

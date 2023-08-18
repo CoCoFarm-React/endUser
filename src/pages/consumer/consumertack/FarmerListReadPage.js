@@ -8,6 +8,7 @@ import { useState } from "react"
 import FarmerHomeComponent from "../../../components/farmers/FarmerHomeComponent"
 import FarmerProfileComponent from "../../../components/consumer/FarmerProfileComponent"
 import FarmerBoardComponent from "../../../components/farmers/FarmerBoardComponent"
+import ConsumerTopNav from "../../../layouts/farmers/nav/ConsumerTopNav"
 
 const FarmerListReadPage = () => {
 
@@ -44,7 +45,8 @@ const FarmerListReadPage = () => {
 
         <div className="container mx-[auto] w-[1280px]">
             <div>
-                <SampleNav></SampleNav>
+                {/* <SampleNav></SampleNav> */}
+                <ConsumerTopNav></ConsumerTopNav>
             </div>
             <div className="font-size-16px text-center mt-5 mb-9">
                 FARMER

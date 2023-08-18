@@ -21,11 +21,11 @@ const FarmerQAReadPage = () => {
         <TopNav></TopNav>
       </div>
 
-      <div className="text-xl mt-5 text-red-600">
+      <div className="text-xl mt-5 ml-6 text-red-600">
         고객 문의 게시판
       </div>
       
-      <div className="mt-5">
+      <div className="mt-3">
         <FarmerQAReadComponent></FarmerQAReadComponent>
         {/* <button         
         onClick={() => moveModify({bno})}

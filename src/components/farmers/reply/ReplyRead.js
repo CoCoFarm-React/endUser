@@ -63,7 +63,7 @@ const ReplyRead = ({rno, cancelRead, refreshPage}) => {
                 <thead className="">
                     <tr className="">
                         <td className="border-2 font-medium w-32 text-center ">No</td>
-                        <td className="border-2">{rno}</td>
+                        <td className="border-2 w-[75vw]">{rno}</td>
                     </tr>
 
                     <tr >
@@ -73,13 +73,13 @@ const ReplyRead = ({rno, cancelRead, refreshPage}) => {
 
                     <tr >
                         <td className="border-2 font-medium text-center">Title</td>
-                        <td className="border-2">
+                        <td className="border-2 ">
                             <input 
                             type="text" 
                             name="reply" 
                             onChange={handleChange} 
                             value={reply.reply}
-                            className="border-2 bg-yellow-100"
+                            className="border-2 bg-yellow-100 w-full"
                             >
                             </input>
                         </td>

@@ -5,6 +5,8 @@ import FooterComponent from "../../../components/consumer/FooterComponent"
 import useQueryObj from "../../../hooks/consumers/useQueryObj"
 // import SampleNav from "../../layout/consumernav/SampleNav"
 import SampleLayout from "../../../layout/consumer/SampleLayout"
+import ReplyWrapper from "../../../components/farmers/reply/ReplyWrapper"
+import ConsumerTopNav from "../../../layouts/farmers/nav/ConsumerTopNav"
 
 
 const QNAReadPage = () => {
@@ -21,10 +23,11 @@ const QNAReadPage = () => {
         
         <div className="container mx-[auto] w-[1280px]">
             <div>
-                <SampleLayout></SampleLayout>
+                {/* <SampleLayout></SampleLayout> */}
+                <ConsumerTopNav></ConsumerTopNav>
             </div>
-            <div className="text-xl mt-5">
-                Q&A Read Page
+            <div className="text-xl mt-5 ml-10 mb-3 text-green-600">
+                문의게시판
             </div>
 
             <div className="m-auto">
@@ -34,8 +37,13 @@ const QNAReadPage = () => {
                     moveModify={moveModify}
                     moveDelete={moveDelete}
                 ></QNAReadComponent>
-                <FooterComponent></FooterComponent>
             </div>
+            <div>
+                <ReplyWrapper bno={bno}></ReplyWrapper>
+            </div>
+
+                <FooterComponent></FooterComponent>
+            
         </div>
 
      );

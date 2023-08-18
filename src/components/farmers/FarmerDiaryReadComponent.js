@@ -158,7 +158,7 @@ const FarmerDiaryReadComponent = ({refreshFn}) => {
               <li key={idx}
                   className="mb-2"
               >
-                <img src={`http://192.168.0.48/${filelist}`} alt='ddd' className="w-[600px] h-[600px]"></img>
+                <img src={`http://192.168.0.74/${filelist}`} alt='ddd' className="w-[600px] h-[600px]"></img>
               </li>
             )}
           </ul>

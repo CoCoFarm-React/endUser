@@ -48,7 +48,7 @@ const FarmerProfileComponent = ({mno}) => {
         </img> */}
         <img alt="farmImage01" 
         className="rounded-[50%] object-cover w-[180px] h-[180px] justify-center flex"
-        src={board.profile === '' ? "http://192.168.0.48/default.jpg" : board.profile}>
+        src={board.profile === '' ? "http://192.168.0.74/default.jpg" : board.profile}>
         </img>
       </div>
 

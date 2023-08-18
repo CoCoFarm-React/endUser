@@ -1,6 +1,6 @@
 import { createBrowserRouter } from"react-router-dom";
 
-import QNAPage from "../pages/consumer/consumertack/QNAPage";
+// import QNAPage from "../pages/consumer/consumertack/QNAPage";
 
 import ConsumerPage from "../pages/consumer/consumertack/ConsumerPage";
 import QNAPage from "../pages/consumer/consumertack/QNAPage";
@@ -178,10 +178,10 @@ const router = createBrowserRouter([
         path:"/consumer/farmerlistpage/read/:mno",
         element:<FarmerListReadPage></FarmerListReadPage>
       },
-      // {
-      //   path:"/consumer/modify",
-      //   element:<ModifyPage></ModifyPage>
-      // }
+      {
+        path:"/consumer/modify",
+        element:<ModifyPage></ModifyPage>
+      },
 
             // Song 추가 및 수정 8.16
             {

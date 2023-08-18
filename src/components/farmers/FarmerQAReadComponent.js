@@ -73,7 +73,7 @@ import { useParams } from "react-router";
         <div>{board.content}</div>
     </div>
 
-    <div className="m-2 p-2 border-2">
+    {/* <div className="m-2 p-2 border-2">
       <div className="text-orange-500 font-bold">상품사진</div>                 
       <div>
         <ul className="list-none">
@@ -86,7 +86,7 @@ import { useParams } from "react-router";
           )}
         </ul>
       </div>
-    </div>
+    </div> */}
 
         <div className="flex">
         <button         
