@@ -134,6 +134,7 @@ const FarmerListReadComponent = ({moveList2,refreshFn}) => {
         </div>
         
     );
+    
 }
  
 export default FarmerListReadComponent;

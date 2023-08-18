@@ -15,11 +15,12 @@ import router from './routers/root';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-  <Provider store={store}>
-      <RouterProvider router={router}>
-    <App />
-  </RouterProvider>
-  </Provider>
+    <Provider store={store}>
+        <RouterProvider router={router}>
+        {/* <RouterProvider router={router2}> */}
+            <App />
+    </RouterProvider>
+    </Provider>
 
 );
 

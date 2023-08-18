@@ -21,6 +21,7 @@ const LoginComponent = () => {
     console.log("ERRORMSG: " + errorMsg)
 
     return ( 
+
         <div className="border-2 rounded-md ml-auto mr-auto mt-14 w-[600px] h-[450px]">
 
             <div className="text-2xl text-center m-5">LOGIN</div>
@@ -52,16 +53,16 @@ const LoginComponent = () => {
                 </div>        
             </div>
 
-        <div className="h-[20vh] text-center">
-            <button 
-            className="font-semibold text-center mt-5 h-14 w-4/6 rounded-md" 
-            onClick={() => dispatch(postLoginThunk(loginInfo))}>
-                LOGIN
-            </button>   
-      </div>
-    </div>
+            <div className="h-[20vh] text-center">
+                <button 
+                className="font-semibold text-center mt-5 h-14 w-4/6 rounded-md" 
+                onClick={() => dispatch(postLoginThunk(loginInfo))}>
+                    LOGIN
+                </button>   
+            </div>
+        </div>
 
-     );
+    );
 
 }
  

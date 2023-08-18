@@ -3,7 +3,10 @@ import FooterComponent from "../../../components/consumer/FooterComponent";
 import SampleLayout from "../../../layout/consumer/SampleLayout";
 import SampleNav from "../../../layout/consumernav/SampleNav";
 
+
 const MyPage = () => {
+
+    // const {user} = useUserState();
 
     return ( 
 

@@ -33,6 +33,7 @@ const FarmerListComponent = ({queryObj, movePage, moveRead2}) => {
     }, [queryObj])
 
     return ( 
+
         <div>
             <ul className="flex flex-wrap mt-5 border border-[#ddd] ">
           {listData.dtoList.map( ({mno, email, nickname, intro, fname}) => 

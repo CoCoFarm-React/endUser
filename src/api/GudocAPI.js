@@ -1,5 +1,5 @@
 import axios from "axios"
-const url = 'http://192.168.0.48:8080'
+const url = 'http://192.168.0.74:8080'
 
 //구독 하기
 export const addGudoc = async (tomno , params) => {

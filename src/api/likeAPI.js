@@ -1,5 +1,5 @@
 import axios from "axios"
-const url = 'http://192.168.0.48:8080'
+const url = 'http://192.168.0.74:8080'
 
 //좋아요 누르기
 export const addBoardLike = async (bno , params) => {

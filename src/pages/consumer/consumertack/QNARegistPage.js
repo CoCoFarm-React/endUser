@@ -4,6 +4,7 @@ import SampleLayout from "../../../layout/consumer/SampleLayout";
 import FooterComponent from "../../../components/consumer/FooterComponent";
 import { useNavigate } from "react-router-dom";
 
+
 const RegisterPage = () => {
 
     const navigate = useNavigate()
@@ -25,7 +26,9 @@ const RegisterPage = () => {
           <QNARegistComponent moveList={moveList}></QNARegistComponent>
           <FooterComponent></FooterComponent>
       </div>
+
   );
+  
 }
 
 export default RegisterPage;
