@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const url = 'http://192.168.0.74:8080'
+const url = 'http://192.168.0.48:8080'
 
 export const getRepliesOfBoard = async (bno, page = 1, last = false) => {
 

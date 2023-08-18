@@ -1,20 +1,33 @@
 //import styles from '../../styles.css';
 
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 
 const HeaderComponent = () => {
 
+    const dispatch = useDispatch();
+    const nav = useNavigate()
+
+    const logout = () => {
+        alert("11")
+        dispatch(requestLogout())
+        alert("22")
+        nav("/")   
+    }
+
     return ( 
 
-        <header className="
-         w-[1280px] mt-auto bg-green-200">
+        <header className="w-[1280px] mt-auto">
             <div className="flex w-4/5 max-w-screen-lg h-full m-auto items-center justify-between">
-                <h2 className="font-semibold text-2xl">HEADER</h2>
+                {/* <h2 className="font-semibold text-2xl">HEADER</h2> */}
                 
                 <div className='m-10'>
-                    <Link to="/consumer">로고이미지</Link>
+                    <Link to="/consumer">
+                        <img className="h-[69px] " alt="cocofarm" src={farmIcon1} />
+                    </Link>
                 </div>
+
                 <div className='flex list-none'>
                     <div className='m-5'><Link to="/consumer/mainpage">MAIN</Link></div>
                     <div className='m-5'><Link to="/consumer/farmerlistpage">FARMERLIST</Link></div>
@@ -28,12 +41,10 @@ const HeaderComponent = () => {
                         </button>
                     </Link>
                 </div>
-
-                
             </div>
         </header>
 
-     );
+    );
 
 }
 

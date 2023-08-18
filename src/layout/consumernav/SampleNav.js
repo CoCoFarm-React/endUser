@@ -1,7 +1,20 @@
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { requestLogout } from "../../reducers/loginSlice";
 
 
 const SampleNav = () => {
+
+    const dispatch = useDispatch();
+    const nav = useNavigate()
+  
+    const logout = () => {
+        alert("11")
+        dispatch(requestLogout())
+        // alert("22")
+        nav("/")   
+    }
+
     return ( 
         <div className="relative flex justify-between items-center bg-white pt-12 pb-12">
             
@@ -25,13 +38,26 @@ const SampleNav = () => {
                     ACCOUNT
                     </button>
                 </Link>
-                <Link to="/">
+
+
+
+                {/* <Link to="/">
                     <button 
                     className=" 
                     hover:bg-black hover:text-white text-center text-sm">
                     LOGOUT
                     </button>
-                </Link>
+                </Link> */}
+                <button 
+                    className="m-5 rounded-md hover:bg-white text-center text-sm"
+                    onClick={() => logout()}
+                    >
+                    LogOut
+                </button>
+
+
+
+
             </div>
         </div>
     );

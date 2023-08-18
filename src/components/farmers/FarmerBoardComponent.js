@@ -55,7 +55,7 @@ const FarmerBoardComponent = ({queryObj, movePage, moveRead}) => {
           <div className="justify-center">
 
             <div className="hover:cursor-pointer w-36 h-32 mx-auto mt-4">
-              <img src={`http://192.168.0.74/s_${fname}`} 
+              <img src={`http://192.168.0.48/s_${fname}`} 
                 alt="defaultImg" className="w-36 h-32"></img>
                 {/* <img src={`http:192.168.0.74/${fname}`} 
                 alt="defaultImg" className="w-36 h-32"></img> */}

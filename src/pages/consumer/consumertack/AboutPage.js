@@ -11,7 +11,7 @@ const AboutPage = () => {
           <h2 className="font-size-16px font-serif text-center p-12">COCOFARM</h2>
           <div className="container">
             <div className=" w-auto flex justify-center items-center">
-              <img src="http://192.168.0.74/main/cocofarmmain.jpg" 
+              <img src="http://192.168.0.48/main/cocofarmmain.jpg" 
               className="w-auto h-auto justify-center flex">
               </img>
             </div>

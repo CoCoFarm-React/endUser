@@ -5,7 +5,6 @@ import useQueryObj from "../../../hooks/consumers/useQueryObj";
 import SampleLayout from "../../../layout/consumer/SampleLayout";
 
 
-
 const QNAPage = () => {
 
     const {queryObj, setSearch, moveRead, moveRegist} = useQueryObj()

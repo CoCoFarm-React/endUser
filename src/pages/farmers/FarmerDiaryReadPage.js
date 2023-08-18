@@ -13,9 +13,18 @@ const FarmerDiaryReadPage = () => {
   
   const {queryObj, moveDiaryList} = useQueryObj()
   const {bno} = useParams()
+  const [refresh, setRefresh] = useState(false)
   
   console.log(bno)
   console.log(queryObj)
+
+  //차은우 추가
+  const refreshFn = () => {
+
+    let data = !refresh
+    setRefresh({...data})
+
+  }
 
   return ( 
     
@@ -26,8 +35,8 @@ const FarmerDiaryReadPage = () => {
         <TopNav></TopNav>
       </div>
       
-      <div className="mt-5 ">
-        <FarmerDiaryReadComponent bno={bno}></FarmerDiaryReadComponent>
+      <div className="mt-5">
+        <FarmerDiaryReadComponent bno={bno} refreshFn={refreshFn} ></FarmerDiaryReadComponent>
         {/* <button 
             className="border-2 w-20 mt-4 p-2 rounded-md bg-gray-600 text-white "
             onClick={() => moveDiaryList()}>List</button> */}
