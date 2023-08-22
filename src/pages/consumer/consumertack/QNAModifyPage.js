@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom"
 
-
 import FooterComponent from "../../../components/consumer/FooterComponent"
 import useQueryObj from "../../../hooks/consumers/useQueryObj"
 import QNAModifyComponent from "../../../components/consumer/QNAModifyComponent"
@@ -12,7 +11,7 @@ const QNAReadPage = () => {
     const {queryObj, moveDelete, moveList, moveRead} = useQueryObj()
     const {bno} = useParams()
 
-    console.log(bno)
+    console.log("QAMODI bno:" + bno)
     console.log(queryObj)
     console.log(useQueryObj)
     console.log("==========----------==========")

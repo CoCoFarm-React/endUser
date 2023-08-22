@@ -5,7 +5,9 @@ const initState = {
   title:'제목 TEST',
   content:'내용 TEST',  
   email:'Email TEST',
-  nickname:'NickName TEST'
+  nickname:'NickName TEST',
+  cateno:0,
+  mno:0
 
 
 }
@@ -31,7 +33,9 @@ const FarmerQARegistComponent = ({moveList}) => {
         formData.append("title", board.title)
         formData.append("content", board.content)
         // formData.append("email", board.email)
-        formData.append("nickname", board.nickname)
+        //formData.append("nickname", board.nickname)
+        formData.append("cateno", 1)
+        formData.append("mno", 3)
 
         console.dir(fileRef.current)
 

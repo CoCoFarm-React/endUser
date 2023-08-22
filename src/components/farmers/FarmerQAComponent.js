@@ -43,7 +43,7 @@ const FarmerQAComponent = ({queryObj, movePage, moveRead}) => {
             <td className="w-1/12">No</td>
             <td className="w-7/12">Title</td>
             <td className="w-1/12">Nickname</td>
-            <td className="w-2/12">Duedate</td>
+            <td className="w-2/12">RegDate</td>
             <td className="w-1/12">ReplyCnt</td>          
           </tr>
         </thead>
@@ -53,12 +53,13 @@ const FarmerQAComponent = ({queryObj, movePage, moveRead}) => {
             <tr className="border-b-2 border-gray-300 text-center h-12"
                 key={bno}
                 onClick={() => moveRead(bno)}
+                
             >
-              <td>{bno}</td>
-              <td className="text-left hover:underline hover:cursor-pointer">{title}</td>
-              <td>{nickname}</td>
-              <td>{regDate}</td>
-              <td>{rcnt}</td>
+              <td className="w-1/12">{bno}</td>
+              <td className="w-7/12 text-left hover:underline hover:cursor-pointer">{title}</td>
+              <td className="w-1/12">{nickname}</td>
+              <td className="w-2/12">{regDate}</td>
+              <td className="w-1/12">{rcnt}</td>
             </tr>
           
           )}

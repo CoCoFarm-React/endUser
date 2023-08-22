@@ -3,7 +3,7 @@ import QNAComponent from "../../../components/consumer/QNAComponent";
 import SearchComponent from "../../../components/consumer/SearchComponent";
 import useQueryObj from "../../../hooks/consumers/useQueryObj";
 import SampleLayout from "../../../layout/consumer/SampleLayout";
-
+import ConsumerTopNav from "../../../layouts/farmers/nav/ConsumerTopNav";
 
 
 const QNAPage = () => {
@@ -32,22 +32,26 @@ const QNAPage = () => {
     return ( 
 
         <div className="container mx-[auto] w-[1280px] ">
-            <SampleLayout>
+            {/* <SampleLayout>
                 <h2>Q&A PAGE</h2>
-            </SampleLayout>
+            </SampleLayout> */}
+            <ConsumerTopNav></ConsumerTopNav>
+            
             <div>
-            <div>
-                <SearchComponent
-                moveSearch={moveSearch}
-                queryObj={queryObj}>
-                </SearchComponent>
-            </div>
-                <QNAComponent
-                queryObj={queryObj}
-                movePage={movePage}
-                moveRead={moveRead}
-                moveRegist={moveRegist}>
-                </QNAComponent>
+            
+                <div>
+                    <SearchComponent
+                    moveSearch={moveSearch}
+                    queryObj={queryObj}>
+                    </SearchComponent>
+                </div>
+                    <QNAComponent
+                    queryObj={queryObj}
+                    movePage={movePage}
+                    moveRead={moveRead}
+                    moveRegist={moveRegist}>
+                    </QNAComponent>
+            
             </div>
 
             <FooterComponent></FooterComponent>

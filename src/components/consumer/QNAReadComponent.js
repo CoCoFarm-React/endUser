@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getOne } from "../../api/ConsumerAPI"
+import { deleteBoard, getOne } from "../../api/ConsumerAPI"
 import { useParams } from "react-router-dom"
 
 
@@ -24,57 +24,71 @@ const QNAReadComponent = ({moveDelete, moveModify, moveList}) => {
     console.log(bno)
 
     useEffect(() => {
+
         getOne(bno).then(data => {
             console.log("==========-----==========")
             console.log(data)
             setBoard(data)
         })
+        
     }, [bno])
+
+    const handleClickDelete = () => {
+        deleteBoard(bno).then(data => {
+            alert("삭제되었습니다!!!!!")
+            moveList()
+        })
+    }
 
     return ( 
 
         <div className="w-[1200px] items-center justify-center m-auto">
             <table className="w-full">
-                <thead>
-                    <tr className="h-12 font-medium text-center">
-                        <td className="border-2  w-32">NO.</td>
-                        <td className="border-2 ">TITLE</td>
-                        <td className="border-2 ">CONTENT</td>
-                        <td className="border-2 ">NICKNAME</td>
-                        <td className="border-2 ">REGDATE</td>
-                        <td className="border-2 ">MODDATE</td>
-                    </tr>
-                </thead>
-                
-                <tbody>
-                    <tr className="font-medium text-center">
+                <thead className="">
+                    <tr>
+                        <td className="border-2 font-medium w-32 text-center ">NO.</td>
                         <td className="border-2">{board.bno}</td>
+                    </tr>
+                    <tr >
+                        <td className="border-2 font-medium h-10 text-center">TITLE</td>
                         <td className="border-2">{board.title}</td>
-                        <td className="border-2">{board.content}</td>
+                    </tr>
+                    <tr >
+                        <td className="border-2 font-medium h-80 text-center">CONTENT</td>
+                        <td className="border-2">{board.content}</td>             
+                    </tr>
+                    <tr >
+                        <td className="border-2 font-medium text-center">NICKNAME</td>
                         <td className="border-2">{board.nickname}</td>
+                    </tr>
+                    <tr >
+                        <td className="border-2 font-medium text-center">REGDATE</td>
                         <td className="border-2">{board.regDate}</td>
+                    </tr>
+                    <tr >
+                        <td className="border-2 font-medium text-center">MODDATE</td>
                         <td className="border-2">{board.modDate}</td>
                     </tr>
-                </tbody>
+                </thead>
             </table>
-            <div>
+
+            <div className="flex">
                 <button 
-                    className="bg-orange-400 border-2 m-2 p-2 text-white font-bold"
+                    className="w-auto p-2 m-2 border-2 rounded-md font-bold"
                     onClick={() => moveModify(board.bno)}>
-                    Modify
+                    MODIFY
                 </button>
                 <button 
-                    className="bg-blue-500 border-2 m-2 p-2 text-white font-bold"
+                    className="w-auto p-2 m-2 border-2 rounded-md font-bold"
                     onClick={moveList}>
-                    List
+                    LIST
                 </button>
                 <button 
-                    className="bg-blue-500 border-2 m-2 p-2 text-white font-bold"
-                    onClick={moveDelete}>
-                    Delete
+                    className="w-auto p-2 m-2 border-2 rounded-md font-bold"
+                    onClick={handleClickDelete}>
+                    DELETE
                 </button>
             </div>
-
         </div>
 
      );

@@ -4,7 +4,7 @@ import useQueryObj from "../../hooks/farmers/useQueryObj";
 import TopNav from "../../layouts/farmers/nav/TopNav";
 
 
-const FarmerQAModifyPage = () => {
+const FarmerDiaryModifyPage = () => {
 
   const {queryObj, moveList, moveModify, moveRead} = useQueryObj()
   const { bno } = useParams()
@@ -20,7 +20,7 @@ const FarmerQAModifyPage = () => {
 
       <div>
         <FarmerQAModifyComponent bno={bno} 
-        addUrl={{url: "/farmer/qa/"}} 
+        addUrl={{url: "/farmer/diary/"}} 
         moveRead={moveRead}></FarmerQAModifyComponent>
       </div>
 
@@ -28,4 +28,4 @@ const FarmerQAModifyPage = () => {
    );
 }
  
-export default FarmerQAModifyPage;
+export default FarmerDiaryModifyPage;

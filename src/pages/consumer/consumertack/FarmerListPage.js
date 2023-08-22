@@ -3,6 +3,7 @@ import FooterComponent from "../../../components/consumer/FooterComponent";
 import SearchComponent from "../../../components/consumer/SearchComponent";
 import useQueryObj from "../../../hooks/consumers/useQueryObj";
 import SampleNav from "../../../layout/consumernav/SampleNav";
+import ConsumerTopNav from "../../../layouts/farmers/nav/ConsumerTopNav";
 
 
 const FarmerListPage = () => {
@@ -30,7 +31,8 @@ const FarmerListPage = () => {
     return ( 
 
         <div className="container mx-[auto] w-[1280px] ">
-            <SampleNav></SampleNav>
+            {/* <SampleNav></SampleNav> */}
+            <ConsumerTopNav></ConsumerTopNav>
             <h2 className="font-size-16px font-serif text-center p-12">FARMER LIST</h2>
             <div>
                 <FarmerListComponent

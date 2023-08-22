@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { setCookie , getCookies , removeCookis } from "../util/cookieUtil";
 import { postLogin } from "../api/LoginApi";
 
+
 export const postLoginThunk = createAsyncThunk('postLoginThunk', (params) => {
     console.log(params)
 
@@ -14,7 +15,7 @@ const loadCookie = () => {
     console.log("")
     console.log(loginObj)
 
-    if(!loginObj){
+    if(!loginObj) {
         return initState;
     }
 
@@ -35,7 +36,8 @@ const initState = {
 }
 
 const loginSlice = createSlice({
-    name : 'loginSlice' , 
+    name : 'loginSlice', 
+    // 함수의 리턴값으로 받을 생각.
     initialState: loadCookie(),
     reducers:{
         requestLogin: (state , action) =>  {
@@ -51,14 +53,19 @@ const loginSlice = createSlice({
 
         },
 
-        requestLogout: (state , param) =>  {
+        requestLogout: (state) =>  {
 
-            removeCookis("login" , "/")
+            console.log("=================requestLogout=====================")
+
+            removeCookis("login")
        
             return initState
+
         }
     },
 
+    // extraReducers 설정방법 2가지.
+    // 1. 키,값 설정. / 2. 빌더설정.
     extraReducers: (builder) => {
         
 
@@ -97,9 +104,8 @@ const loginSlice = createSlice({
         })
         .addCase(postLoginThunk.rejected, (state,action) => {
             console.log("rejected");
-            
-           
         })
+        
     }
 
 })

@@ -37,7 +37,7 @@ const PageComponent = ({movePage, start, end, prev, next, pageNums, page}) => {
             </ul>
         </div>
 
-     );
+    );
 
 }
  
