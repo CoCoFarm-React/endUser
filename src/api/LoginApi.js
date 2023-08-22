@@ -1,7 +1,6 @@
 import axios from "axios"
 import { url } from "./FarmerAPI"
 
-
 export const postLogin = async(params) => {
 
     // json 형식을 문자열로 보낼 때 쓴다.
