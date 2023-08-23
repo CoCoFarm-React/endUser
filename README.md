@@ -68,3 +68,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+##AWS Test
+
+
+https://github.com/CoCoFarm-React/enduser/assets/46257969/e3291ea2-c607-44e2-af47-50c24bc5d87b
+
+
